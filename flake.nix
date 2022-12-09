@@ -8,11 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-doom-emacs, ... }: 
+  outputs = { self, nixpkgs, home-manager, ... }: 
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -31,10 +31,9 @@
 	    home-manager.nixosModules.home-manager {
 	      home-manager.useGlobalPkgs = true;
 	      home-manager.useUserPackages = true;
-	      home-manager.users.shivanshu =  lib.mkMerge [ 
-                nix-doom-emacs.hmModule
-                ./home.nix 
-              ];
+	      home-manager.users.shivanshu = {
+                imports =  [ ./home.nix ];
+              };
 	    }
 	  ];
 	};
