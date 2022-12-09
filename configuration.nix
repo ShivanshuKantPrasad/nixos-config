@@ -108,6 +108,13 @@
     libsForQt5.bismuth
   ];
 
+  fonts.fonts = with pkgs; [
+    fantasque-sans-mono
+    jetbrains-mono
+    font-awesome
+    nerdfonts
+  ];
+
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
