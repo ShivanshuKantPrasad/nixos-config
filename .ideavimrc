@@ -1,0 +1,56 @@
+"" Source your .vimrc
+source ~/.intellimacs/spacemacs.vim
+source ~/.intellimacs/which-key.vim
+
+source ~/.intellimacs/extra.vim
+source ~/.intellimacs/major.vim
+source ~/.intellimacs/hybrid.vim
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+inoremap fd <Esc>
+inoremap df <Esc>
+
+nmap , <leader>m
+vmap , <leader>m
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+map \r <Action>(ReformatCode)
+map \e <Action>(EditorSelectWord)
+map <C-=> <Action>(EditorSelectWord)
+imap <C-=> <Action>(EditorSelectWord)
+map \u <Action>(EditorUnSelectWord)
+map <C--> <Action>(EditorUnSelectWord)
+imap <C--> <Action>(EditorUnSelectWord)
+map \p <Action>(ParameterInfo)
+
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+Plug 'tpope/vim-commentary'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'easymotion/vim-easymotion'
