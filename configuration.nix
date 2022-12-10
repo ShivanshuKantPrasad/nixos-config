@@ -1,18 +1,18 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-{
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+{ config, pkgs, inputs, ... }: {
+  nix.registry.nixpkgs.flake = inputs.nixpkgs;
+
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  boot.supportedFilesystems = ["ntfs"];
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -84,11 +84,7 @@
     description = "Shivanshu";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
-    packages = with pkgs; [
-      firefox
-      kate
-      jetbrains.clion
-    ];
+    packages = with pkgs; [ firefox kate ];
   };
 
   # Allow unfree packages
@@ -101,11 +97,8 @@
     wget
     git
     ncdu
-    brave
-    protonvpn-gui
     htop
     neovim
-    neofetch
     libsForQt5.bismuth
     plocate
     xclip
@@ -132,10 +125,10 @@
   # List services that you want to enable:
 
   services.locate = {
-     enable = true;
-     locate = pkgs.plocate;
-     interval = "hourly";
-     localuser = null;
+    enable = true;
+    locate = pkgs.plocate;
+    interval = "hourly";
+    localuser = null;
   };
 
   # Enable the OpenSSH daemon.

@@ -19,6 +19,11 @@
     homeDirectory = "/home/shivanshu";
 
     packages = with pkgs; [
+
+      brave
+      neofetch
+      nvd
+
       silver-searcher
       ripgrep
       bmon
