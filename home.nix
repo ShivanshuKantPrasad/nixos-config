@@ -31,7 +31,6 @@
       gcc
       gnumake
       update-nix-fetchgit
-      oh-my-fish
       ((emacsPackagesFor emacsNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
     ];

@@ -107,6 +107,8 @@
     neovim
     neofetch
     libsForQt5.bismuth
+    plocate
+    xclip
   ];
 
   fonts.fonts = with pkgs; [
@@ -128,6 +130,13 @@
   # };
 
   # List services that you want to enable:
+
+  services.locate = {
+     enable = true;
+     locate = pkgs.plocate;
+     interval = "hourly";
+     localuser = null;
+  };
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
