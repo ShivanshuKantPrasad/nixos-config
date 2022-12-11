@@ -98,7 +98,6 @@
     git
     ncdu
     htop
-    neovim
     libsForQt5.bismuth
     plocate
     xclip

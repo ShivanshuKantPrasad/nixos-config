@@ -27,6 +27,8 @@
       topgrade
       nethogs
       discord
+      gh
+      git
 
       silver-searcher
       ripgrep
