@@ -29,6 +29,10 @@
       discord
       gh
       git
+      zip
+      unzip
+      rar
+      unrar
 
       silver-searcher
       ripgrep
@@ -38,6 +42,7 @@
       lshw
       cmake
       gcc
+      gdb
       gnumake
       update-nix-fetchgit
  
