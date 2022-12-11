@@ -49,6 +49,7 @@
       jetbrains.clion
       libreoffice
       lutris
+      mangohud
      ((emacsPackagesFor emacsNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
     ];
