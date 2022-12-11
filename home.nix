@@ -32,7 +32,6 @@
       zip
       unzip
       rar
-      unrar
 
       silver-searcher
       ripgrep
