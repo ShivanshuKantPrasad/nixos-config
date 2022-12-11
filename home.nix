@@ -23,20 +23,27 @@
       brave
       neofetch
       nvd
+      nixfmt
+      topgrade
+      nethogs
+      discord
 
       silver-searcher
       ripgrep
       bmon
       usbutils
-      jetbrains.rider
       pciutils
       lshw
-      libreoffice
       cmake
       gcc
       gnumake
       update-nix-fetchgit
-      ((emacsPackagesFor emacsNativeComp).emacsWithPackages
+ 
+      jetbrains.rider
+      jetbrains.clion
+      libreoffice
+      lutris
+     ((emacsPackagesFor emacsNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
     ];
 
