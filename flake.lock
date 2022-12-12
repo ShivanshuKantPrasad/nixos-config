@@ -1,8 +1,29 @@
 {
   "nodes": {
-    "emacs-overlay": {
+    "dde-nixos": {
       "inputs": {
         "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1670822498,
+        "narHash": "sha256-0Aoo2i6ArcbeJNJPtruPY+BTZKNdQX0t0SXbNszIReA=",
+        "owner": "linuxdeepin",
+        "repo": "dde-nixos",
+        "rev": "6c9f88442651865a05f545c693ee4e5a9653385f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "linuxdeepin",
+        "repo": "dde-nixos",
+        "type": "github"
+      }
+    },
+    "emacs-overlay": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
@@ -20,6 +41,21 @@
       }
     },
     "flake-utils": {
+      "locked": {
+        "lastModified": 1667395993,
+        "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5aed5285a952e0b949eb3ba02c12fa4fcfef535f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
       "locked": {
         "lastModified": 1667395993,
         "narHash": "sha256-nuEHfE/LcWyuSWnS8t12N1wc105Qtau+/OdUAjtQ0rA=",
@@ -87,6 +123,7 @@
     },
     "root": {
       "inputs": {
+        "dde-nixos": "dde-nixos",
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs_2"
