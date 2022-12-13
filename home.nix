@@ -33,6 +33,10 @@
       unzip
       rar
 
+      fzf
+      fsearch
+      fd
+      android-tools
       silver-searcher
       ripgrep
       bmon
@@ -63,5 +67,9 @@
     bat.enable = true;
     exa.enable = true;
     fish.enable = true;
+    kodi.enable = true;
+
+    direnv.enable = true;
+    direnv.nix-direnv.enable = true;
   };
 }
