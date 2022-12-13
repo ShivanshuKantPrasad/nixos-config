@@ -8,16 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dde-nixos = {
-      url = "github:linuxdeepin/dde-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, dde-nixos, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -32,7 +27,6 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            dde-nixos.nixosModules.${system}
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
