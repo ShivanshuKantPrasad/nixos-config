@@ -1,6 +1,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }: {
+{ config, rust-overlay, pkgs, inputs, ... }: {
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
   imports = [ # Include the results of the hardware scan.
@@ -92,6 +92,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [ rust-overlay.overlays.default ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -103,6 +105,8 @@
     libsForQt5.bismuth
     plocate
     xclip
+    rust-bin.stable.latest.default
+    rust-analyzer
   ];
 
   fonts.fonts = with pkgs; [

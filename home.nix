@@ -18,6 +18,7 @@
     username = "shivanshu";
     homeDirectory = "/home/shivanshu";
 
+
     packages = with pkgs; [
 
       brave
@@ -48,14 +49,15 @@
       gdb
       gnumake
       update-nix-fetchgit
- 
+
       jetbrains.rider
       jetbrains.clion
       libreoffice
       lutris
       mangohud
-     ((emacsPackagesFor emacsNativeComp).emacsWithPackages
+      ((emacsPackagesFor emacsNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
+
     ];
 
     stateVersion = "22.11";
