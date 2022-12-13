@@ -87,6 +87,8 @@
     packages = with pkgs; [ firefox kate ];
   };
 
+  environment.shells = with pkgs; [ fish ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -111,6 +113,7 @@
   ];
 
   programs.neovim.enable = true;
+  programs.partition-manager.enable = true;
   programs.neovim.defaultEditor = true;
   programs.gamemode.enable = true;
 
