@@ -103,6 +103,9 @@
     ncdu
     htop
     libsForQt5.bismuth
+    libsForQt5.kaccounts-integration
+    libsForQt5.kaccounts-providers
+    libsForQt5.kio-gdrive
     plocate
     xclip
     rust-bin.stable.latest.default
