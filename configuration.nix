@@ -87,6 +87,7 @@
     packages = with pkgs; [ firefox kate ];
   };
 
+  users.extraGroups.vboxusers.members = ["shivanshu"];
   environment.shells = with pkgs; [ fish ];
 
   # Allow unfree packages
@@ -140,6 +141,8 @@
     interval = "hourly";
     localuser = null;
   };
+  
+  services.ipfs.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -163,6 +166,10 @@
   };
 
   virtualisation = {
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
+    virtualbox.guest.enable = true;
+    virtualbox.guest.x11 = true;
     waydroid.enable = true;
     lxd.enable = true;
   };
