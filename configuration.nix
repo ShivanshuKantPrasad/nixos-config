@@ -142,7 +142,8 @@
     localuser = null;
   };
   
-  services.ipfs.enable = true;
+  # Enable ipfs service
+  services.kubo.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
