@@ -45,6 +45,7 @@
       pciutils
       lshw
       cmake
+      python3
       gcc
       gdb
       gnumake
