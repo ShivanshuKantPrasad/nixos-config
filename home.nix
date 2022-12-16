@@ -2,6 +2,7 @@
 
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
+  xdg.enable = true;
   home = {
 
     file = {
