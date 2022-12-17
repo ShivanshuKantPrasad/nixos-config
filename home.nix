@@ -35,6 +35,8 @@
       unzip
       rar
       spotify
+      qbittorrent
+      sublime4
 
       fzf
       fsearch
@@ -45,6 +47,9 @@
       sqlite
       wordnet
       bmon
+      bpytop
+      meld
+      hspell
       usbutils
       pciutils
       lshw
