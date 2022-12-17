@@ -41,6 +41,8 @@
       android-tools
       silver-searcher
       ripgrep
+      sqlite
+      wordnet
       bmon
       usbutils
       pciutils
