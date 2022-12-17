@@ -34,6 +34,7 @@
       zip
       unzip
       rar
+      spotify
 
       fzf
       fsearch
