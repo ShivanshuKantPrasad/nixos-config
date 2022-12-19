@@ -116,6 +116,7 @@
   fonts.fonts = with pkgs; [
     fantasque-sans-mono
     jetbrains-mono
+    emacs-all-the-icons-fonts
     font-awesome
     nerdfonts
   ];

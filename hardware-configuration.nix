@@ -22,6 +22,17 @@
     { device = "/dev/disk/by-uuid/CD24-93CF";
       fsType = "vfat";
     };
+    
+   fileSystems."/run/media/shivanshu/Dev" =
+    { device = "/dev/disk/by-label/Dev";
+      fsType = "auto";
+    };
+
+   fileSystems."/run/media/shivanshu/DATA" =
+    { device = "/dev/disk/by-label/DATA";
+      fsType = "auto";
+    };
+
 
   swapDevices =
     [ { device = "/dev/disk/by-uuid/0e6fb472-f314-45bd-8a82-f2c29edcb6d0"; }
