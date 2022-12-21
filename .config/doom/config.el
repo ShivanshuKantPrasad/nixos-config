@@ -110,3 +110,8 @@
 (setq doom-themes-treemacs-theme "doom-colors")
 
 (company-quickhelp-mode)
+
+(map!
+ (:map 'override
+  :v "v" #'er/expand-region
+  :v "V" #'er/contract-region))
