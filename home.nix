@@ -37,6 +37,7 @@
       spotify
       qbittorrent
       sublime4
+      zeal
 
       fzf
       fsearch
