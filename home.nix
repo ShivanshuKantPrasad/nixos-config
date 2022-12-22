@@ -19,7 +19,6 @@
     username = "shivanshu";
     homeDirectory = "/home/shivanshu";
 
-
     packages = with pkgs; [
 
       brave
@@ -85,4 +84,5 @@
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
   };
+
 }

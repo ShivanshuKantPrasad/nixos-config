@@ -127,6 +127,7 @@
   programs.neovim.defaultEditor = true;
   programs.gamemode.enable = true;
   programs.dconf.enable = true;
+  programs.kdeconnect.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
