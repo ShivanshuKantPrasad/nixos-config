@@ -82,12 +82,12 @@
   users.users.shivanshu = {
     isNormalUser = true;
     description = "Shivanshu";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
     packages = with pkgs; [ firefox kate ];
   };
 
-  users.extraGroups.vboxusers.members = ["shivanshu"];
+  users.extraGroups.vboxusers.members = [ "shivanshu" ];
   environment.shells = with pkgs; [ fish ];
 
   # Allow unfree packages
@@ -111,6 +111,7 @@
     xclip
     rust-bin.stable.latest.default
     rust-analyzer
+    virt-manager
   ];
 
   fonts.fonts = with pkgs; [
@@ -125,6 +126,7 @@
   programs.partition-manager.enable = true;
   programs.neovim.defaultEditor = true;
   programs.gamemode.enable = true;
+  programs.dconf.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -142,7 +144,7 @@
     interval = "hourly";
     localuser = null;
   };
-  
+
   # Enable ipfs service
   services.kubo.enable = true;
 
@@ -176,6 +178,7 @@
     virtualbox.guest.x11 = true;
     waydroid.enable = true;
     lxd.enable = true;
+    libvirtd.enable = true;
   };
 
   # This value determines the NixOS release from which the default
