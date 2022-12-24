@@ -8,9 +8,19 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      enable = true;
+      version = 2;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+    };
+  };
 
   boot.supportedFilesystems = [ "ntfs" ];
 
@@ -26,6 +36,7 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
+  time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
