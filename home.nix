@@ -59,6 +59,17 @@
       gdb
       gnumake
       update-nix-fetchgit
+      alacritty
+      quickemu
+      neovide
+      grc
+      gdu
+      tldr
+      scrcpy
+      tmux
+      vscode
+      feh
+      grc
 
       jetbrains.rider
       jetbrains.clion
@@ -94,7 +105,7 @@
       '';
     };
 
-    
+
   };
 
 }
