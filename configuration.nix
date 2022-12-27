@@ -133,9 +133,7 @@
     nerdfonts
   ];
 
-  programs.neovim.enable = true;
   programs.partition-manager.enable = true;
-  programs.neovim.defaultEditor = true;
   programs.gamemode.enable = true;
   programs.dconf.enable = true;
   programs.kdeconnect.enable = true;

@@ -83,6 +83,18 @@
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
+
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+      extraConfig = ''
+        luafile ~/.config/nvim/init.lua
+      '';
+    };
+
+    
   };
 
 }
