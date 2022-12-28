@@ -85,6 +85,8 @@
 
   };
 
+  services.emacs.enable = true;
+
   programs = {
     home-manager.enable = true;
     bat.enable = true;
@@ -101,10 +103,9 @@
       vimAlias = true;
       vimdiffAlias = true;
       extraConfig = ''
-        luafile ~/.config/nvim/init.lua
+        luafile ~/.config/nvim/settings.lua
       '';
     };
-
 
   };
 
