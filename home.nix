@@ -25,7 +25,6 @@
       neofetch
       nvd
       nixfmt
-      topgrade
       nethogs
       discord
       gh
