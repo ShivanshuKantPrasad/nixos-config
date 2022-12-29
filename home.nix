@@ -54,6 +54,7 @@
       lshw
       cmake
       python3
+      rustup
       gcc
       gdb
       gnumake

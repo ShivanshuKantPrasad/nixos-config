@@ -8,16 +8,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     emacs-overlay.url = "github:nix-community/emacs-overlay";
 
   };
 
-  outputs = inputs@{ self, rust-overlay, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self,  nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -30,7 +25,7 @@
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit rust-overlay inputs; };
+          specialArgs = { inherit inputs; };
           modules = [
             ./configuration.nix
 
