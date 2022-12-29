@@ -93,12 +93,11 @@
   users.users.shivanshu = {
     isNormalUser = true;
     description = "Shivanshu";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
     packages = with pkgs; [ firefox kate ];
   };
 
-  users.extraGroups.vboxusers.members = [ "shivanshu" ];
   environment.shells = with pkgs; [ fish ];
 
   # Allow unfree packages
@@ -182,10 +181,7 @@
   };
 
   virtualisation = {
-    virtualbox.host.enable = true;
-    virtualbox.host.enableExtensionPack = true;
-    virtualbox.guest.enable = true;
-    virtualbox.guest.x11 = true;
+    docker.enable = true;
     waydroid.enable = true;
     lxd.enable = true;
     libvirtd.enable = true;
