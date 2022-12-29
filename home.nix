@@ -101,9 +101,6 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      extraConfig = ''
-        luafile ~/.config/nvim/settings.lua
-      '';
     };
 
   };
