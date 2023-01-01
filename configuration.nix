@@ -162,6 +162,8 @@
 
   hardware.bluetooth.enable = true;
 
+  hardware.opengl.driSupport32Bit = true;
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
