@@ -3,7 +3,8 @@
 { config, pkgs, inputs, ... }: {
   nix.registry.nixpkgs.flake = inputs.nixpkgs;
 
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 

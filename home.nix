@@ -71,8 +71,9 @@
       feh
       grc
 
-      jetbrains.rider
-      jetbrains.clion
+      nur.repos.utybo.jetbrains.clion
+      nur.repos.utybo.jetbrains.rider
+      nur.repos.utybo.jetbrains.idea-ultimate
       libreoffice
       lutris
       mangohud
