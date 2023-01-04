@@ -161,9 +161,15 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    opengl.driSupport32Bit = true;
 
-  hardware.opengl.driSupport32Bit = true;
+    bluetooth = {
+      enable = true;
+      settings.General.Experimental = true;
+    };
+  };
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
