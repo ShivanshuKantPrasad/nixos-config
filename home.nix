@@ -56,6 +56,7 @@
       usbutils
       pciutils
       lshw
+      glxinfo
 
       # Language
       clang-tools
@@ -72,6 +73,7 @@
       deadnix
       nvd
       nixfmt
+      nixpkgs-fmt
       patchelf
       update-nix-fetchgit
       grc
