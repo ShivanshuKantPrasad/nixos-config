@@ -21,22 +21,26 @@
 
     packages = with pkgs; [
 
-      brave
-      neofetch
-      nvd
-      nixfmt
-      nethogs
+      alacritty
       discord
+      libreoffice
+      lutris
+      steam
+      mangohud
+      zeal
+
+      # Virtualization
+      quickemu
+      distrobox
+
+      # Terminal commands
+      nethogs
+      neofetch
       gh
       git
       zip
       unzip
       rar
-      spotify
-      qbittorrent
-      sublime4
-      zeal
-
       fzf
       fsearch
       fd
@@ -52,31 +56,51 @@
       usbutils
       pciutils
       lshw
+
+      # Language
+      clang-tools
       cmake
       python3
       rustup
+      rust-analyzer
+      lld
+      mold
       gcc
       gdb
       gnumake
+      statix
+      deadnix
+      nvd
+      nixfmt
+      patchelf
       update-nix-fetchgit
-      alacritty
-      quickemu
-      neovide
       grc
       gdu
       tldr
       scrcpy
       tmux
-      vscode
-      feh
       grc
 
+      # Media
+      spotify
+      qbittorrent
+      feh
+      gimp
+      vlc
+
+      # Browsers
+      brave
+      # vieb
+
+      # IDEs
       nur.repos.utybo.jetbrains.clion
       nur.repos.utybo.jetbrains.rider
       nur.repos.utybo.jetbrains.idea-ultimate
-      libreoffice
-      lutris
-      mangohud
+
+      # Editors
+      vscode
+      sublime4
+      neovide
       ((emacsPackagesFor emacsNativeComp).emacsWithPackages
         (epkgs: [ epkgs.vterm ]))
 
