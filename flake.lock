@@ -21,13 +21,45 @@
         "type": "github"
       }
     },
+    "jetbrains-updater": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1672272332,
+        "narHash": "sha256-AUN7uBub7GI8mCO+7PUcJoLxWqgAYN7VxgOi7oBoCNE=",
+        "owner": "genericnerdyusername",
+        "repo": "jetbrains-updater",
+        "rev": "7eea36d1fb8517badff78ff8f747bc1f83a87d1e",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "genericnerdyusername",
+        "repo": "jetbrains-updater",
+        "type": "gitlab"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1672617983,
-        "narHash": "sha256-68WDiCBs631mbDDk4UAKdGURKcsfW6hjb7wgudTAe5o=",
+        "lastModified": 1671007632,
+        "narHash": "sha256-1uxNTBOa0SMypJKOWeUqrz2VfmwQ1hVgWckPdgDNip4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b9a0cd40ede905f554399f3f165895dccfd35f3b",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1672791794,
+        "narHash": "sha256-mqGPpGmwap0Wfsf3o2b6qHJW1w2kk/I6cGCGIU+3t6o=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0fc9fca9c8d43edd79d33fea0dd8409d7c4580f4",
+        "rev": "9813adc7f7c0edd738c6bdd8431439688bb0cb3d",
         "type": "github"
       },
       "original": {
@@ -39,11 +71,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1672807544,
-        "narHash": "sha256-fYseOl11yf0iZq3osgGpLos/8Q9CyWlvE7QOPuaDnLI=",
+        "lastModified": 1672943155,
+        "narHash": "sha256-Gb4z+f2/hWbX2H6hb7V51rxu/UjV8yZLt3wriQix7D4=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "498cadbe39b8b843540ea01e9b22d06fc9ad7de3",
+        "rev": "c240cb7aec973a227c2b6725fe2b6c45b2fcfc85",
         "type": "github"
       },
       "original": {
@@ -55,7 +87,8 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
+        "jetbrains-updater": "jetbrains-updater",
+        "nixpkgs": "nixpkgs_2",
         "nur": "nur"
       }
     },

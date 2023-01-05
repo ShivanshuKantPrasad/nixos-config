@@ -95,10 +95,10 @@
       # vieb
 
       # IDEs
-      nur.repos.utybo.jetbrains.clion
-      nur.repos.utybo.jetbrains.rider
-      nur.repos.utybo.jetbrains.idea-ultimate
-
+      jetbrains.clion
+      jetbrains.rider
+      jetbrains.idea-community
+      
       # Editors
       vscode
       sublime4
