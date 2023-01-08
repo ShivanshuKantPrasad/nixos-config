@@ -17,8 +17,8 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-inoremap fd <Esc>
-inoremap df <Esc>
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 nmap , <leader>m
 vmap , <leader>m
@@ -34,12 +34,12 @@ map <C--> <Action>(EditorUnSelectWord)
 imap <C--> <Action>(EditorUnSelectWord)
 map \p <Action>(ParameterInfo)
 
-nnoremap <c-p> :action JumpToLastWindow<CR>
-nnoremap <c-x> :action HideAllWindows<CR>
-nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
+nmap <c-p> <Action>(JumpToLastWindow)
+nmap <c-x> <Action>(HideAllWindows)
+nmap <c-z> <Action>(ToggleDistractionFreeMode)
 
-nnoremap <TAB> :action PreviousTab<CR>
-nnoremap <s-TAB> :action NextTab<CR>
+nmap <TAB> <Action>(PreviousTab)
+nmap <s-TAB> <Action>(NextTab)
 
 "" Map <leader>d to start debug
 "map <leader>d <Action>(Debug)
