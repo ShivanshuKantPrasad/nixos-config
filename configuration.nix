@@ -179,7 +179,7 @@
 
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [ "ca-derivations" "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
     gc = {
