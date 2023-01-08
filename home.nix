@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{config, pkgs, ... }:
 
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
@@ -13,7 +13,7 @@
         sha256 = "0agz51awrq029r8khbg4glwmnz9f1ylk051gbgp5lrmnqkbag282";
       };
 
-      ".ideavimrc".source = ./.ideavimrc;
+      ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
     };
 
     username = "shivanshu";
@@ -96,9 +96,8 @@
 
       # IDEs
       jetbrains.clion
-      jetbrains.rider
-      jetbrains.idea-community
-      
+      jetbrains.idea-ultimate
+
       # Editors
       vscode
       sublime4

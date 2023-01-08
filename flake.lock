@@ -26,15 +26,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1672272332,
-        "narHash": "sha256-AUN7uBub7GI8mCO+7PUcJoLxWqgAYN7VxgOi7oBoCNE=",
-        "owner": "genericnerdyusername",
+        "lastModified": 1673070000,
+        "narHash": "sha256-IM6wKgic2h79zt2xyxRJs6gnuOsE1KjVhUkPbA4f/A4=",
+        "owner": "ShivanshuKantPrasad",
         "repo": "jetbrains-updater",
-        "rev": "7eea36d1fb8517badff78ff8f747bc1f83a87d1e",
+        "rev": "7863ac73687e3cd42fe5aa395c5d38e6d50e6de1",
         "type": "gitlab"
       },
       "original": {
-        "owner": "genericnerdyusername",
+        "owner": "ShivanshuKantPrasad",
         "repo": "jetbrains-updater",
         "type": "gitlab"
       }
