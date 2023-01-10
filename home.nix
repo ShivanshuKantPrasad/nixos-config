@@ -24,6 +24,7 @@
       alacritty
       discord
       libreoffice
+      masterpdfeditor
       lutris
       steam
       mangohud
@@ -37,7 +38,9 @@
       nethogs
       neofetch
       gh
+      glab
       git
+      subversion
       zip
       unzip
       rar
