@@ -94,13 +94,13 @@
 
 
   (setq lsp-semantic-tokens-enable t))
-  ;; (setq lsp-eldoc-render-all t)
+;; (setq lsp-eldoc-render-all t)
 
-  ;; (setq lsp-ui-sideline-show-hover t)
-  ;; (setq lsp-ui-sideline-show-code-actions t)
-  ;; (setq lsp-ui-sideline-enable nil)
-  ;; (setq lsp-ui-doc-show-with-mouse t)
-  ;; (setq lsp-ui-doc-enable t))
+;; (setq lsp-ui-sideline-show-hover t)
+;; (setq lsp-ui-sideline-show-code-actions t)
+;; (setq lsp-ui-sideline-enable nil)
+;; (setq lsp-ui-doc-show-with-mouse t)
+;; (setq lsp-ui-doc-enable t))
 
 (require 'sublimity)
 (require 'sublimity-scroll)
@@ -119,3 +119,5 @@
  (:map 'override
   :v "v" #'er/expand-region
   :v "V" #'er/contract-region))
+
+(setq +lsp-company-backends '(company-tabnine :separate company-capf company-yasnippet))
