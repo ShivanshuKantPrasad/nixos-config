@@ -56,6 +56,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.flatpak.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;

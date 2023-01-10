@@ -1,4 +1,4 @@
-{config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
@@ -66,8 +66,6 @@
       rust-analyzer
       lld
       mold
-      gcc
-      gdb
       gnumake
       statix
       deadnix
@@ -87,7 +85,7 @@
       spotify
       qbittorrent
       feh
-      gimp
+      gimp-with-plugins
       vlc
 
       # Browsers
