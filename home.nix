@@ -21,7 +21,7 @@
   home = {
 
     file = {
-      ".intellimacs".source = pkgs.fetchFromGitHub {
+      "${config.xdg.configHome}/ideavim/intellimacs".source = pkgs.fetchFromGitHub {
         owner = "MarcoIeni";
         repo = "intellimacs";
         rev = "116e566bafb4c7fe9a2962a746281053e59b1f49";
@@ -29,6 +29,7 @@
       };
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
+      # "${config.xdg.configHome}/ideavim/ideavimrc".source = ./.ideavimrc;
     };
 
     username = "shivanshu";
@@ -94,7 +95,7 @@
       update-nix-fetchgit
       grc
       gdu
-      tldr
+      tealdeer
       scrcpy
       tmux
       grc
