@@ -112,7 +112,6 @@
     wget
     git
     ncdu
-    nodejs
     htop
     libsForQt5.bismuth
     libsForQt5.kaccounts-integration
@@ -136,7 +135,15 @@
     gamemode.enable = true;
     dconf.enable = true;
     kdeconnect.enable = true;
-    npm.enable = true;
+    # npm = {
+    #   enable = true;
+    #   npmrc = ''
+    #     prefix=''${XDG_DATA_HOME}/npm
+    #     cache=''${XDG_CACHE_HOME}/npm
+    #     tmp=''${XDG_RUNTIME_DIR}/npm
+    #     init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
+    #   '';
+    # };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

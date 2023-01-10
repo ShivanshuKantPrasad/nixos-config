@@ -15,6 +15,7 @@
     WINEPREFIX = "${config.xdg.dataHome}/wine";
     ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
     _Z_DATA = "${config.xdg.dataHome}/z";
+    # NPM_CONFIG_USERCONFIG="${config.xdg.configHome}/npm/npmrc";
 
   };
 
