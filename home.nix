@@ -38,6 +38,14 @@
 
     packages = with pkgs; [
 
+      # Kde integration
+      libsForQt5.bismuth
+      libsForQt5.kdegraphics-thumbnailers
+      libsForQt5.kaccounts-integration
+      libsForQt5.kaccounts-providers
+      libsForQt5.kio-gdrive
+
+      # General Apps
       alacritty
       discord
       libreoffice
@@ -48,34 +56,42 @@
       zeal
 
       # Virtualization
+      virt-manager
       quickemu
       distrobox
 
       # Terminal commands
-      nethogs
-      neofetch
+      vim
+      wget
+      xclip
+      meld
       gh
-      glab
       git
+      glab
       subversion
       zip
       unzip
       rar
-      fzf
-      fsearch
       fd
-      android-tools
+      fzf
+      plocate
+      fsearch
       silver-searcher
       ripgrep
       sqlite
       wordnet
-      bmon
-      bpytop
-      meld
       hspell
+      android-tools
+      
+      # Systems Monitoring
+      bmon
+      htop
+      bpytop
       usbutils
       pciutils
       lshw
+      nethogs
+      neofetch
       glxinfo
 
       # Language
@@ -95,6 +111,7 @@
       patchelf
       update-nix-fetchgit
       grc
+      ncdu
       gdu
       tealdeer
       scrcpy
@@ -110,6 +127,7 @@
 
       # Browsers
       brave
+      firefox
       # vieb
 
       # IDEs
@@ -118,6 +136,7 @@
 
       # Editors
       vscode
+      kate
       sublime4
       neovide
       ((emacsPackagesFor emacsNativeComp).emacsWithPackages

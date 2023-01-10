@@ -97,30 +97,12 @@
     description = "Shivanshu";
     extraGroups = [ "docker" "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
-    packages = with pkgs; [ firefox kate ];
   };
 
   environment.shells = with pkgs; [ fish ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-    ncdu
-    htop
-    libsForQt5.bismuth
-    libsForQt5.kaccounts-integration
-    libsForQt5.kaccounts-providers
-    libsForQt5.kio-gdrive
-    plocate
-    xclip
-    virt-manager
-  ];
 
   fonts.fonts = with pkgs; [
     fantasque-sans-mono
@@ -145,14 +127,6 @@
     #   '';
     # };
   };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   # List services that you want to enable:
 
