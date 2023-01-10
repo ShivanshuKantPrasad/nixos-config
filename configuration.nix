@@ -117,15 +117,15 @@
     gamemode.enable = true;
     dconf.enable = true;
     kdeconnect.enable = true;
-    # npm = {
-    #   enable = true;
-    #   npmrc = ''
-    #     prefix=''${XDG_DATA_HOME}/npm
-    #     cache=''${XDG_CACHE_HOME}/npm
-    #     tmp=''${XDG_RUNTIME_DIR}/npm
-    #     init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
-    #   '';
-    # };
+    npm = {
+      enable = true;
+      npmrc = ''
+        prefix=''${XDG_DATA_HOME}/npm
+        cache=''${XDG_CACHE_HOME}/npm
+        tmp=''${XDG_RUNTIME_DIR}/npm
+        init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
+      '';
+    };
   };
 
   # List services that you want to enable:
