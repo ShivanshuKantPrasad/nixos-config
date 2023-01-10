@@ -3,6 +3,21 @@
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
   xdg.enable = true;
+  home.sessionVariables = rec {
+    ANDROID_HOME = "${config.xdg.dataHome}/android";
+    CARGO_HOME = "${config.xdg.dataHome}/cargo";
+    HISTFILE = "${config.xdg.stateHome}/bash/history";
+    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+    GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
+    GTK2_RC_FILES = "${config.xdg.dataHome}/gtk-2.0/gtkrc";
+    XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
+    RUSUTP_HOME = "${config.xdg.dataHome}/rustup";
+    WINEPREFIX = "${config.xdg.dataHome}/wine";
+    ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
+    _Z_DATA = "${config.xdg.dataHome}/z";
+
+  };
+
   home = {
 
     file = {
@@ -13,7 +28,7 @@
         sha256 = "0agz51awrq029r8khbg4glwmnz9f1ylk051gbgp5lrmnqkbag282";
       };
 
-      ".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
+      "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
     };
 
     username = "shivanshu";
@@ -119,7 +134,9 @@
     bat.enable = true;
     exa.enable = true;
     fish.enable = true;
+
     kodi.enable = true;
+    kodi.datadir = "${config.xdg.dataHome}/kodi";
 
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
