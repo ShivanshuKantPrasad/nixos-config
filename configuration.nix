@@ -178,11 +178,19 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
+
   nix = {
+    # nix options for derivations to persist garbage collection
     settings = {
       experimental-features = [ "ca-derivations" "nix-command" "flakes" ];
       auto-optimise-store = true;
+      keep-outputs = true;
+      keep-derivations = true;
     };
+
     gc = {
       automatic = true;
       dates = "weekly";
