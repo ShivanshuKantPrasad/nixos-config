@@ -5,7 +5,8 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "sd_mod" "rtsx_usb_sdmmc" ];
@@ -14,29 +15,32 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a902195d-24fe-488a-b560-74429833a98a";
+    {
+      device = "/dev/disk/by-uuid/a902195d-24fe-488a-b560-74429833a98a";
       fsType = "ext4";
     };
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/CD24-93CF";
+    {
+      device = "/dev/disk/by-uuid/CD24-93CF";
       fsType = "vfat";
     };
-    
-   fileSystems."/run/media/shivanshu/Dev" =
-    { device = "/dev/disk/by-label/Dev";
+
+  fileSystems."/run/media/shivanshu/Dev" =
+    {
+      device = "/dev/disk/by-label/Dev";
       fsType = "auto";
     };
 
-   fileSystems."/run/media/shivanshu/DATA" =
-    { device = "/dev/disk/by-label/DATA";
+  fileSystems."/run/media/shivanshu/DATA" =
+    {
+      device = "/dev/disk/by-label/DATA";
       fsType = "auto";
     };
 
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0e6fb472-f314-45bd-8a82-f2c29edcb6d0"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/0e6fb472-f314-45bd-8a82-f2c29edcb6d0"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -46,6 +50,7 @@
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  services.auto-cpufreq.enable = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
