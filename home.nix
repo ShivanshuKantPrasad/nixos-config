@@ -53,6 +53,7 @@
       lutris
       steam
       mangohud
+      keepassxc
       zeal
 
       # Virtualization
