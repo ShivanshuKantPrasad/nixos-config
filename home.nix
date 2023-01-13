@@ -15,7 +15,7 @@
     WINEPREFIX = "${config.xdg.dataHome}/wine";
     ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
     _Z_DATA = "${config.xdg.dataHome}/z";
-    NPM_CONFIG_USERCONFIG="${config.xdg.configHome}/npm/npmrc";
+    NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
 
   };
 
@@ -82,7 +82,7 @@
       wordnet
       hspell
       android-tools
-      
+
       # Systems Monitoring
       bmon
       htop
@@ -157,6 +157,9 @@
     bat.enable = true;
     exa.enable = true;
     fish.enable = true;
+    oh-my-posh.enable = true;
+    oh-my-posh.useTheme = "robbyrussel";
+    zoxide.enable = true;
 
     kodi.enable = true;
     kodi.datadir = "${config.xdg.dataHome}/kodi";

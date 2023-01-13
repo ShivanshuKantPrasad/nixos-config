@@ -106,13 +106,17 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  fonts.fonts = with pkgs; [
-    fantasque-sans-mono
-    jetbrains-mono
-    emacs-all-the-icons-fonts
-    font-awesome
-    nerdfonts
-  ];
+  fonts = {
+    enableDefaultFonts = true;
+    fonts = with pkgs; [
+      fantasque-sans-mono
+      jetbrains-mono
+      emacs-all-the-icons-fonts
+      font-awesome
+      nerdfonts
+      noto-fonts
+    ];
+  };
 
   programs = {
     partition-manager.enable = true;
