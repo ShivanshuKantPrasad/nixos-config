@@ -112,7 +112,6 @@
       nixpkgs-fmt
       patchelf
       update-nix-fetchgit
-      grc
       ncdu
       gdu
       tealdeer
@@ -158,6 +157,18 @@
     bat.enable = true;
     exa.enable = true;
     fish.enable = true;
+    fish.plugins = [
+      {
+        name = "grc";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-grc";
+          rev = "61de7a8a0d7bda3234f8703d6e07c671992eb079";
+          sha256 = "1r4zsf3ndf92p0iqj5nwzk7mq3l7jhahxk4q23v4r51kppcba1im";
+        };
+      }
+
+    ];
     oh-my-posh.enable = true;
     oh-my-posh.useTheme = "robbyrussel";
     zoxide.enable = true;
