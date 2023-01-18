@@ -170,7 +170,8 @@
 
     ];
     oh-my-posh.enable = true;
-    oh-my-posh.useTheme = "robbyrussel";
+    # oh-my-posh.useTheme = "robbyrussel";
+    oh-my-posh.useTheme = "tonybaloney";
     zoxide.enable = true;
 
     kodi.enable = true;
