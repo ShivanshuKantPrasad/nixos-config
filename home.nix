@@ -129,7 +129,7 @@
       # Browsers
       brave
       firefox
-      # vieb
+      vieb
 
       # IDEs
       jetbrains.clion
