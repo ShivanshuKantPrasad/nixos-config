@@ -123,7 +123,7 @@
       spotify
       qbittorrent
       feh
-      gimp-with-plugins
+      gimp
       vlc
 
       # Browsers
