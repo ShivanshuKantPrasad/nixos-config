@@ -37,7 +37,7 @@
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
-  time.hardwareClockInLocalTime = true;
+  # time.hardwareClockInLocalTime = true;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_IN";
