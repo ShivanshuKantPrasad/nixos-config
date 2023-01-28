@@ -40,6 +40,7 @@
     packages = with pkgs; [
 
       # Kde integration
+      ark
       libsForQt5.bismuth
       libsForQt5.kdegraphics-thumbnailers
       libsForQt5.kaccounts-integration
@@ -47,6 +48,7 @@
       libsForQt5.kio-gdrive
 
       # General Apps
+      wezterm
       alacritty
       discord
       libreoffice
@@ -97,7 +99,9 @@
       glxinfo
 
       # Language
+      luarocks
       nodejs
+      gcc
       clang-tools
       cmake
       python3
@@ -126,6 +130,7 @@
       feh
       gimp
       vlc
+      mpv
 
       # Browsers
       brave
