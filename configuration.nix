@@ -109,6 +109,8 @@
   fonts = {
     enableDefaultFonts = true;
     fonts = with pkgs; [
+      comic-mono
+      victor-mono
       fantasque-sans-mono
       jetbrains-mono
       emacs-all-the-icons-fonts
