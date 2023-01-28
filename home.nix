@@ -97,6 +97,7 @@
       nethogs
       neofetch
       glxinfo
+      teamviewer
 
       # Language
       luarocks

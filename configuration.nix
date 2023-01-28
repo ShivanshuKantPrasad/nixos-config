@@ -58,6 +58,7 @@
   services.xserver.enable = true;
 
   services.flatpak.enable = true;
+  services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
