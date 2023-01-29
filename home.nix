@@ -3,24 +3,36 @@
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
   xdg.enable = true;
-  home.sessionVariables = rec {
-    ANDROID_HOME = "${config.xdg.dataHome}/android";
-    CARGO_HOME = "${config.xdg.dataHome}/cargo";
-    HISTFILE = "${config.xdg.stateHome}/bash/history";
-    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
-    GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
-    GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc";
-    XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
-    RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-    WINEPREFIX = "${config.xdg.dataHome}/wine";
-    ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
-    _Z_DATA = "${config.xdg.dataHome}/z";
-    NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
-    CABAL_CONFIG="${config.xdg.configHome}/cabal/config";
-    CABAL_DIR="${config.xdg.dataHome}/cabal";
-  };
-
   home = {
+
+    sessionVariables = rec {
+      ANDROID_HOME = "${config.xdg.dataHome}/android";
+      CARGO_HOME = "${config.xdg.dataHome}/cargo";
+      HISTFILE = "${config.xdg.stateHome}/bash/history";
+      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+      GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
+      GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+      XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
+      RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
+      WINEPREFIX = "${config.xdg.dataHome}/wine";
+      ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
+      _Z_DATA = "${config.xdg.dataHome}/z";
+      NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
+      CABAL_CONFIG = "${config.xdg.configHome}/cabal/config";
+      CABAL_DIR = "${config.xdg.dataHome}/cabal";
+    };
+
+
+    shellAliases = {
+      hello = "echo Hello World";
+      cat = "bat";
+      g = "git";
+      glog = "g lg - 10";
+      gs = "git status";
+      la = "ls -lah";
+      ls = "exa --icons";
+      lvim = "~/.local/bin/lvim";
+    };
 
     file = {
       "${config.xdg.configHome}/ideavim/intellimacs".source = pkgs.fetchFromGitHub {
@@ -31,7 +43,6 @@
       };
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
-      # "${config.xdg.configHome}/ideavim/ideavimrc".source = ./.ideavimrc;
     };
 
     username = "shivanshu";
@@ -163,6 +174,7 @@
     home-manager.enable = true;
     bat.enable = true;
     exa.enable = true;
+    bash.enable = true;
     fish.enable = true;
     fish.plugins = [
       {
@@ -180,7 +192,6 @@
     # oh-my-posh.useTheme = "robbyrussel";
     # oh-my-posh.useTheme = "tonybaloney";
     starship.enable = true;
-    starship.enableBashIntegration.enable = true;
     zoxide.enable = true;
 
     kodi.enable = true;
