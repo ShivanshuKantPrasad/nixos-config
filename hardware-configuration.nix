@@ -51,7 +51,9 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  services.auto-cpufreq.enable = true;
-  services.thermald.enable = true;
+  services.power-profiles-daemon.enable = false;
+  services.tlp.enable = true;
+  # services.auto-cpufreq.enable = true;
+  # services.thermald.enable = true;
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

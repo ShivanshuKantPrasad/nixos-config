@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "FantasqueSansMono Nerd Font Mono" :size 16))
+(setq doom-font (font-spec :family "VictorMono Nerd Font Mono" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -121,3 +121,6 @@
   :v "V" #'er/contract-region))
 
 (setq +lsp-company-backends '(company-tabnine :separate company-capf company-yasnippet))
+(set-frame-parameter nil 'alpha-background 50)
+(when (fboundp 'windmove-default-keybindings)
+  (windmove-default-keybindings))

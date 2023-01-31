@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     jetbrains-updater.url = "gitlab:genericnerdyusername/jetbrains-updater";
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,12 +14,16 @@
 
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nix-doom-emacs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ inputs.nur.overlay inputs.jetbrains-updater.overlay ];
+        overlays = [
+          inputs.nur.overlay
+          inputs.jetbrains-updater.overlay
+          inputs.emacs-overlay.overlay
+       ];
         config.allowUnfree = true;
       };
 
@@ -35,7 +41,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.shivanshu = { imports = [ ./home.nix ]; };
+              home-manager.users.shivanshu = { imports = [ nix-doom-emacs.hmModule ./home.nix ]; };
             }
           ];
         };

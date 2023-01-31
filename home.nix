@@ -158,8 +158,6 @@
       kate
       sublime4
       neovide
-      ((emacsPackagesFor emacsNativeComp).emacsWithPackages
-        (epkgs: [ epkgs.vterm ]))
 
     ];
 
@@ -205,6 +203,38 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+    };
+
+    doom-emacs = rec {
+      enable = true;
+      doomPrivateDir = ./.config/doom;
+
+      emacsPackage = pkgs.emacsPgtk;
+      # emacsPackage = with pkgs; (emacsPackagesFor emacsGit).emacsWithPackages
+      # (epkgs: [ epkgs.vterm ]);
+      doomPackageDir =
+        let
+          filteredPath = builtins.path {
+            path = doomPrivateDir;
+            name = "doom-private-dir-filtered";
+            filter = path: type:
+              builtins.elem (baseNameOf path) [ "init.el" "packages.el" ];
+          };
+        in
+        pkgs.linkFarm "doom-packages-dir" [
+          {
+            name = "init.el";
+            path = "${filteredPath}/init.el";
+          }
+          {
+            name = "packages.el";
+            path = "${filteredPath}/packages.el";
+          }
+          {
+            name = "config.el";
+            path = pkgs.emptyFile;
+          }
+        ];
     };
 
   };
