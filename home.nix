@@ -27,7 +27,7 @@
       hello = "echo Hello World";
       cat = "bat";
       g = "git";
-      glog = "g lg - 10";
+      glog = "g lg -10";
       gs = "git status";
       la = "ls -lah";
       ls = "exa --icons";
