@@ -124,3 +124,6 @@
 (set-frame-parameter nil 'alpha-background 50)
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
+
+
+(use-package! kbd-mode)

@@ -98,7 +98,8 @@
   users.users.shivanshu = {
     isNormalUser = true;
     description = "Shivanshu";
-    extraGroups = [ "docker" "networkmanager" "wheel" "libvirtd" ];
+    extraGroups =
+      [ "input" "uinput" "docker" "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
   };
 
@@ -161,22 +162,26 @@
     };
   };
 
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  environment.pathsToLink = [
-    "/share/nix-direnv"
-  ];
+  environment.pathsToLink = [ "/share/nix-direnv" ];
 
   nix = {
     # nix options for derivations to persist garbage collection
     settings = {
-      substituters = [ "https://nix-community.cachix.org" "https://cache.nixos.org/" ];
-      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+      substituters = [
+        "https://static-haskell-nix.cachix.org"
+        "https://nix-community.cachix.org"
+        "https://cache.nixos.org/"
+      ];
+      trusted-public-keys = [
+        "static-haskell-nix.cachix.org-1:Q17HawmAwaM1/BfIxaEDKAxwTOyRVhPG5Ji9K3+FvUU="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
       experimental-features = [ "ca-derivations" "nix-command" "flakes" ];
       auto-optimise-store = true;
       keep-outputs = true;
@@ -197,6 +202,31 @@
     libvirtd.enable = true;
   };
 
+  services.kmonad = {
+    enable = true;
+    keyboards.internal = {
+      device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+      config = import ./keyboard.nix {inherit pkgs;};
+      # config = builtins.readFile .config/keyboard.kbd;
+
+      defcfg = {
+        enable = true;
+        fallthrough = true;
+        allowCommands = true;
+      };
+    };
+  };
+  # systemd.services.kmonad = {
+  #   enable = true;
+  #   description = "kmonad";
+  #   script = "source ${config.system.build.setEnvironment}; ${pkgs.kmonad}/bin/kmonad /home/shivanshu/.config/keyboard.kbd";
+  #   wantedBy = [ "default.target" ];
+  #   serviceConfig = {
+  #     User = "shivanshu";
+  #     Restart = "always";
+  #
+  #   };
+  # };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

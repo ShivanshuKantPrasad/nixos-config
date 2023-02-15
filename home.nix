@@ -43,6 +43,8 @@
       };
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
+      "${config.xdg.configHome}/doom".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.config/doom";
+      "${config.xdg.configHome}/keyboard.kbd".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
     };
 
     username = "shivanshu";
@@ -147,6 +149,8 @@
       # Browsers
       brave
       firefox
+      microsoft-edge
+      qutebrowser
       vieb
 
       # IDEs
@@ -158,6 +162,7 @@
       kate
       sublime4
       neovide
+      emacsPgtk
 
     ];
 
@@ -166,6 +171,7 @@
   };
 
   services.emacs.enable = true;
+  services.emacs.package = pkgs.emacsPgtk;
   services.syncthing.enable = true;
 
   programs = {
@@ -205,37 +211,37 @@
       vimdiffAlias = true;
     };
 
-    doom-emacs = rec {
-      enable = true;
-      doomPrivateDir = ./.config/doom;
-
-      emacsPackage = pkgs.emacsPgtk;
-      # emacsPackage = with pkgs; (emacsPackagesFor emacsGit).emacsWithPackages
-      # (epkgs: [ epkgs.vterm ]);
-      doomPackageDir =
-        let
-          filteredPath = builtins.path {
-            path = doomPrivateDir;
-            name = "doom-private-dir-filtered";
-            filter = path: type:
-              builtins.elem (baseNameOf path) [ "init.el" "packages.el" ];
-          };
-        in
-        pkgs.linkFarm "doom-packages-dir" [
-          {
-            name = "init.el";
-            path = "${filteredPath}/init.el";
-          }
-          {
-            name = "packages.el";
-            path = "${filteredPath}/packages.el";
-          }
-          {
-            name = "config.el";
-            path = pkgs.emptyFile;
-          }
-        ];
-    };
+    # doom-emacs = rec {
+    #   enable = true;
+    #   doomPrivateDir = ./.config/doom;
+    #
+    #   emacsPackage = pkgs.emacsPgtk;
+    #   # emacsPackage = with pkgs; (emacsPackagesFor emacsGit).emacsWithPackages
+    #   # (epkgs: [ epkgs.vterm ]);
+    #   doomPackageDir =
+    #     let
+    #       filteredPath = builtins.path {
+    #         path = doomPrivateDir;
+    #         name = "doom-private-dir-filtered";
+    #         filter = path: type:
+    #           builtins.elem (baseNameOf path) [ "init.el" "packages.el" ];
+    #       };
+    #     in
+    #     pkgs.linkFarm "doom-packages-dir" [
+    #       {
+    #         name = "init.el";
+    #         path = "${filteredPath}/init.el";
+    #       }
+    #       {
+    #         name = "packages.el";
+    #         path = "${filteredPath}/packages.el";
+    #       }
+    #       {
+    #         name = "config.el";
+    #         path = pkgs.emptyFile;
+    #       }
+    #     ];
+    # };
 
   };
 

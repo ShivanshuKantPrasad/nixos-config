@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
+    kmonad.url = "github:kmonad/kmonad?dir=nix";
     jetbrains-updater.url = "gitlab:genericnerdyusername/jetbrains-updater";
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
@@ -11,7 +12,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, nix-doom-emacs, ... }:
@@ -23,7 +23,8 @@
           inputs.nur.overlay
           inputs.jetbrains-updater.overlay
           inputs.emacs-overlay.overlay
-       ];
+          inputs.kmonad.overlays.default
+        ];
         config.allowUnfree = true;
       };
 
@@ -35,6 +36,7 @@
           inherit system;
           specialArgs = { inherit inputs pkgs; };
           modules = [
+            inputs.kmonad.nixosModules.default
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
