@@ -103,7 +103,7 @@
       # Systems Monitoring
       bmon
       htop
-      bpytop
+      btop
       usbutils
       pciutils
       lshw
@@ -163,6 +163,9 @@
       sublime4
       neovide
       emacsPgtk
+
+      cachix
+      nix-index
 
     ];
 
