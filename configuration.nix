@@ -123,6 +123,7 @@
   };
 
   programs = {
+    fish.enable = true;
     partition-manager.enable = true;
     gamemode.enable = true;
     dconf.enable = true;
