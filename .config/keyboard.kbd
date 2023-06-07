@@ -8,7 +8,8 @@
   fallthrough true
   allow-cmd true
 )
-(defalias web (cmd-button "/nix/store/bcijns5f6iq8y8v153dzyascgj9f9fjl-brave-1.47.186/bin/brave"))
+;;(defalias web (cmd-button "/nix/store/bcijns5f6iq8y8v153dzyascgj9f9fjl-brave-1.47.186/bin/brave"))
+(defalias web (cmd-button "brave"))
 (defalias ed (cmd-button "/nix/store/ihg8qc2qxpycnql7ixlqzv43w2xqmjzi-sublimetext4-4143/bin/subl"))
       
 (defsrc

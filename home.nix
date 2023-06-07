@@ -54,7 +54,6 @@
 
       # Kde integration
       ark
-      libsForQt5.bismuth
       libsForQt5.kdegraphics-thumbnailers
       libsForQt5.kaccounts-integration
       libsForQt5.kaccounts-providers
@@ -120,7 +119,6 @@
       cmake
       python3
       rustup
-      rust-analyzer
       lld
       mold
       gnumake
@@ -130,7 +128,7 @@
       nixfmt
       nixpkgs-fmt
       patchelf
-      update-nix-fetchgit
+      # update-nix-fetchgit
       ncdu
       gdu
       tealdeer
@@ -160,21 +158,21 @@
       # Editors
       vscode
       kate
-      sublime4
+      #sublime4
       neovide
-      emacsPgtk
+      emacs-pgtk
 
       cachix
       nix-index
 
     ];
 
-    stateVersion = "22.11";
+    stateVersion = "23.05";
 
   };
 
   services.emacs.enable = true;
-  services.emacs.package = pkgs.emacsPgtk;
+  services.emacs.package = pkgs.emacs-pgtk;
   services.syncthing.enable = true;
 
   programs = {
@@ -201,7 +199,7 @@
     starship.enable = true;
     zoxide.enable = true;
 
-    kodi.enable = true;
+    # kodi.enable = true;
     kodi.datadir = "${config.xdg.dataHome}/kodi";
 
     direnv.enable = true;

@@ -2,7 +2,6 @@
 ''
 
 (defalias web (cmd-button "${pkgs.brave}/bin/brave"))
-(defalias ed (cmd-button "${pkgs.sublime4}/bin/subl"))
 
 (defalias prn (cmd-button "echo ${pkgs.brave}/bin/brave >> /tmp/brave.txt"))
       
@@ -43,7 +42,7 @@
 (deflayer shortcut
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    @ed    r    t    y    u    i    o    p    [    ]    \
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    @web @prn    m    ,    .    /    rsft up
   lctl lmet lalt           spc            ralt rctl      left down right

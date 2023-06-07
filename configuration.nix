@@ -16,7 +16,6 @@
     };
     grub = {
       enable = true;
-      version = 2;
       efiSupport = true;
       device = "nodev";
       useOSProber = true;
@@ -99,7 +98,7 @@
     isNormalUser = true;
     description = "Shivanshu";
     extraGroups =
-      [ "input" "uinput" "docker" "networkmanager" "wheel" "libvirtd" ];
+      [ "vboxusers" "input" "uinput" "docker" "networkmanager" "wheel" "libvirtd" ];
     shell = pkgs.fish;
   };
 
@@ -197,6 +196,8 @@
   };
 
   virtualisation = {
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
     docker.enable = true;
     waydroid.enable = true;
     lxd.enable = true;
@@ -234,6 +235,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
 }
