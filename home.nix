@@ -3,6 +3,12 @@
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
   xdg.enable = true;
+
+  qt = {
+    enable = true;
+    platformTheme = "kde";
+  };
+
   home = {
 
     sessionVariables = rec {
@@ -42,15 +48,29 @@
         sha256 = "0agz51awrq029r8khbg4glwmnz9f1ylk051gbgp5lrmnqkbag282";
       };
 
-      "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.ideavimrc";
-      "${config.xdg.configHome}/doom".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.config/doom";
-      "${config.xdg.configHome}/keyboard.kbd".source = config.lib.file.mkOutOfStoreSymlink "/run/media/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+      "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+      "${config.xdg.configHome}/doom".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.config/doom";
+      "${config.xdg.configHome}/keyboard.kbd".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
     };
 
     username = "shivanshu";
     homeDirectory = "/home/shivanshu";
 
     packages = with pkgs; [
+
+      # Hyprland
+      kmonad
+      networkmanagerapplet
+      wlogout
+      mpd
+      jq
+      mako
+      brightnessctl
+      pamixer
+      pavucontrol
+      libnotify
+      wl-clipboard
+      cliphist
 
       # Kde integration
       ark
@@ -60,6 +80,7 @@
       libsForQt5.kio-gdrive
 
       # General Apps
+      kitty
       wezterm
       alacritty
       discord
@@ -177,10 +198,18 @@
 
   programs = {
     home-manager.enable = true;
+    swaylock.enable = true;
+    swaylock.package = pkgs.swaylock-effects;
     bat.enable = true;
     exa.enable = true;
     bash.enable = true;
     fish.enable = true;
+    fish.shellAbbrs = {
+    	ni = "nix profile install nixpkgs#";
+    };
+    fish.functions = {
+    	nlist = "nix profile list | awk '{print $4}' | awk '{ st = index($0,\"-\"); print NR-1, substr($0,st+1)}'";
+    };
     fish.plugins = [
       {
         name = "grc";
