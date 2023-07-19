@@ -209,20 +209,12 @@
     libvirtd.enable = true;
   };
 
-  services.kmonad = {
-    enable = true;
-    keyboards.internal = {
-      device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-      config = import ./keyboard.nix {inherit pkgs;};
-      # config = builtins.readFile .config/keyboard.kbd;
+  services.kmonad.enable = true;
 
-      defcfg = {
-        enable = true;
-        fallthrough = true;
-        allowCommands = true;
-      };
-    };
-  };
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=10s
+  '';
+
   # systemd.services.kmonad = {
   #   enable = true;
   #   description = "kmonad";
