@@ -10,6 +10,7 @@
 )
 (defalias web (cmd-button "microsoft-edge"))
 (defalias ed (cmd-button "kate"))
+(defalias file (cmd-button "krusader"))
       
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
@@ -46,10 +47,10 @@
 )
 
 (deflayer shortcut
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    @ed  r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    @web n    m    ,    .    /    rsft up
-  lctl lmet lalt           spc            ralt rctl      left down right
+  esc  f1   f2   f3   f4    f5   f6   f7   f8   f9   f10  f11  f12  prnt del
+  grv  1    2    3    4     5    6    7    8    9    0    -    =    bspc
+  tab  q    w    @ed  @file t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f     g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v     @web n    m    ,    .    /    rsft up
+  lctl lmet lalt            spc            ralt rctl      left down right
 )

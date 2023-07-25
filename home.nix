@@ -239,6 +239,7 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      defaultEditor = true;
     };
 
     # doom-emacs = rec {
