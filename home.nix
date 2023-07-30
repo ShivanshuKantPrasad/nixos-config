@@ -71,9 +71,18 @@
       libnotify
       wl-clipboard
       cliphist
+      swaybg
+      variety
+      
+      ydotool
+      keepmenu
+
+      rofi-bluetooth
+      rofi-power-menu
 
       # Kde integration
       ark
+      libqalculate
       libsForQt5.kdegraphics-thumbnailers
       libsForQt5.kaccounts-integration
       libsForQt5.kaccounts-providers
@@ -91,6 +100,10 @@
       mangohud
       keepassxc
       zeal
+      motrix
+      obsidian
+      krusader
+      protonvpn-cli
 
       # Virtualization
       virt-manager
@@ -119,6 +132,8 @@
       wordnet
       hspell
       android-tools
+      steam-run
+      xdg-ninja
 
       # Systems Monitoring
       bmon
@@ -240,6 +255,14 @@
       vimAlias = true;
       vimdiffAlias = true;
       defaultEditor = true;
+    };
+
+    rofi = {
+      enable = true;
+      plugins = [
+      	pkgs.rofi-file-browser
+	pkgs.rofi-calc
+      ];
     };
 
     # doom-emacs = rec {
