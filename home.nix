@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
@@ -56,6 +56,7 @@
     username = "shivanshu";
     homeDirectory = "/home/shivanshu";
 
+
     packages = with pkgs; [
 
       # Hyprland
@@ -73,6 +74,7 @@
       cliphist
       swaybg
       variety
+      wlr-randr
       
       ydotool
       keepmenu
@@ -103,7 +105,7 @@
       motrix
       obsidian
       krusader
-      protonvpn-cli
+      protonvpn-cli_2
 
       # Virtualization
       virt-manager
@@ -164,7 +166,7 @@
       nixfmt
       nixpkgs-fmt
       patchelf
-      # update-nix-fetchgit
+      update-nix-fetchgit
       ncdu
       gdu
       tealdeer
@@ -184,7 +186,7 @@
       brave
       firefox
       microsoft-edge
-      qutebrowser
+      qutebrowser-qt6
       vieb
 
       # IDEs

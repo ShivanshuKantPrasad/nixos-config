@@ -50,7 +50,10 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.shivanshu = { imports = [ nix-doom-emacs.hmModule ./home.nix ]; };
+              home-manager.users.shivanshu = { imports = [
+	      	nix-doom-emacs.hmModule 
+		./home.nix
+              ];};
             }
           ];
         };
