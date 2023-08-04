@@ -113,8 +113,8 @@
   nixpkgs.config.allowUnfree = true;
 
   fonts = {
-    enableDefaultFonts = true;
-    fonts = with pkgs; [
+    enableDefaultPackages = true;
+    packages = with pkgs; [
       comic-mono
       victor-mono
       fantasque-sans-mono
