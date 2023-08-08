@@ -210,8 +210,11 @@
 
   };
 
-  services.emacs.enable = true;
-  services.emacs.package = pkgs.emacs-pgtk;
+  services.emacs = {
+      enable = true;
+      package = pkgs.emacs-pgtk;
+      defaultEditor = true;
+  };
   services.syncthing.enable = true;
 
   programs = {
@@ -257,7 +260,6 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      defaultEditor = true;
     };
 
     rofi = {
