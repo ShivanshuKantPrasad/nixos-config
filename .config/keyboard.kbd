@@ -8,8 +8,8 @@
   fallthrough true
   allow-cmd true
 )
-(defalias web (cmd-button "microsoft-edge"))
-(defalias ed (cmd-button "kate"))
+(defalias web (cmd-button "qutebrowser"))
+(defalias ed (cmd-button "emacsclient --create-frame"))
 (defalias file (cmd-button "krusader"))
       
 (defsrc

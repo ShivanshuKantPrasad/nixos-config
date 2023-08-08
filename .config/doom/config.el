@@ -127,3 +127,23 @@
 
 
 (use-package! kbd-mode)
+
+(use-package jupyter
+  :defer t
+  :ensure t
+  :config
+  (require 'jupyter-python))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)
+   (jupyter . t)))
+
+(setq org-babel-default-header-args:jupyter-python '((:session . "py")
+                                                    (:kernel . "python3")
+                                                    (:async . "yes")
+                                                    (:exports . "both")
+                                                    (:results . "output")))
+
+(setq org-element-use-cache t)
