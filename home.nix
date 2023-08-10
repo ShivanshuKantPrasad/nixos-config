@@ -23,6 +23,7 @@
   home = {
 
     sessionVariables = rec {
+      TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
       HISTFILE = "${config.xdg.stateHome}/bash/history";
@@ -191,15 +192,9 @@
       grc
 
       #Python
-      python3
-      jupyter
       pipenv
-      isort
-      black
-      python3Packages.nose
-      python3Packages.pytest
-      python3Packages.pyflakes
-      python3Packages.setuptools
+      (python3.withPackages
+        (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
 
       # Media
       spotify
