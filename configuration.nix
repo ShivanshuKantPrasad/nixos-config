@@ -55,6 +55,7 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.gvfs.enable = true;
 
   services.flatpak.enable = true;
   services.teamviewer.enable = true;

@@ -167,7 +167,6 @@
       clang-tools
       cmake
       texlive.combined.scheme-medium
-      (python3.withPackages( ps: with ps; [jupyter]))
       rustup
       lld
       mold
@@ -185,6 +184,17 @@
       scrcpy
       tmux
       grc
+
+      #Python
+      python3
+      jupyter
+      pipenv
+      isort
+      black
+      python3Packages.nose
+      python3Packages.pytest
+      python3Packages.pyflakes
+      python3Packages.setuptools
 
       # Media
       spotify
