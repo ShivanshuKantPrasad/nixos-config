@@ -15,7 +15,8 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, hyprland, home-manager, nix-doom-emacs, ... }:
+  outputs =
+    inputs@{ self, nixpkgs, hyprland, home-manager, nix-doom-emacs, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -30,30 +31,29 @@
       };
 
       lib = nixpkgs.lib;
-    in
-    {
+    in {
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
           inherit system;
           specialArgs = { inherit inputs pkgs; };
           modules = [
             inputs.kmonad.nixosModules.default
-	    hyprland.nixosModules.default
-	    {
-	    	programs.hyprland.enable = true;
-	    	programs.waybar.enable = true;
-		programs.waybar.package = inputs.hyprland.packages.${system}.waybar-hyprland;
-	    }
+            hyprland.nixosModules.default
+            {
+              programs.hyprland.enable = true;
+              programs.waybar.enable = true;
+              programs.waybar.package =
+                inputs.hyprland.packages.${system}.waybar-hyprland;
+            }
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.shivanshu = { imports = [
-	      	nix-doom-emacs.hmModule 
-		./home.nix
-              ];};
+              home-manager.users.shivanshu = {
+                imports = [ nix-doom-emacs.hmModule ./home.nix ];
+              };
             }
           ];
         };

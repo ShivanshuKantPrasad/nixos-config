@@ -3,16 +3,16 @@
 {
   #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
   xdg = {
-      enable = true;
-      mimeApps.enable = true;
-      mimeApps.defaultApplications = {
-          "application/octet-stream" = "emacsclient.desktop";
-          "text/html" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-          "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
-      };
+    enable = true;
+    mimeApps.enable = true;
+    mimeApps.defaultApplications = {
+      "application/octet-stream" = "emacsclient.desktop";
+      "text/html" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+    };
   };
 
   qt = {
@@ -39,7 +39,6 @@
       CABAL_DIR = "${config.xdg.dataHome}/cabal";
     };
 
-
     shellAliases = {
       hello = "echo Hello World";
       cat = "bat";
@@ -52,21 +51,27 @@
     };
 
     file = {
-      "${config.xdg.configHome}/ideavim/intellimacs".source = pkgs.fetchFromGitHub {
-        owner = "MarcoIeni";
-        repo = "intellimacs";
-        rev = "116e566bafb4c7fe9a2962a746281053e59b1f49";
-        sha256 = "0agz51awrq029r8khbg4glwmnz9f1ylk051gbgp5lrmnqkbag282";
-      };
+      "${config.xdg.configHome}/ideavim/intellimacs".source =
+        pkgs.fetchFromGitHub {
+          owner = "MarcoIeni";
+          repo = "intellimacs";
+          rev = "116e566bafb4c7fe9a2962a746281053e59b1f49";
+          sha256 = "0agz51awrq029r8khbg4glwmnz9f1ylk051gbgp5lrmnqkbag282";
+        };
 
-      "${config.xdg.configHome}/ideavim/ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.ideavimrc";
-      "${config.xdg.configHome}/doom".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.config/doom";
-      "${config.xdg.configHome}/keyboard.kbd".source = config.lib.file.mkOutOfStoreSymlink "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+      "${config.xdg.configHome}/ideavim/ideavimrc".source =
+        config.lib.file.mkOutOfStoreSymlink
+        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+      "${config.xdg.configHome}/doom".source =
+        config.lib.file.mkOutOfStoreSymlink
+        "/home/shivanshu/Dev/nixos-config/.config/doom";
+      "${config.xdg.configHome}/keyboard.kbd".source =
+        config.lib.file.mkOutOfStoreSymlink
+        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
     };
 
     username = "shivanshu";
     homeDirectory = "/home/shivanshu";
-
 
     packages = with pkgs; [
 
@@ -86,7 +91,7 @@
       swaybg
       variety
       wlr-randr
-      
+
       ydotool
       keepmenu
 
@@ -232,9 +237,9 @@
   };
 
   services.emacs = {
-      enable = true;
-      package = pkgs.emacs-pgtk;
-      defaultEditor = true;
+    enable = true;
+    package = pkgs.emacs-pgtk;
+    defaultEditor = true;
   };
   services.syncthing.enable = true;
 
@@ -246,22 +251,21 @@
     exa.enable = true;
     bash.enable = true;
     fish = {
-        enable = true;
-        shellAbbrs = {
-            ni = "nix profile install nixpkgs#";
+      enable = true;
+      shellAbbrs = { ni = "nix profile install nixpkgs#"; };
+      functions = {
+        nlist =
+          "nix profile list | awk '{print $4}' | awk '{ st = index($0,\"-\"); print NR-1, substr($0,st+1)}'";
+      };
+      plugins = [{
+        name = "grc";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-grc";
+          rev = "61de7a8a0d7bda3234f8703d6e07c671992eb079";
+          sha256 = "1r4zsf3ndf92p0iqj5nwzk7mq3l7jhahxk4q23v4r51kppcba1im";
         };
-        functions = {
-            nlist = "nix profile list | awk '{print $4}' | awk '{ st = index($0,\"-\"); print NR-1, substr($0,st+1)}'";
-        };
-        plugins = [{
-            name = "grc";
-            src = pkgs.fetchFromGitHub {
-              owner = "oh-my-fish";
-              repo = "plugin-grc";
-              rev = "61de7a8a0d7bda3234f8703d6e07c671992eb079";
-              sha256 = "1r4zsf3ndf92p0iqj5nwzk7mq3l7jhahxk4q23v4r51kppcba1im";
-            };
-        }];
+      }];
     };
     # oh-my-posh.enable = true;
     # oh-my-posh.useTheme = "robbyrussel";
@@ -284,10 +288,7 @@
 
     rofi = {
       enable = true;
-      plugins = [
-        pkgs.rofi-file-browser
-        pkgs.rofi-calc
-      ];
+      plugins = [ pkgs.rofi-file-browser pkgs.rofi-calc ];
     };
 
     # doom-emacs = rec {

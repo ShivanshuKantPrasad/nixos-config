@@ -4,41 +4,34 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "sd_mod" "rtsx_usb_sdmmc" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "nvme" "sd_mod" "rtsx_usb_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    {
-      # device = "/dev/disk/by-uuid/f5187846-1a81-4f53-8940-de1b7a4a40d1";
-      device = "/dev/disk/by-label/root";
-      fsType = "ext4";
-    };
-    
-  fileSystems."/boot/efi" =
-    {
-      device = "/dev/disk/by-uuid/4EA7-F5AF";
-      fsType = "vfat";
-    };
+  fileSystems."/" = {
+    # device = "/dev/disk/by-uuid/f5187846-1a81-4f53-8940-de1b7a4a40d1";
+    device = "/dev/disk/by-label/root";
+    fsType = "ext4";
+  };
 
-  fileSystems."/home" =
-    {
-      device = "/dev/disk/by-label/Dev";
-      fsType = "auto";
-    };
+  fileSystems."/boot/efi" = {
+    device = "/dev/disk/by-uuid/4EA7-F5AF";
+    fsType = "vfat";
+  };
 
-  fileSystems."/run/media/shivanshu/DATA" =
-    {
-      device = "/dev/disk/by-label/DATA";
-      fsType = "auto";
-    };
+  fileSystems."/home" = {
+    device = "/dev/disk/by-label/Dev";
+    fsType = "auto";
+  };
 
+  fileSystems."/run/media/shivanshu/DATA" = {
+    device = "/dev/disk/by-label/DATA";
+    fsType = "auto";
+  };
 
   # swapDevices =
   #  [{ device = "/dev/disk/by-uuid/0e6fb472-f314-45bd-8a82-f2c29edcb6d0"; }];
@@ -56,5 +49,6 @@
   services.tlp.enable = true;
   # services.auto-cpufreq.enable = true;
   # services.thermald.enable = true;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

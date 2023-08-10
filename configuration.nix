@@ -79,7 +79,7 @@
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -103,8 +103,15 @@
   users.users.shivanshu = {
     isNormalUser = true;
     description = "Shivanshu";
-    extraGroups =
-      [ "vboxusers" "input" "uinput" "docker" "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "vboxusers"
+      "input"
+      "uinput"
+      "docker"
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     shell = pkgs.fish;
   };
 
