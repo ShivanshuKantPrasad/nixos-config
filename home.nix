@@ -191,6 +191,10 @@
       tmux
       grc
 
+      #Shell
+      shfmt
+      shellcheck
+
       #Python
       pipenv
       (python3.withPackages
