@@ -10,6 +10,7 @@
 ;(package! some-package)
 ;; (package! flycheck-inline)
 (package! sublimity)
+(package! selectric-mode)
 (package! company-quickhelp)
 (package! cmake-ide)
 (package! company-tabnine)

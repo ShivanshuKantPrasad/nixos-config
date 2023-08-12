@@ -8,10 +8,7 @@
   fallthrough true
   allow-cmd true
 )
-(defalias web (cmd-button "qutebrowser"))
-(defalias ed (cmd-button "emacsclient --create-frame"))
-(defalias file (cmd-button "krusader"))
-      
+
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -25,17 +22,41 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    @f   g    h    j   k    l    ;    '    ret
+  @cap a    s    d    @f   g    h    j    k    l    ;    '    ret
   @ls  z    x    c    v    b    n    m    ,    .    /    @rs  up
-  lctl lmet lalt          @osl            ralt rctl      left down right
+  lctl @met lalt          @osl            ralt rctl      left down right
 )
 
+(defalias met (tap-next lmet (layer-toggle leader)))
+(defalias run (layer-next apps))
 (defalias cap (tap-next esc lctl))
-(defalias osl (tap-hold-next-release 1000 spc (layer-toggle number)))
-;; (defalias j (tap-hold-next-release 1000 j (layer-toggle shortcut)))
-(defalias f (tap-hold-next-release 1000 f (layer-toggle shortcut)))
+(defalias osl (tap-hold-next-release 400 spc (layer-toggle number) :timeout-button spc))
+(defalias j (tap-hold-next-release 400 j (layer-toggle shortcut) :timeout-button j))
+(defalias f (tap-hold-next-release 400 f (layer-toggle shortcut) :timeout-button f))
 (defalias ls (sticky-key 1000 lsft))
 (defalias rs (sticky-key 1000 rsft))
+
+(deflayer leader
+  M-esc  M-f1   M-f2   M-f3   M-f4   M-f5   M-f6   M-f7   M-f8   M-f9   M-f10  M-f11  M-f12  M-prnt M-del
+  M-grv  M-1    M-2    M-3    M-4    M-5    M-6    M-7    M-8    M-9    M-0    M--    M-=    M-bspc
+  M-tab  M-q    M-w    M-e    @run   M-t    M-y    M-u    M-i    M-o    M-p    M-[    M-]    M-\
+  M-caps M-a    M-s    M-d    M-f    M-g    M-h    M-j    M-k    M-l    M-;    M-'    M-ret
+  M-lsft M-z    M-x    M-c    M-v    M-b    M-n    M-m    M-,    M-.    M-/    M-rsft M-up
+  M-lctl lmet   M-lalt           M-spc             M-ralt M-rctl        M-left M-down M-right
+)
+
+(defalias web (cmd-button "qutebrowser"))
+(defalias ed (cmd-button "emacsclient --create-frame"))
+(defalias file (cmd-button "krusader"))
+
+(deflayer apps
+  _    _    _    _    _     _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _     _    _    _    _    _    _    _    _    _
+  _    _    _    @ed  _     _    _    _    _    _    _    _    _    _
+  _    _    _    _    @file _    _    _    _    _    _    _    _
+  _    _    _    _    _     @web _    _    _    _    _    _    _
+  _    _    _               _              _    _         _    _    _
+)
 
 (deflayer number
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del

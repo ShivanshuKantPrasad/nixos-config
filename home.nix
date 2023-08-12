@@ -196,6 +196,7 @@
       shellcheck
 
       #Python
+      pipx
       pipenv
       (python3.withPackages
         (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
