@@ -22,7 +22,7 @@
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  @cap a    s    d    @f   g    h    j    k    l    ;    '    ret
+  @cap a    s    d    f   g    h    j    k    l    ;    '    ret
   @ls  z    x    c    v    b    n    m    ,    .    /    @rs  up
   lctl @met lalt          @osl            ralt rctl      left down right
 )
@@ -30,9 +30,9 @@
 (defalias met (tap-next lmet (layer-toggle leader)))
 (defalias run (layer-next apps))
 (defalias cap (tap-next esc lctl))
-(defalias osl (tap-hold-next-release 400 spc (layer-toggle number) :timeout-button spc))
-(defalias j (tap-hold-next-release 400 j (layer-toggle shortcut) :timeout-button j))
-(defalias f (tap-hold-next-release 400 f (layer-toggle shortcut) :timeout-button f))
+(defalias osl (tap-hold-next-release 1000 spc (layer-toggle number) :timeout-button spc))
+;;(defalias j (tap-hold-next-release 400 j (layer-toggle shortcut) :timeout-button j))
+;;(defalias f (tap-hold-next-release 400 f (layer-toggle shortcut) :timeout-button f))
 (defalias ls (sticky-key 1000 lsft))
 (defalias rs (sticky-key 1000 rsft))
 

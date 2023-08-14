@@ -38,9 +38,13 @@
       NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
       CABAL_CONFIG = "${config.xdg.configHome}/cabal/config";
       CABAL_DIR = "${config.xdg.dataHome}/cabal";
+      PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
+      JUPYTER_CONFIG_DIR = "${config.xdg.configHome}/jupyter";
+      IPYTHONDIR = "${config.xdg.configHome}/ipython";
     };
 
     shellAliases = {
+      wget = ''wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'';
       hello = "echo Hello World";
       cat = "bat";
       g = "git";
@@ -63,12 +67,34 @@
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
         "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
         "/home/shivanshu/Dev/nixos-config/.config/doom";
+
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
         "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+
+      "${config.xdg.configHome}/python/pyhtonrc".source = ''
+        import os
+            import atexit
+            import readline
+
+            history = os.path.join(os.environ['XDG_CACHE_HOME'], 'python_history')
+            try:
+                readline.read_history_file(history)
+            except OSError:
+                pass
+
+            def write_history():
+                try:
+                    readline.write_history_file(history)
+                except OSError:
+                    pass
+
+            atexit.register(write_history)
+      '';
     };
 
     username = "shivanshu";

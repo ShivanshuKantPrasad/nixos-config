@@ -147,3 +147,4 @@
                                                     (:results . "output")))
 
 (setq org-element-use-cache t)
+(setq org-roam-directory "~/Study")
