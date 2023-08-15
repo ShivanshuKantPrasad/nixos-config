@@ -76,7 +76,7 @@
         config.lib.file.mkOutOfStoreSymlink
         "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
-      "${config.xdg.configHome}/python/pyhtonrc".source = ''
+      "${config.xdg.configHome}/python/pyhtonrc".text = ''
         import os
             import atexit
             import readline
@@ -251,7 +251,7 @@
       kate
       #sublime4
       neovide
-      emacs-pgtk
+      my-emacs
 
       cachix
       nix-index
@@ -264,7 +264,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacs-pgtk;
+    package = pkgs.my-emacs;
     defaultEditor = true;
   };
   services.syncthing.enable = true;

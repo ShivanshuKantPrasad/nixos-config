@@ -26,6 +26,12 @@
           inputs.jetbrains-updater.overlay
           inputs.emacs-overlay.overlay
           inputs.kmonad.overlays.default
+	  (self: super: {
+	    my-emacs = super.emacs-git.override {
+	      withXwidgets = true;
+	      withGTK3 = true;
+	    };
+	  })
         ];
         config.allowUnfree = true;
       };
