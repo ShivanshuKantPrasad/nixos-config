@@ -27,8 +27,9 @@
   lctl @met lalt          @osl            ralt rctl      left down right
 )
 
-(defalias met (tap-next lmet (layer-toggle leader)))
-(defalias run (layer-next apps))
+(defalias met (tap-hold-next 500 lmet (layer-toggle leader) :timeout-button lmet))
+(defalias open (layer-next apps))
+(defalias rofi (layer-next rofi))
 (defalias cap (tap-next esc lctl))
 (defalias osl (tap-hold-next-release 1000 spc (layer-toggle number) :timeout-button spc))
 ;;(defalias j (tap-hold-next-release 400 j (layer-toggle shortcut) :timeout-button j))
@@ -39,7 +40,7 @@
 (deflayer leader
   M-esc  M-f1   M-f2   M-f3   M-f4   M-f5   M-f6   M-f7   M-f8   M-f9   M-f10  M-f11  M-f12  M-prnt M-del
   M-grv  M-1    M-2    M-3    M-4    M-5    M-6    M-7    M-8    M-9    M-0    M--    M-=    M-bspc
-  M-tab  M-q    M-w    M-e    @run   M-t    M-y    M-u    M-i    M-o    M-p    M-[    M-]    M-\
+  M-tab  M-q    M-w    M-e    @rofi  M-t    M-y    M-u    M-i    @open  M-p    M-[    M-]    M-\
   M-caps M-a    M-s    M-d    M-f    M-g    M-h    M-j    M-k    M-l    M-;    M-'    M-ret
   M-lsft M-z    M-x    M-c    M-v    M-b    M-n    M-m    M-,    M-.    M-/    M-rsft M-up
   M-lctl lmet   M-lalt           M-spc             M-ralt M-rctl        M-left M-down M-right
@@ -48,6 +49,13 @@
 (defalias web (cmd-button "qutebrowser"))
 (defalias ed (cmd-button "emacsclient --create-frame"))
 (defalias file (cmd-button "krusader"))
+(defalias bat (cmd-button "~/.config/rofi/applets/bin/battery.sh"))
+(defalias off (cmd-button "~/.config/rofi/applets/bin/powermenu.sh"))
+(defalias scr (cmd-button "~/.config/rofi/applets/bin/brightness.sh"))
+(defalias win (cmd-button "~/.config/rofi/hyprland_window_switcher.sh"))
+(defalias blu (cmd-button "rofi-bluetooth -show-icons -theme ~/.config/rofi/launchers/type-1/style-1.rasi"))
+(defalias rfile (cmd-button "rofi -show file-browser-extended -show-icons -theme ~/.config/rofi/launchers/type-1/style-1.rasi"))
+(defalias calc (cmd-button "rofi -show calc -show-icons -theme ~/.config/rofi/launchers/type-1/style-1.rasi"))
 
 (deflayer apps
   _    _    _    _    _     _    _    _    _    _    _    _    _    _    _
@@ -56,6 +64,15 @@
   _    _    _    _    @file _    _    _    _    _    _    _    _
   _    _    _    _    _     @web _    _    _    _    _    _    _
   _    _    _               _              _    _         _    _    _
+)
+
+(deflayer rofi
+  _    _    _    _     _      _    _    _    _    _    _    _    _    _    _
+  _    _    _    _     _      _    _    _    _    _    _    _    _    _
+  _    @off @win _     _      _    _    _    _    _    @bat _    _    _
+  _    _    @scr _     @rfile _    _    _    _    _    _    _    _
+  _    _    _    @calc _      @blu _    _    _    _    _    _    _
+  _    _    _                 _              _    _         _    _    _
 )
 
 (deflayer number
