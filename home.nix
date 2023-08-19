@@ -6,12 +6,14 @@
     enable = true;
     mimeApps.enable = true;
     mimeApps.defaultApplications = {
+      "application/pdf" = "org.kde.okular.desktop";
       "application/octet-stream" = "emacsclient.desktop";
       "text/html" = "org.qutebrowser.qutebrowser.desktop";
       "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
       "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
       "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
       "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/org-protocol" = "emacsclient.desktop";
     };
   };
 
@@ -237,10 +239,7 @@
 
       # Browsers
       brave
-      firefox
-      microsoft-edge
       qutebrowser-qt6
-      vieb
 
       # IDEs
       jetbrains.clion
