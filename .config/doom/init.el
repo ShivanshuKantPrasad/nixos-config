@@ -24,8 +24,8 @@
        (company +childrame)          ; the ultimate code completion backend
        ;; (helm +childrame +fuzzy +icons)              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
-       ;;ivy               ; a search engine for love and life
-       vertico           ; the search engine of the future
+       ;;(ivy +prescient)               ; a search engine for love and life
+       (vertico +icons)           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -153,7 +153,7 @@
        ;;nim               ; python + lisp at the speed of c
        (nix +tree-sitter)              ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
-       (org +babel +noter +dragndrop +journal +jupyter +pomodoro +roam2 +pretty)
+       (org +babel +noter +dragndrop +jupyter +pomodoro +roam2 +pretty)
                            ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more

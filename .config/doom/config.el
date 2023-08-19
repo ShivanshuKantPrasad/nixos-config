@@ -1,9 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
-
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Shivanshu Kant Prasad"
@@ -41,8 +37,34 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Notes/")
+(setq org-agenda-files '("~/Notes/"))
+(setq org-roam-directory "~/Notes/")
+(setq org-roam-dailies-directory "~/Notes/journal/")
 
+(use-package! org-super-agenda
+  :after org-agenda
+  :init
+  (setq org-agenda-skip-scheduled-if-done t
+      org-habit-show-habits-only-for-today nil
+      org-habit-show-all-today t
+      org-agenda-skip-deadline-if-done t
+      org-agenda-include-deadlines t
+      org-agenda-block-separator nil
+      org-agenda-compact-blocks t
+      org-agenda-start-day nil ;; i.e. today
+      org-agenda-span 1
+      org-agenda-start-on-weekday nil)
+  (setq org-agenda-custom-commands
+        '(("c" "Super view"
+           ((agenda "" ((org-agenda-overriding-header "")
+                        (org-super-agenda-groups
+                              '((:name "College"
+                                        :and (:time-grid t
+                                              :date today
+                                              :tag "College"))))))))))
+  :config
+  (org-super-agenda-mode))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -142,11 +164,10 @@
    (jupyter . t)))
 
 (setq org-babel-default-header-args:jupyter-python '((:session . "py")
-                                                    (:kernel . "python3")
-                                                    (:async . "yes")
-                                                    (:exports . "both")
-                                                    (:results . "output")))
+                                                     (:kernel . "python3")
+                                                     (:async . "yes")
+                                                     (:exports . "both")
+                                                     (:results . "output")))
 
-(setq org-element-use-cache t)
-(setq org-roam-directory "~/Study")
-(setq x-select-enable-clipboard nil)
+(setq org-element-use-cache nil)
+(setq select-enable-clipboard nil)
