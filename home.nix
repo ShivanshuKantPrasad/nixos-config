@@ -136,6 +136,7 @@
       libsForQt5.kio-gdrive
 
       # General Apps
+      anki
       kitty
       wezterm
       alacritty
@@ -158,29 +159,48 @@
       distrobox
 
       # Terminal commands
-      vim
       wget
       xclip
       meld
-      gh
-      git
-      glab
-      subversion
+      steam-run
+      tealdeer
+      scrcpy
+      tmux
+      grc
+      android-tools
+
+      # System
+      acpi
+      light
+      ncdu
+      gdu
+      xdg-ninja
+
+      # Dictionary
+      sqlite
+      hspell
+      wordnet
+      hunspell
+      hunspellDicts.en-us
+
+      # Zip
       zip
       unzip
       rar
+
+      # Search
       fd
       fzf
       plocate
       fsearch
       silver-searcher
       ripgrep
-      sqlite
-      wordnet
-      hspell
-      android-tools
-      steam-run
-      xdg-ninja
+
+      # Version Control
+      gh
+      git
+      glab
+      subversion
 
       # Systems Monitoring
       bmon
@@ -196,15 +216,24 @@
 
       # Language
       luarocks
-      nodejs
-      gcc
-      clang-tools
-      cmake
-      texlive.combined.scheme-medium
       rustup
       lld
       mold
       gnumake
+
+      # LaTeX
+      pandoc
+      texlive.combined.scheme-medium
+      graphviz
+      gnuplot
+
+      # C
+      gcc
+      clang-tools
+      cmake
+      glslang
+
+      # Nix
       statix
       deadnix
       nvd
@@ -212,12 +241,12 @@
       nixpkgs-fmt
       patchelf
       update-nix-fetchgit
-      ncdu
-      gdu
-      tealdeer
-      scrcpy
-      tmux
-      grc
+
+      # Web
+      nodejs
+      html-tidy
+      nodePackages.stylelint
+      nodePackages.js-beautify
 
       #Shell
       shfmt
