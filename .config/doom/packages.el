@@ -18,6 +18,8 @@
 (package! company-quickhelp)
 (package! cmake-ide)
 (package! company-tabnine)
+(package! ivy-rich)
+(package! all-the-icons-ivy-rich)
 (package! kbd-mode
   :recipe (:host github
            :repo "kmonad/kbd-mode"))

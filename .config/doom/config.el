@@ -42,29 +42,43 @@
 (setq org-roam-directory "~/Notes/")
 (setq org-roam-dailies-directory "~/Notes/journal/")
 
-(use-package! org-super-agenda
-  :after org-agenda
-  :init
-  (setq org-agenda-skip-scheduled-if-done t
-      org-habit-show-habits-only-for-today nil
-      org-habit-show-all-today t
-      org-agenda-skip-deadline-if-done t
-      org-agenda-include-deadlines t
-      org-agenda-block-separator nil
-      org-agenda-compact-blocks t
-      org-agenda-start-day nil ;; i.e. today
-      org-agenda-span 1
-      org-agenda-start-on-weekday nil)
-  (setq org-agenda-custom-commands
-        '(("c" "Super view"
-           ((agenda "" ((org-agenda-overriding-header "")
-                        (org-super-agenda-groups
-                              '((:name "College"
-                                        :and (:time-grid t
-                                              :date today
-                                              :tag "College"))))))))))
+(use-package org-recur
+  :hook ((org-mode . org-recur-mode)
+         (org-agenda-mode . org-recur-agenda-mode))
+  :demand t
   :config
-  (org-super-agenda-mode))
+  (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
+
+  ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
+  (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
+  (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
+
+  (setq org-recur-finish-done t
+        org-recur-finish-archive t))
+
+;; (use-package! org-super-agenda
+;;   :after org-agenda
+;;   :init
+;;   (setq org-agenda-skip-scheduled-if-done t
+;;       org-habit-show-habits-only-for-today nil
+;;       org-habit-show-all-today t
+;;       org-agenda-skip-deadline-if-done t
+;;       org-agenda-include-deadlines t
+;;       org-agenda-block-separator nil
+;;       org-agenda-compact-blocks t
+;;       org-agenda-start-day nil ;; i.e. today
+;;       org-agenda-span 1
+;;       org-agenda-start-on-weekday nil)
+;;   (setq org-agenda-custom-commands
+;;         '(("c" "Super view"
+;;            ((agenda "" ((org-agenda-overriding-header "")
+;;                         (org-super-agenda-groups
+;;                               '((:name "College"
+;;                                         :and (:time-grid t
+;;                                               :date today
+;;                                               :tag "College"))))))))))
+;;   :config
+;;   (org-super-agenda-mode))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -151,7 +165,7 @@
 
 (use-package! kbd-mode)
 
-(use-package jupyter
+(use-package! jupyter
   :defer t
   :ensure t
   :config
@@ -171,3 +185,11 @@
 
 (setq org-element-use-cache nil)
 (setq select-enable-clipboard nil)
+
+(use-package! all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode 1))
+
+(use-package! ivy-rich
+  :ensure t
+  :init (ivy-rich-mode 1))
