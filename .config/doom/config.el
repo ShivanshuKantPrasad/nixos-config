@@ -56,6 +56,19 @@
   (setq org-recur-finish-done t
         org-recur-finish-archive t))
 
+(use-package! org-pdftools
+  :hook (org-load . org-pdftools-setup-link))
+
+(use-package! org-noter
+  :after (:any org pdf-view)
+  :custom (org-noter-always-create-frame nil))
+
+(use-package! org-noter-pdftools
+  :after org-noter
+  :config
+  (with-eval-after-load 'pdf-annot
+     (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+
 ;; (use-package! org-super-agenda
 ;;   :after org-agenda
 ;;   :init
@@ -156,6 +169,10 @@
  (:map 'override
   :v "v" #'er/expand-region
   :v "V" #'er/contract-region))
+
+;; (map! :after image-roll
+;;       :map pdf-view-roll-minor-mode-map
+;;       "j" #'pdf-view-next-line-or-next-page)
 
 (setq +lsp-company-backends '(company-tabnine :separate company-capf company-yasnippet))
 (set-frame-parameter nil 'alpha-background 50)
