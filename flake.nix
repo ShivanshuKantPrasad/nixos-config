@@ -49,8 +49,7 @@
             {
               programs.hyprland.enable = true;
               programs.waybar.enable = true;
-              programs.waybar.package =
-                inputs.hyprland.packages.${system}.waybar-hyprland;
+              programs.waybar.package = pkgs.waybar-hyprland;
             }
             ./configuration.nix
 
