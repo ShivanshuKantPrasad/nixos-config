@@ -64,7 +64,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.autoNumlock = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -136,6 +136,9 @@
   };
 
   programs = {
+    waybar.enable = true;
+    waybar.package = pkgs.waybar-hyprland;
+    hyprland.enable = true;
     fish.enable = true;
     partition-manager.enable = true;
     gamemode.enable = true;
