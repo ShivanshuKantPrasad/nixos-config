@@ -220,7 +220,6 @@
     virtualbox.host.enableExtensionPack = true;
     docker.enable = true;
     waydroid.enable = true;
-    lxd.enable = true;
     libvirtd.enable = true;
   };
 
