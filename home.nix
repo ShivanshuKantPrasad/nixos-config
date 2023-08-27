@@ -55,6 +55,11 @@
       la = "ls -lah";
       ls = "exa --icons";
       lvim = "~/.local/bin/lvim";
+      e = "emacsclient -nw";
+      ed = "emacsclient -nw";
+      centaur = "emacs -init-directory ~/.config/centaur";
+      doom = "emacs -init-directory ~/.config/doomemacs";
+      space = "emacs -init-directory ~/.config/spacemacs";
     };
 
     file = {
@@ -259,6 +264,7 @@
         (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
 
       # Media
+      yt-dlp
       spotify
       qbittorrent
       feh
@@ -309,7 +315,7 @@
       shellAbbrs = { ni = "nix profile install nixpkgs#"; };
       functions = {
         nlist =
-          "nix profile list | awk '{print $4}' | awk '{ st = index($0,\"-\"); print NR-1, substr($0,st+1)}'";
+          "nix profile list | sed -n '2~6p' | awk -F '.' '{print NR-1, $3}'";
       };
       plugins = [{
         name = "grc";
