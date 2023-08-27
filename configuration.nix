@@ -63,6 +63,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.theme = "chili";
   services.xserver.displayManager.sddm.autoNumlock = true;
   # services.xserver.desktopManager.plasma5.enable = true;
 
@@ -134,6 +135,8 @@
       noto-fonts
     ];
   };
+
+  environment.systemPackages = with pkgs; [ sddm-chili-theme ];
 
   programs = {
     waybar.enable = true;
