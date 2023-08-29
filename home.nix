@@ -73,15 +73,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/doom";
+          "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pyhtonrc".text = ''
         import os
@@ -132,6 +132,8 @@
       rofi-bluetooth
       rofi-power-menu
 
+      breeze-icons
+
       # Kde integration
       ark
       libqalculate
@@ -139,6 +141,7 @@
       libsForQt5.kaccounts-integration
       libsForQt5.kaccounts-providers
       libsForQt5.kio-gdrive
+      libsForQt5.kio-extras
 
       # General Apps
       anki
@@ -157,6 +160,8 @@
       obsidian
       krusader
       protonvpn-cli_2
+      mupdf
+      dolphin
 
       # Virtualization
       virt-manager
@@ -205,6 +210,7 @@
       gh
       git
       glab
+      lazygit
       subversion
 
       # Systems Monitoring
@@ -234,22 +240,31 @@
 
       # C
       gcc
-      clang-tools
+      bear
       cmake
       glslang
+      clang-tools
 
       # Nix
+      nvd
+      nix-index
+      cachix
       statix
       deadnix
-      nvd
+      rnix-lsp
       nixfmt
       nixpkgs-fmt
       patchelf
       update-nix-fetchgit
 
+      #raku
+      rakudo
+      zef
+
       # Web
       nodejs
       html-tidy
+      wireshark
       nodePackages.stylelint
       nodePackages.js-beautify
 
@@ -273,7 +288,8 @@
       mpv
 
       # Browsers
-      brave
+      vieb
+      vivaldi
       qutebrowser-qt6
 
       # IDEs
@@ -286,9 +302,6 @@
       #sublime4
       neovide
       my-emacs
-
-      cachix
-      nix-index
 
     ];
 
