@@ -135,7 +135,6 @@
       breeze-icons
 
       # Kde integration
-      ark
       libqalculate
       libsForQt5.kdegraphics-thumbnailers
       libsForQt5.kaccounts-integration
@@ -145,23 +144,31 @@
 
       # General Apps
       anki
-      kitty
-      wezterm
-      alacritty
       discord
       libreoffice
-      masterpdfeditor
-      lutris
-      steam
-      mangohud
       keepassxc
       zeal
       motrix
       obsidian
-      krusader
       protonvpn-cli_2
-      mupdf
+      krusader
       dolphin
+
+      #Game
+      lutris
+      steam
+      mangohud
+
+      #Terminal Emulator
+      kitty
+      wezterm
+      alacritty
+
+      #pdf
+      okular
+      masterpdfeditor
+      zathura
+      mupdf
 
       # Virtualization
       virt-manager
@@ -197,6 +204,7 @@
       zip
       unzip
       rar
+      ark
 
       # Search
       fd
@@ -302,6 +310,11 @@
       #sublime4
       neovide
       my-emacs
+
+      #Man packages
+      linux-manual
+      man-pages-posix
+      man-pages
 
     ];
 
