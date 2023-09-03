@@ -25,6 +25,7 @@
   home = {
 
     sessionVariables = rec {
+      WINEPREFIX = "${config.xdg.dataHome}/wineprefixes/default";
       TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
@@ -151,6 +152,9 @@
       motrix
       obsidian
       protonvpn-cli_2
+
+      #File Manager
+      ranger
       krusader
       dolphin
 
@@ -158,6 +162,7 @@
       lutris
       steam
       mangohud
+      wine
 
       #Terminal Emulator
       kitty
