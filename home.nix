@@ -25,7 +25,7 @@
   home = {
 
     sessionVariables = rec {
-      WINEPREFIX = "${config.xdg.dataHome}/wineprefixes/default";
+      W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
@@ -38,6 +38,7 @@
       WINEPREFIX = "${config.xdg.dataHome}/wine";
       ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
       _Z_DATA = "${config.xdg.dataHome}/z";
+      NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
       NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
       CABAL_CONFIG = "${config.xdg.configHome}/cabal/config";
       CABAL_DIR = "${config.xdg.dataHome}/cabal";
