@@ -25,6 +25,7 @@
   home = {
 
     sessionVariables = rec {
+      PAGER = "vim +Man!";
       W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
@@ -318,7 +319,7 @@
       my-emacs
 
       #Man packages
-      linux-manual
+      #linux-manual
       man-pages-posix
       man-pages
 
