@@ -26,6 +26,7 @@
 
     sessionVariables = rec {
       PAGER = "vim +Man!";
+      BAT_PAGER = "less";
       W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
@@ -164,7 +165,8 @@
       lutris
       steam
       mangohud
-      wine
+      wineWowPackages.waylandFull
+      winetricks
 
       #Terminal Emulator
       kitty
