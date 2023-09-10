@@ -255,27 +255,9 @@
         "type": "github"
       }
     },
-    "jetbrains-updater": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1692662535,
-        "narHash": "sha256-sgjrvDoMQ6+j39mLG0wzddJvrx5HfHDFZj/TwPrE5GQ=",
-        "owner": "genericnerdyusername",
-        "repo": "jetbrains-updater",
-        "rev": "de06abdfdc996f4b8bcd1287ae2b7a06a75c1868",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "genericnerdyusername",
-        "repo": "jetbrains-updater",
-        "type": "gitlab"
-      }
-    },
     "kmonad": {
       "inputs": {
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
         "dir": "nix",
@@ -308,7 +290,7 @@
         "flake-utils": "flake-utils_2",
         "format-all": "format-all",
         "nix-straight": "nix-straight",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "nose": "nose",
         "ob-racket": "ob-racket",
         "org": "org",
@@ -385,20 +367,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1689631193,
-        "narHash": "sha256-AGSkBZaiTODQc8eT1rZDrQIjtb8JtFwJ0wVPzArlrnM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "57695599bdc4f7bfe5d28cfa23f14b3d8bdf8a5f",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1653326962,
         "narHash": "sha256-W8feCYqKTsMre4nAEpv5Kx1PVFC+hao/LwqtB2Wci/8=",
         "owner": "NixOS",
@@ -413,7 +381,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1682566018,
         "narHash": "sha256-HPzPRFiy2o/7k7mtnwfM1E6NVZHiFbPdmYCMoIpkHO4=",
@@ -428,7 +396,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1692447944,
         "narHash": "sha256-fkJGNjEmTPvqBs215EQU4r9ivecV5Qge5cF/QDLVn3U=",
@@ -575,10 +543,9 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
-        "jetbrains-updater": "jetbrains-updater",
         "kmonad": "kmonad",
         "nix-doom-emacs": "nix-doom-emacs",
-        "nixpkgs": "nixpkgs_5",
+        "nixpkgs": "nixpkgs_4",
         "nur": "nur"
       }
     },

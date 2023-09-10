@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
-    jetbrains-updater.url = "gitlab:genericnerdyusername/jetbrains-updater";
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     home-manager = {
@@ -22,22 +21,22 @@
         inherit system;
         overlays = [
           inputs.nur.overlay
-          inputs.jetbrains-updater.overlay
           inputs.emacs-overlay.overlay
           inputs.kmonad.overlays.default
-	  (self: super: {
-	    my-emacs = super.emacs-pgtk;
-	    # super.emacs-git.override {
-	    #  withXwidgets = true;
-	    #  withGTK3 = true;
-	    # };
-	  })
+          (self: super: {
+            my-emacs = super.emacs-pgtk;
+            # super.emacs-git.override {
+            #  withXwidgets = true;
+            #  withGTK3 = true;
+            # };
+          })
         ];
         config.allowUnfree = true;
       };
 
       lib = nixpkgs.lib;
-    in {
+    in
+    {
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
           inherit system;
