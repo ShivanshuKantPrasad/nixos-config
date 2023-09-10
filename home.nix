@@ -77,15 +77,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/doom";
+        "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pythonrc".text = ''
         import os
@@ -140,11 +140,11 @@
 
       # Kde integration
       libqalculate
-      libsForQt5.kdegraphics-thumbnailers
-      libsForQt5.kaccounts-integration
-      libsForQt5.kaccounts-providers
-      libsForQt5.kio-gdrive
-      libsForQt5.kio-extras
+      # libsForQt5.kdegraphics-thumbnailers
+      # libsForQt5.kaccounts-integration
+      # libsForQt5.kaccounts-providers
+      # libsForQt5.kio-gdrive
+      # libsForQt5.kio-extras
 
       # General Apps
       anki
@@ -159,7 +159,9 @@
       #File Manager
       ranger
       krusader
-      dolphin
+      pcmanfm
+      # libsForQt5.dolphin
+      # libsForQt5.dolphin-plugins
 
       #Game
       lutris
