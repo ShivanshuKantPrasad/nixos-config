@@ -65,10 +65,10 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.theme = "chili";
   services.xserver.displayManager.sddm.autoNumlock = true;
-  services.xserver.windowManager.qtile.enable = true;
-  services.xserver.windowManager.qtile.backend = "wayland";
-  services.xserver.windowManager.qtile.extraPackages = python3Packages:
-    [ python3Packages.qtile-extras ];
+  # services.xserver.windowManager.qtile.enable = true;
+  # services.xserver.windowManager.qtile.backend = "wayland";
+  # services.xserver.windowManager.qtile.extraPackages = python3Packages:
+  # [ python3Packages.qtile-extras ];
   # services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
@@ -224,8 +224,8 @@
   };
 
   virtualisation = {
-    virtualbox.host.enable = true;
-    virtualbox.host.enableExtensionPack = true;
+    # virtualbox.host.enable = true;
+    # virtualbox.host.enableExtensionPack = true;
     docker.enable = true;
     waydroid.enable = true;
     libvirtd.enable = true;
