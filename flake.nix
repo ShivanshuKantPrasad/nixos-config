@@ -3,9 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nur.url = "github:nix-community/NUR";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,13 +12,12 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, home-manager, nix-doom-emacs, ... }:
+    inputs@{ self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          inputs.nur.overlay
           inputs.emacs-overlay.overlay
           inputs.kmonad.overlays.default
           (self: super: {
@@ -50,7 +47,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.shivanshu = {
-                imports = [ nix-doom-emacs.hmModule ./home.nix ];
+                imports = [ ./home.nix ];
               };
             }
           ];

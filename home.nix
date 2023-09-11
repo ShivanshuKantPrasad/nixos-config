@@ -57,7 +57,7 @@
       glog = "g lg -10";
       gs = "git status";
       la = "ls -lah";
-      ls = "exa --icons";
+      ls = "eza --icons";
       lvim = "~/.local/bin/lvim";
       e = "emacsclient -nw";
       ed = "emacsclient -nw";
@@ -309,7 +309,7 @@
       # Browsers
       vieb
       vivaldi
-      qutebrowser-qt6
+      qutebrowser
 
       # IDEs
       jetbrains.clion
@@ -345,7 +345,7 @@
     swaylock.enable = true;
     swaylock.package = pkgs.swaylock-effects;
     bat.enable = true;
-    exa.enable = true;
+    eza.enable = true;
     bash.enable = true;
     fish = {
       enable = true;

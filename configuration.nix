@@ -148,7 +148,6 @@
 
   programs = {
     waybar.enable = true;
-    waybar.package = pkgs.waybar-hyprland;
     hyprland.enable = true;
     fish.enable = true;
     partition-manager.enable = true;
