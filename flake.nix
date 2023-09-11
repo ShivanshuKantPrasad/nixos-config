@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,14 +17,9 @@
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          inputs.emacs-overlay.overlay
           inputs.kmonad.overlays.default
           (self: super: {
-            my-emacs = super.emacs-pgtk;
-            # super.emacs-git.override {
-            #  withXwidgets = true;
-            #  withGTK3 = true;
-            # };
+            my-emacs = super.emacs29-pgtk;
           })
         ];
         config.allowUnfree = true;
