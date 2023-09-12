@@ -25,7 +25,7 @@
   home = {
 
     sessionVariables = rec {
-      PAGER = "vim +Man!";
+      MAN_PAGER = "vim +Man!";
       BAT_PAGER = "less";
       W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
@@ -151,13 +151,13 @@
       discord
       libreoffice
       keepassxc
-      zeal
       motrix
       obsidian
       protonvpn-cli_2
 
       #File Manager
       ranger
+      broot
       krusader
       pcmanfm
       # libsForQt5.dolphin
@@ -203,6 +203,7 @@
       ncdu
       gdu
       xdg-ninja
+      system-config-printer
 
       # Dictionary
       sqlite
@@ -245,6 +246,7 @@
       teamviewer
 
       # Language
+      mitscheme
       luarocks
       rustup
       lld
@@ -263,6 +265,11 @@
       cmake
       glslang
       clang-tools
+
+      # Debugger
+      gdb
+      seer
+      gf
 
       # Nix
       nvd
@@ -326,6 +333,8 @@
       #linux-manual
       man-pages-posix
       man-pages
+      zeal
+      hors
 
     ];
 
