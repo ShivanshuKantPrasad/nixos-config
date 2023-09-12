@@ -150,10 +150,10 @@
     waybar.enable = true;
     hyprland.enable = true;
     fish.enable = true;
-    partition-manager.enable = true;
+    # partition-manager.enable = true;
     gamemode.enable = true;
     dconf.enable = true;
-    kdeconnect.enable = true;
+    # kdeconnect.enable = true;
     npm = {
       enable = true;
       npmrc = ''

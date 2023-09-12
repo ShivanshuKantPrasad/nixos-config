@@ -216,7 +216,6 @@
       zip
       unzip
       rar
-      ark
 
       # Search
       fd
@@ -324,7 +323,6 @@
 
       # Editors
       vscode
-      kate
       #sublime4
       neovide
       my-emacs
