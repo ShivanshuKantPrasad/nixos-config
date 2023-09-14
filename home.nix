@@ -25,7 +25,7 @@
   home = {
 
     sessionVariables = rec {
-      MAN_PAGER = "vim +Man!";
+      MANPAGER = "vim +Man!";
       BAT_PAGER = "less";
       W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
@@ -354,6 +354,10 @@
     bat.enable = true;
     eza.enable = true;
     bash.enable = true;
+    bash.initExtra = ''
+      source "$(blesh-share)"/ble.sh --attach=none # does not work currently
+      [[ $\{BLE_VERSION-} ]] && ble-attach
+    '';
     fish = {
       enable = true;
       shellAbbrs = { ni = "nix profile install nixpkgs#"; };
