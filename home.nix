@@ -77,15 +77,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/doom";
+          "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pythonrc".text = ''
         import os
@@ -226,10 +226,7 @@
       ripgrep
 
       # Version Control
-      gh
-      git
       glab
-      lazygit
       subversion
 
       # Systems Monitoring
@@ -397,6 +394,18 @@
     rofi = {
       enable = true;
       plugins = [ pkgs.rofi-file-browser pkgs.rofi-calc ];
+    };
+
+    gh.enable = true;
+    git = {
+      enable = true;
+      delta.enable = true;
+      userName = "Shivanshu Kant Prasad";
+      userEmail = "shivanshukantprasad@gmail.com";
+      aliases = {
+        lg =
+          "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      };
     };
 
     # doom-emacs = rec {
