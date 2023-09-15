@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 
 {
-  #xdg.configFile."fish/functions/rust.fish".source = ./.config/fish/functions/rust.fish;
+  xsession.enable = true;
+
   xdg = {
     enable = true;
     mimeApps.enable = true;
@@ -341,6 +342,8 @@
     enable = true;
     package = pkgs.my-emacs;
     defaultEditor = true;
+    socketActivation.enable = true;
+    startWithUserSession = "graphical";
   };
   services.syncthing.enable = true;
 
