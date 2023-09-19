@@ -294,6 +294,9 @@
       #Shell
       shfmt
       shellcheck
+      nushell
+      blesh
+      jc
 
       #Python
       pipx
