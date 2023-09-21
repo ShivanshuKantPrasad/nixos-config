@@ -295,7 +295,7 @@
       shfmt
       shellcheck
       nushell
-      blesh
+      # blesh
       jc
 
       #Python
@@ -356,11 +356,11 @@
     swaylock.package = pkgs.swaylock-effects;
     bat.enable = true;
     eza.enable = true;
-    bash.enable = true;
-    bash.initExtra = ''
-      source "$(blesh-share)"/ble.sh --attach=none # does not work currently
-      [[ $\{BLE_VERSION-} ]] && ble-attach
-    '';
+    # bash.enable = true;
+    # bash.initExtra = ''
+    #   source "$(blesh-share)"/ble.sh --attach=none # does not work currently
+    #   [[ $\{BLE_VERSION-} ]] && ble-attach
+    # '';
     fish = {
       enable = true;
       shellAbbrs = { ni = "nix profile install nixpkgs#"; };

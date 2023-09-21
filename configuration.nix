@@ -127,6 +127,11 @@
 
   environment.shells = with pkgs; [ fish ];
 
+  documentation = {
+    dev.enable = true;
+    man.generateCaches = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
