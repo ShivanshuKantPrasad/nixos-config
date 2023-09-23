@@ -78,15 +78,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/doom";
+        "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pythonrc".text = ''
         import os
@@ -270,7 +270,6 @@
 
       # Nix
       nvd
-      nix-index
       cachix
       statix
       deadnix
@@ -351,6 +350,8 @@
   services.syncthing.enable = true;
 
   programs = {
+    nix-index-database.comma.enable = true;
+    nix-index.enable = true;
     home-manager.enable = true;
     swaylock.enable = true;
     swaylock.package = pkgs.swaylock-effects;

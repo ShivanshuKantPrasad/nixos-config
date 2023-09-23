@@ -8,26 +8,24 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
           inputs.kmonad.overlays.default
-          (self: super: {
-            my-emacs = super.emacs29-pgtk;
-          })
+          (self: super: { my-emacs = super.emacs29-pgtk; })
         ];
         config.allowUnfree = true;
       };
 
       lib = nixpkgs.lib;
-    in
-    {
+    in {
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
           inherit system;
@@ -41,7 +39,8 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.shivanshu = {
-                imports = [ ./home.nix ];
+                imports =
+                  [ inputs.nix-index-database.hmModules.nix-index ./home.nix ];
               };
             }
           ];
