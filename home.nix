@@ -270,6 +270,7 @@
 
       # Nix
       nvd
+      nil
       cachix
       statix
       deadnix
