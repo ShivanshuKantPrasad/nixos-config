@@ -152,6 +152,7 @@
   environment.systemPackages = with pkgs; [ sddm-chili-theme ];
 
   programs = {
+    adb.enable = true;
     waybar.enable = true;
     hyprland.enable = true;
     fish.enable = true;
