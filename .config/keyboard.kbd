@@ -21,7 +21,7 @@
 (deflayer qwerty
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  prnt del
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @tab q    w    e    r    t    y    u    i    o    p    [    ]    \
   @cap @a   @s   @d   @f   g    h    @j   @k   @l   @;   '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft up
   lctl @met lalt          @osl            ralt rctl      left down right
@@ -32,6 +32,7 @@
 (defalias rofi (layer-next rofi))
 (defalias cap (tap-next esc lctl))
 (defalias osl (tap-hold-next-release 500 spc (layer-toggle number)))
+(defalias tab (tap-hold-next-release 500 tab (layer-toggle nav)))
 (defalias a (tap-hold-next-release 200 a lmet))
 (defalias s (tap-hold-next-release 200 s lalt))
 (defalias d (tap-hold-next-release 200 d lctl))
@@ -54,7 +55,7 @@
 
 (defalias web (cmd-button "qutebrowser"))
 (defalias ed (cmd-button "emacsclient --create-frame"))
-(defalias file (cmd-button "krusader"))
+(defalias file (cmd-button "pcmanfm"))
 (defalias bat (cmd-button "~/.config/rofi/applets/bin/battery.sh"))
 (defalias off (cmd-button "~/.config/rofi/applets/bin/powermenu.sh"))
 (defalias scr (cmd-button "~/.config/rofi/applets/bin/brightness.sh"))
@@ -97,4 +98,13 @@
   caps a    s    d    f     g    h    j    k    l    ;    '    ret
   lsft z    x    c    v     @web n    m    ,    .    /    rsft up
   lctl lmet lalt            spc            ralt rctl      left down right
+)
+
+(deflayer nav
+  _    _    _    _    _     _    _    _    _    _      _    _    _    _    _
+  _    _    _    _    _     _    _    _    _    _      _    _    _    _
+  _    _    _    _    _     _    _    _    _    _      _    _    _    _
+  _    _    _    _    _     _    left down up   right  _    _    _
+  _    _    _    _    _     _    _    _    _    _      _    _    _
+  _    _    _               _              _    _           _    _    _
 )

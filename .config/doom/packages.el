@@ -20,13 +20,19 @@
 (package! org-web-tools)
 (package! company-quickhelp)
 (package! cmake-ide)
-(package! company-tabnine)
 (package! ivy-rich)
 (package! all-the-icons-ivy-rich)
 (package! kbd-mode
   :recipe (:host github
            :repo "kmonad/kbd-mode"))
-
+(package! eat :recipe
+  (:host codeberg
+   :repo "akib/emacs-eat"
+   :files ("*.el" ("term" "term/*.el") "*.texi"
+           "*.ti" ("terminfo/e" "terminfo/e/*")
+           ("terminfo/65" "terminfo/65/*")
+           ("integration" "integration/*")
+           (:exclude ".dir-locals.el" "*-tests.el"))))
 ;; (package! pdf-tools :recipe
 ;;           (:host github
 ;;                  :repo "dalanicolai/pdf-tools"
