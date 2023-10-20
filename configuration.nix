@@ -173,6 +173,8 @@
 
   # List services that you want to enable:
 
+  services.logind.lidSwitchExternalPower = "ignore";
+
   services.locate = {
     enable = true;
     locate = pkgs.plocate;
