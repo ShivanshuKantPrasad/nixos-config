@@ -81,7 +81,7 @@
   services.printing.enable = true;
   services.avahi.enable = true;
   services.avahi.openFirewall = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   # Enable sound with pipewire.
@@ -177,7 +177,7 @@
 
   services.locate = {
     enable = true;
-    locate = pkgs.plocate;
+    package = pkgs.plocate;
     interval = "hourly";
     localuser = null;
   };

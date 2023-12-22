@@ -39,8 +39,8 @@
 (defalias f (tap-hold-next-release 200 f lsft))
 (defalias ; (tap-hold-next-release 200 ; rmet))
 (defalias l (tap-hold-next-release 200 l ralt))
-(defalias k (tap-hold-next-release 200 k rctl))
-(defalias j (tap-hold-next-release 200 j rsft))
+(defalias k (tap-hold-next-release 200 k rctl :timeout-button k))
+(defalias j (tap-hold-next-release 200 j rsft :timeout-button j))
 ;; (defalias ls (sticky-key 1000 lsft))
 ;; (defalias rs (sticky-key 1000 rsft))
 

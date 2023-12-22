@@ -152,8 +152,7 @@
       discord
       libreoffice
       keepassxc
-      motrix
-      obsidian
+      # obsidian
       protonvpn-cli_2
 
       #File Manager
