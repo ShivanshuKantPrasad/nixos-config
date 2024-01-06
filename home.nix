@@ -130,6 +130,8 @@
       swaybg
       variety
       wlr-randr
+      pyprland
+      grimblast
 
       ydotool
       keepmenu
@@ -154,6 +156,7 @@
       keepassxc
       # obsidian
       protonvpn-cli_2
+      kget
 
       #File Manager
       ranger
@@ -236,6 +239,7 @@
       usbutils
       pciutils
       lshw
+      # (lshw.override { withGUI = true; })
       nethogs
       neofetch
       glxinfo
@@ -322,8 +326,8 @@
       jetbrains.idea-ultimate
 
       # Editors
+      helix
       vscode
-      #sublime4
       neovide
       my-emacs
 
