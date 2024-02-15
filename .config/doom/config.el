@@ -1,4 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+(setq shell-file-name (executable-find "bash"))
+(setq-default vterm-shell (executable-find "fish"))
+(setq-default explicit-shell-file-name (executable-find "fish"))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
@@ -56,18 +59,18 @@
   (setq org-recur-finish-done t
         org-recur-finish-archive t))
 
-(use-package! org-pdftools
-  :hook (org-load . org-pdftools-setup-link))
-
-(use-package! org-noter
-  :after (:any org pdf-view)
-  :custom (org-noter-always-create-frame nil))
-
-(use-package! org-noter-pdftools
-  :after org-noter
-  :config
-  (with-eval-after-load 'pdf-annot
-     (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
+                                        ; (use-package! org-pdftools
+                                        ;   :hook (org-load . org-pdftools-setup-link))
+                                        ;
+                                        ; (use-package! org-noter
+                                        ;   :after (:any org pdf-view)
+                                        ;   :custom (org-noter-always-create-frame nil))
+                                        ;
+                                        ; (use-package! org-noter-pdftools
+                                        ;   :after org-noter
+                                        ;   :config
+                                        ;   (with-eval-after-load 'pdf-annot
+                                        ;      (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
 
 ;; (use-package! org-super-agenda
 ;;   :after org-agenda
