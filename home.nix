@@ -187,6 +187,7 @@
       # Virtualization
       virt-manager
       quickemu
+      qemu-utils
       distrobox
 
       # Terminal commands
@@ -252,6 +253,7 @@
       lld
       mold
       gnumake
+      openjdk
 
       # LaTeX
       pandoc
@@ -324,6 +326,8 @@
       # IDEs
       jetbrains.clion
       jetbrains.idea-ultimate
+      jetbrains.pycharm
+      # jetbrains.android-studio
 
       # Editors
       helix
