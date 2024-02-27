@@ -155,6 +155,7 @@
 
   programs = {
     adb.enable = true;
+    nix-ld.enable = true;
     waybar.enable = true;
     hyprland.enable = true;
     fish.enable = true;
@@ -200,8 +201,8 @@
   };
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 6567 ];
+  networking.firewall.allowedUDPPorts = [ 6567 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -237,7 +238,9 @@
     # virtualbox.host.enableExtensionPack = true;
     docker.enable = true;
     waydroid.enable = true;
-    libvirtd.enable = true;
+    libvirtd = {
+      enable = true;
+    };
   };
 
   services.kmonad.enable = true;
