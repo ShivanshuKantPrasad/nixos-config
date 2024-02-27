@@ -270,9 +270,11 @@
       bear
       cmake
       glslang
+      pkg-config
       clang-tools
 
       # Debugger
+      linuxKernel.packages.linux_6_1.perf
       hotspot
       gdb
       seer
