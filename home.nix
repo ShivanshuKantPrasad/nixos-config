@@ -152,6 +152,8 @@
       # General Apps
       anki
       discord
+      teams-for-linux
+      teamviewer
       libreoffice
       keepassxc
       # obsidian
@@ -172,6 +174,7 @@
       mangohud
       wineWowPackages.waylandFull
       winetricks
+      mindustry-wayland
 
       #Terminal Emulator
       kitty
@@ -217,6 +220,7 @@
       hunspellDicts.en-us
 
       # Zip
+      peazip
       zip
       unzip
       rar
@@ -269,6 +273,7 @@
       clang-tools
 
       # Debugger
+      hotspot
       gdb
       seer
       gf
@@ -313,6 +318,7 @@
       yt-dlp
       spotify
       qbittorrent
+      gwenview
       feh
       gimp
       vlc
@@ -321,12 +327,13 @@
       # Browsers
       vieb
       vivaldi
+      floorp
       qutebrowser
 
       # IDEs
       jetbrains.clion
       jetbrains.idea-ultimate
-      jetbrains.pycharm
+      jetbrains.pycharm-community
       # jetbrains.android-studio
 
       # Editors
