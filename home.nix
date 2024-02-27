@@ -269,6 +269,7 @@
       gcc
       bear
       cmake
+      libtool
       glslang
       pkg-config
       clang-tools
@@ -297,6 +298,8 @@
       zef
 
       # Web
+      phpPackages.composer
+      php
       nodejs
       html-tidy
       wireshark
