@@ -60,6 +60,11 @@
   services.flatpak.enable = true;
   services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
+  
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
@@ -78,6 +83,7 @@
       variant = "";
     };
   };
+  services.kmonad.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -242,8 +248,6 @@
       enable = true;
     };
   };
-
-  services.kmonad.enable = true;
 
   systemd.extraConfig = ''
     DefaultTimeoutStopSec=10s

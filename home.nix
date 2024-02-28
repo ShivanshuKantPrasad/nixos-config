@@ -337,7 +337,7 @@
 
       # IDEs
       jetbrains.clion
-      jetbrains.idea-ultimate
+      jetbrains.idea-community
       jetbrains.pycharm-community
       # jetbrains.android-studio
 
