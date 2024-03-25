@@ -115,6 +115,7 @@
     packages = with pkgs; [
 
       # Hyprland
+      kanata-with-cmd
       kmonad
       networkmanagerapplet
       wlogout

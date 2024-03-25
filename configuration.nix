@@ -66,6 +66,9 @@
     package = pkgs.mariadb;
   };
 
+  services.tomcat.enable = true;
+  services.tomcat.package = pkgs.tomcat10;
+
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.displayManager.sddm.theme = "chili";
@@ -83,7 +86,9 @@
       variant = "";
     };
   };
-  services.kmonad.enable = true;
+  # services.kmonad.enable = true;
+  # services.keyd.enable = true;
+  # services.kanata.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -95,6 +100,7 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.uinput.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
