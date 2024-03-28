@@ -30,6 +30,7 @@
 
   fileSystems."/run/media/shivanshu/DATA" = {
     device = "/dev/disk/by-label/DATA";
+    options = [ "uid=1000" "gid=1000" "dmask=007" "fmask=117" ];
     fsType = "auto";
   };
 
