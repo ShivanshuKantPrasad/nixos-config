@@ -221,7 +221,7 @@
       hunspellDicts.en-us
 
       # Zip
-      peazip
+      # peazip
       zip
       unzip
       rar
@@ -244,8 +244,8 @@
       btop
       usbutils
       pciutils
-      lshw
-      # (lshw.override { withGUI = true; })
+      # lshw
+      (lshw.override { withGUI = true; })
       nethogs
       neofetch
       glxinfo
@@ -288,7 +288,6 @@
       cachix
       statix
       deadnix
-      rnix-lsp
       nixfmt
       nixpkgs-fmt
       patchelf
