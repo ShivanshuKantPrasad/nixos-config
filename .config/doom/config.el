@@ -20,8 +20,10 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "VictorMono Nerd Font Mono" :size 16))
-(setq doom-font (font-spec :family "FantasqueSansM Nerd Font Mono" :size 16))
+;; (setq doom-font (font-spec :family "VictorMono Nerd Font Mono" :size 16))
+;; (setq doom-font (font-spec :family "FantasqueSansM Nerd Font Mono" :size 16))
+(setq doom-font (font-spec :family "Comic Code Ligatures" :size 16))
+;; (setq doom-font (font-spec :family "Comic Mono" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -129,31 +131,7 @@
 ;; they are implemented.
 ;;
 (after! lsp-mode
-  (setq lsp-lens-enable t
-        lsp-semantic-tokens-enable t
-        lsp-enable-symbol-highlighting t))
-
-(after! lsp-ui
-  (setq lsp-rust-analyzer-server-display-inlay-hints t)
-  (setq lsp-rust-analyzer-inlay-hints-mode t)
-  (setq lsp-rust-analyzer-cargo-watch-command "clippy")
-  (setq lsp-rust-analyzer-server-display-inlay-hints t)
-  (setq lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
-  (setq lsp-rust-analyzer-display-chaining-hints t)
-  (setq lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
-  (setq lsp-rust-analyzer-display-closure-return-type-hints t)
-  (setq lsp-rust-analyzer-display-parameter-hints nil)
-  (setq lsp-rust-analyzer-display-reborrow-hints nil)
-
-
-  (setq lsp-semantic-tokens-enable t))
-;; (setq lsp-eldoc-render-all t)
-
-;; (setq lsp-ui-sideline-show-hover t)
-;; (setq lsp-ui-sideline-show-code-actions t)
-;; (setq lsp-ui-sideline-enable nil)
-;; (setq lsp-ui-doc-show-with-mouse t)
-;; (setq lsp-ui-doc-enable t))
+  (setq lsp-inlay-hint-enable t))
 
 (require 'sublimity)
 (require 'sublimity-scroll)
@@ -177,7 +155,7 @@
 ;;       :map pdf-view-roll-minor-mode-map
 ;;       "j" #'pdf-view-next-line-or-next-page)
 
-(setq +lsp-company-backends '(company-tabnine :separate company-capf company-yasnippet))
+;; (setq +lsp-company-backends '(company-tabnine :separate company-capf company-yasnippet))
 (set-frame-parameter nil 'alpha-background 50)
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
