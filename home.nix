@@ -26,6 +26,7 @@
   home = {
 
     sessionVariables = rec {
+      NIXOS_OZONE_WL = "1";
       MANPAGER = "vim +Man!";
       BAT_PAGER = "less";
       W3M_DIR = "${config.xdg.stateHome}/w3m";
@@ -35,7 +36,7 @@
       HISTFILE = "${config.xdg.stateHome}/bash/history";
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
       GRADLE_USER_HOME = "${config.xdg.dataHome}/gradle";
-      GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+      # GTK2_RC_FILES = "${config.xdg.configHome}/gtk-2.0/gtkrc";
       XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
       RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
       WINEPREFIX = "${config.xdg.dataHome}/wine";
@@ -144,6 +145,7 @@
       rofi-power-menu
 
       breeze-icons
+      orchis-theme
 
       # Kde integration
       libqalculate
@@ -361,6 +363,18 @@
 
     stateVersion = "23.05";
 
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Orchis-Dark";
+      package = pkgs.orchis-theme;
+    };
+    iconTheme = {
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
+    };
   };
 
   services.emacs = {
