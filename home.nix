@@ -65,6 +65,9 @@
       centaur = "emacs -init-directory ~/.config/centaur";
       doom = "emacs -init-directory ~/.config/doomemacs";
       space = "emacs -init-directory ~/.config/spacemacs";
+      na = "nix profile install";
+      nr = "nix profile remove";
+      ns = "nix search nixpkgs";
     };
 
     file = {
