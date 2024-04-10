@@ -68,7 +68,8 @@
       space = "emacs -init-directory ~/.config/spacemacs";
       na = "nix profile install";
       nr = "nix profile remove";
-      ns = "nix search nixpkgs";
+      ns = "nix-search";
+      no = ".local/share/cargo/bin/nox";
     };
 
     file = {
@@ -146,6 +147,7 @@
 
       breeze-icons
       orchis-theme
+      themechanger
 
       # Kde integration
       libqalculate
@@ -176,7 +178,6 @@
 
       #Game
       lutris
-      steam
       mangohud
       wineWowPackages.waylandFull
       winetricks
@@ -204,6 +205,7 @@
       xclip
       meld
       steam-run
+      appimage-run
       tealdeer
       scrcpy
       tmux
@@ -260,6 +262,7 @@
       mitscheme
       luarocks
       rustup
+      evcxr # rust repl
       lld
       mold
       gnumake
@@ -295,6 +298,7 @@
       deadnix
       nixfmt
       nixpkgs-fmt
+      nix-search-cli
       patchelf
       update-nix-fetchgit
 
@@ -325,11 +329,13 @@
         (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
 
       # Media
+      revanced-cli
       yt-dlp
       spotify
       qbittorrent
       gwenview
       feh
+      nomacs
       gimp
       vlc
       mpv
@@ -344,6 +350,8 @@
       jetbrains.clion
       jetbrains.idea-community
       jetbrains.pycharm-community
+      jetbrains.datagrip
+      eclipses.eclipse-sdk
       # jetbrains.android-studio
 
       # Editors
