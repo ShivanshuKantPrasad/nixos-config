@@ -195,7 +195,6 @@
       mupdf
 
       # Virtualization
-      virt-manager
       quickemu
       qemu-utils
       distrobox

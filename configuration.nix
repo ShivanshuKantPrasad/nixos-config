@@ -77,7 +77,7 @@
   # services.xserver.windowManager.qtile.backend = "wayland";
   # services.xserver.windowManager.qtile.extraPackages = python3Packages:
   # [ python3Packages.qtile-extras ];
-  # services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -98,22 +98,18 @@
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = true;
   hardware.uinput.enable = true;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  #   wireplumber.enable = true;
-  # };
+  services.pipewire = {
+    enable = true;
+    systemWide = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # jack.enable = true;
+    # wireplumber.enable = true;
+  };
 
   security.rtkit.enable = true;
   security.pam.services.swaylock = { };
@@ -129,7 +125,7 @@
     isNormalUser = true;
     description = "Shivanshu";
     extraGroups = [
-      "audio"
+      "pipewire"
       "vboxusers"
       "input"
       "uinput"
@@ -168,6 +164,7 @@
   environment.systemPackages = with pkgs; [ sddm-chili-theme ];
 
   programs = {
+    virt-manager.enable = true;
     adb.enable = true;
     nix-ld.enable = true;
     waybar.enable = true;
@@ -215,8 +212,8 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 6567 ];
-  networking.firewall.allowedUDPPorts = [ 6567 ];
+  networking.firewall.allowedTCPPorts = [ 6567 8795 ];
+  networking.firewall.allowedUDPPorts = [ 6567 8795 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
@@ -254,6 +251,18 @@
     waydroid.enable = true;
     libvirtd = {
       enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [(pkgs.OVMF.override {
+            secureBoot = true;
+            tpmSupport = true;
+          }).fd];
+        };
+      };
     };
   };
 
