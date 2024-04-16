@@ -195,9 +195,12 @@
       mupdf
 
       # Virtualization
+      devbox
       quickemu
       qemu-utils
       distrobox
+      libvirt-glib
+      virt-viewer
 
       # Terminal commands
       wget
@@ -284,6 +287,9 @@
 
       # Debugger
       linuxKernel.packages.linux_6_1.perf
+      kcachegrind
+      valgrind
+      massif-visualizer
       hotspot
       gdb
       seer
