@@ -49,6 +49,7 @@
       PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
       JUPYTER_CONFIG_DIR = "${config.xdg.configHome}/jupyter";
       IPYTHONDIR = "${config.xdg.configHome}/ipython";
+      FLAKE = "/home/shivanshu/Dev/nixos-config";
     };
 
     shellAliases = {
@@ -296,15 +297,17 @@
       gf
 
       # Nix
+      nh
       nvd
       nil
+      nixfmt
       cachix
       statix
       deadnix
-      nixfmt
+      patchelf
       nixpkgs-fmt
       nix-search-cli
-      patchelf
+      nix-output-monitor
       update-nix-fetchgit
 
       #raku
