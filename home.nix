@@ -32,6 +32,7 @@
       W3M_DIR = "${config.xdg.stateHome}/w3m";
       TERMINAL = "kitty";
       ANDROID_HOME = "${config.xdg.dataHome}/android";
+      ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
       HISTFILE = "${config.xdg.stateHome}/bash/history";
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
@@ -41,6 +42,7 @@
       RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
       WINEPREFIX = "${config.xdg.dataHome}/wine";
       ERRFILE = "${config.xdg.cacheHome}/X11/xsession-errors";
+      USERXSESSION = "${config.xdg.cacheHome}/X11/xsession";
       _Z_DATA = "${config.xdg.dataHome}/z";
       NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
       NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
@@ -50,9 +52,11 @@
       JUPYTER_CONFIG_DIR = "${config.xdg.configHome}/jupyter";
       IPYTHONDIR = "${config.xdg.configHome}/ipython";
       FLAKE = "/home/shivanshu/Dev/nixos-config";
+      MYSQL_HISTFILE = "${config.xdg.dataHome}/mysql_history";
     };
 
     shellAliases = {
+      adb = ''HOME="$XDG_DATA_HOME"/android adb'';
       wget = ''wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'';
       hello = "echo Hello World";
       cat = "bat";
