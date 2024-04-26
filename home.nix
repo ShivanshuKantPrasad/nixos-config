@@ -298,10 +298,14 @@
       kcachegrind
       valgrind
       massif-visualizer
+      hyperfine
       hotspot
+      ghidra
+      lldb
       gdb
       seer
       gf
+      rr
 
       # Nix
       nh
@@ -381,6 +385,7 @@
       man-pages
       zeal
       hors
+      python3Packages.howdoi
 
     ];
 
