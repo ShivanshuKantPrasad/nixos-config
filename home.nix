@@ -75,6 +75,8 @@
       nr = "nix profile remove";
       ns = "nix-search";
       no = ".local/share/cargo/bin/nox";
+      tp = "trash put";
+      rm = ''echo "rm is scary😨. Use trashy (tp)🗑️ instead."; false'';
     };
 
     file = {
@@ -208,6 +210,7 @@
       virt-viewer
 
       # Terminal commands
+      trashy
       wget
       xclip
       meld
