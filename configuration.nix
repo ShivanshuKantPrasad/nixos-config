@@ -58,7 +58,7 @@
   services.gvfs.enable = true;
 
   services.flatpak.enable = true;
-  services.teamviewer.enable = true;
+  # services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
   
   services.mysql = {

@@ -266,7 +266,6 @@
       nethogs
       neofetch
       glxinfo
-      teamviewer
 
       # Language
       mitscheme
