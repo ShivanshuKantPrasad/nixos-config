@@ -161,7 +161,7 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ sddm-chili-theme ];
+  environment.systemPackages = with pkgs; [ config.boot.kernelPackages.perf sddm-chili-theme ];
 
   programs = {
     virt-manager.enable = true;

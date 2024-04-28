@@ -293,7 +293,8 @@
       clang-tools
 
       # Debugger
-      linuxKernel.packages.linux_6_1.perf
+      # linuxKernel.packages.linux_6_1.perf
+      #linuxPackages_latest.perf
       kcachegrind
       valgrind
       massif-visualizer
