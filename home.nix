@@ -25,6 +25,13 @@
 
   home = {
 
+    pointerCursor = {
+      name = "phinger-cursors-light";
+      package = pkgs.phinger-cursors;
+      size = 36;
+      gtk.enable = true;
+    };
+
     sessionVariables = rec {
       NIXOS_OZONE_WL = "1";
       MANPAGER = "vim +Man!";
@@ -145,6 +152,7 @@
       wlr-randr
       pyprland
       grimblast
+      hyprcursor
 
       ydotool
       keepmenu
@@ -266,6 +274,8 @@
       nethogs
       neofetch
       glxinfo
+      hwinfo
+      procs
 
       # Language
       mitscheme
@@ -276,6 +286,7 @@
       mold
       gnumake
       openjdk
+      go
 
       # LaTeX
       pandoc
@@ -295,6 +306,7 @@
       # Debugger
       # linuxKernel.packages.linux_6_1.perf
       #linuxPackages_latest.perf
+      samply
       kcachegrind
       valgrind
       massif-visualizer
@@ -355,6 +367,7 @@
       gwenview
       feh
       nomacs
+      blender
       gimp
       vlc
       mpv
