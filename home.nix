@@ -272,7 +272,7 @@
       # lshw
       (lshw.override { withGUI = true; })
       nethogs
-      neofetch
+      fastfetch
       glxinfo
       hwinfo
       procs
