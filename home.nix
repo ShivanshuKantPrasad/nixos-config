@@ -81,7 +81,7 @@
       na = "nix profile install";
       nr = "nix profile remove";
       ns = "nix-search";
-      no = ".local/share/cargo/bin/nox";
+      no = "~/.local/share/cargo/bin/nox";
       tp = "trash put";
       rm = ''echo "rm is scary😨. Use trashy (tp)🗑️ instead."; false'';
     };
