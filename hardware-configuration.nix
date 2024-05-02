@@ -7,49 +7,44 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules =
-    [ "xhci_pci" "ahci" "nvme" "sd_mod" "rtsx_usb_sdmmc" ];
+    [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" "rtsx_usb_sdmmc" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    # device = "/dev/disk/by-uuid/f5187846-1a81-4f53-8940-de1b7a4a40d1";
-    device = "/dev/disk/by-label/root";
+    device = "/dev/disk/by-uuid/cbe80b9d-6d6e-4548-ab91-37b3c35b9a70";
     fsType = "ext4";
   };
 
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/4EA7-F5AF";
+    device = "/dev/disk/by-uuid/A10A-51FF";
     fsType = "vfat";
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-label/Dev";
-    fsType = "auto";
+    device = "/dev/disk/by-uuid/26847591-c545-4203-bdeb-9900095a2266";
+    fsType = "ext4";
   };
 
-  fileSystems."/run/media/shivanshu/DATA" = {
-    device = "/dev/disk/by-label/DATA";
-    options = [ "rw" "uid=1000" "gid=100" ];
-    fsType = "ntfs3";
-  };
+  #fileSystems."/run/media/shivanshu/DATA" = {
+  #  device = "/dev/disk/by-label/DATA";
+  #  options = [ "rw" "uid=1000" "gid=100" ];
+  #  fsType = "ntfs3";
+  #};
 
-  # swapDevices =
-  #  [{ device = "/dev/disk/by-uuid/0e6fb472-f314-45bd-8a82-f2c29edcb6d0"; }];
+  swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.enp0s20f0u1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  # powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
-  services.power-profiles-daemon.enable = false;
-  services.tlp.enable = true;
-  # services.auto-cpufreq.enable = true;
-  # services.thermald.enable = true;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
