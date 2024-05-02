@@ -152,7 +152,7 @@
       wlr-randr
       pyprland
       grimblast
-      hyprcursor
+      # hyprcursor
 
       ydotool
       keepmenu
@@ -270,7 +270,7 @@
       usbutils
       pciutils
       # lshw
-      (lshw.override { withGUI = true; })
+      # (lshw.override { withGUI = true; })
       nethogs
       fastfetch
       glxinfo
@@ -320,7 +320,7 @@
       rr
 
       # Nix
-      nh
+      # nh
       nvd
       nil
       nixfmt
@@ -360,7 +360,7 @@
         (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
 
       # Media
-      revanced-cli
+      # revanced-cli
       yt-dlp
       spotify
       qbittorrent
@@ -480,7 +480,7 @@
       enable = true;
       package = pkgs.rofi-wayland;
       plugins = [ 
-        (pkgs.rofi-file-browser.override{ rofi = pkgs.rofi-wayland; })
+        # (pkgs.rofi-file-browser.override{ rofi = pkgs.rofi-wayland; })
         (pkgs.rofi-calc.override{ rofi-unwrapped = pkgs.rofi-wayland; })
       ];
     };
