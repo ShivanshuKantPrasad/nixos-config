@@ -223,11 +223,13 @@
     # nix options for derivations to persist garbage collection
     settings = {
       substituters = [
+        "https://hyprland.cachix.org"
         "https://static-haskell-nix.cachix.org"
         "https://nix-community.cachix.org"
         "https://cache.nixos.org/"
       ];
       trusted-public-keys = [
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
         "static-haskell-nix.cachix.org-1:Q17HawmAwaM1/BfIxaEDKAxwTOyRVhPG5Ji9K3+FvUU="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
