@@ -27,11 +27,11 @@
     fsType = "ext4";
   };
 
-  #fileSystems."/run/media/shivanshu/DATA" = {
-  #  device = "/dev/disk/by-label/DATA";
-  #  options = [ "rw" "uid=1000" "gid=100" ];
-  #  fsType = "ntfs3";
-  #};
+  fileSystems."/run/media/shivanshu/DATA" = {
+    device = "/dev/disk/by-label/DATA";
+    options = [ "rw" "uid=1000" "gid=100" ];
+    fsType = "ntfs-3g";
+  };
 
   swapDevices = [ ];
 
