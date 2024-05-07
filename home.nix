@@ -63,7 +63,7 @@
     };
 
     shellAliases = {
-      adb = ''HOME="$XDG_DATA_HOME"/android adb'';
+      # adb = ''HOME="$XDG_DATA_HOME"/android adb'';
       wget = ''wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'';
       hello = "echo Hello World";
       cat = "bat";

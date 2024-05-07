@@ -173,3 +173,9 @@
 (use-package! ivy-rich
   :ensure t
   :init (ivy-rich-mode 1))
+
+(use-package rustic
+  :custom
+  (rustic-lsp-client 'eglot)
+  (rustic-analyzer-command '("/etc/profiles/per-user/shivanshu/bin/rust-analyzer"))
+  (rustic-enable-detached-file-support t)) ;; enable this until we figure out how to get rust-analyzer to autodetect the workspace

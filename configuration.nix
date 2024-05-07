@@ -134,7 +134,7 @@
       "wheel"
       "libvirtd"
     ];
-    shell = pkgs.fish;
+    shell = pkgs.bash;
   };
 
   environment.shells = with pkgs; [ fish ];
