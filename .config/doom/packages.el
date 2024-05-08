@@ -15,6 +15,7 @@
 ; (package! org-pdftools)
 ; (package! org-noter)
 ; (package! org-noter-pdftools)
+(package! nushell-mode :recipe (:host github :repo "mrkkrp/nushell-mode"))
 (package! org-recur)
 (package! org-super-agenda)
 (package! org-web-tools)

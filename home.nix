@@ -97,15 +97,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/doom";
+          "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pythonrc".text = ''
         import os
@@ -479,9 +479,9 @@
     rofi = {
       enable = true;
       package = pkgs.rofi-wayland;
-      plugins = [ 
-        (pkgs.rofi-file-browser.override{ rofi = pkgs.rofi-wayland; })
-        (pkgs.rofi-calc.override{ rofi-unwrapped = pkgs.rofi-wayland; })
+      plugins = [
+        (pkgs.rofi-file-browser.override { rofi = pkgs.rofi-wayland; })
+        (pkgs.rofi-calc.override { rofi-unwrapped = pkgs.rofi-wayland; })
       ];
     };
 
