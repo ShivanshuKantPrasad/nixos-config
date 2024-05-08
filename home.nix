@@ -286,6 +286,7 @@
       mold
       gnumake
       openjdk
+      zig
       go
 
       # LaTeX
