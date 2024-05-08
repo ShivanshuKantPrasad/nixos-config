@@ -38,6 +38,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "backup";
               home-manager.users.shivanshu = {
                 imports =
                   [ inputs.nix-index-database.hmModules.nix-index ./home.nix ];

@@ -70,9 +70,9 @@
   services.tomcat.package = pkgs.tomcat10;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.sddm.theme = "chili";
-  services.xserver.displayManager.sddm.autoNumlock = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.theme = "chili";
+  services.displayManager.sddm.autoNumlock = true;
   # services.xserver.windowManager.qtile.enable = true;
   # services.xserver.windowManager.qtile.backend = "wayland";
   # services.xserver.windowManager.qtile.extraPackages = python3Packages:
@@ -118,7 +118,7 @@
   services.blueman.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shivanshu = {

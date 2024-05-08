@@ -20,7 +20,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "kde";
+    platformTheme.name = "kde";
   };
 
   home = {
@@ -324,7 +324,7 @@
       nh
       nvd
       nil
-      nixfmt
+      nixfmt-classic
       cachix
       statix
       deadnix
