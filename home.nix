@@ -350,6 +350,8 @@
       shfmt
       shellcheck
       nushell
+      vivid
+      carapace
       # blesh
       jc
 
