@@ -353,7 +353,7 @@
       nushell
       vivid
       carapace
-      # blesh
+      blesh
       jc
 
       #Python
@@ -377,7 +377,14 @@
 
       # Browsers
       vieb
-      vivaldi
+      (vivaldi.override {
+          enableWidevine = true;
+          proprietaryCodecs = true;
+          commandLineArgs = ["--enable-features=UseOzonePlatform" "--ozone-platform=wayland"];
+      })
+      (microsoft-edge.override {
+          commandLineArgs = ["--enable-features=UseOzonePlatform" "--ozone-platform=wayland"];
+      })
       floorp
       qutebrowser
 
@@ -438,11 +445,11 @@
     swaylock.package = pkgs.swaylock-effects;
     bat.enable = true;
     eza.enable = true;
-    # bash.enable = true;
-    # bash.initExtra = ''
-    #   source "$(blesh-share)"/ble.sh --attach=none # does not work currently
-    #   [[ $\{BLE_VERSION-} ]] && ble-attach
-    # '';
+    bash.enable = true;
+    bash.initExtra = ''
+      source "$(blesh-share)"/ble.sh --attach=none # does not work currently
+      [[ $\{BLE_VERSION-} ]] && ble-attach
+    '';
     fish = {
       enable = true;
       shellAbbrs = { ni = "nix profile install nixpkgs#"; };
