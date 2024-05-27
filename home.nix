@@ -387,14 +387,16 @@
       })
       floorp
       qutebrowser
+      thunderbird
 
       # IDEs
       jetbrains.clion
       jetbrains.idea-community
       jetbrains.pycharm-community
       jetbrains.datagrip
+      jetbrains.rust-rover
       eclipses.eclipse-sdk
-      # jetbrains.android-studio
+      android-studio
 
       # Editors
       helix
