@@ -284,6 +284,7 @@
       evcxr # rust repl
       lld
       mold
+      just
       gnumake
       openjdk
       zig
@@ -303,6 +304,7 @@
       glslang
       pkg-config
       clang-tools
+      cmake-language-server
 
       # Debugger
       # linuxKernel.packages.linux_6_1.perf
