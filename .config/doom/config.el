@@ -47,33 +47,6 @@
 (setq org-roam-directory "~/Notes/")
 (setq org-roam-dailies-directory "~/Notes/journal/")
 
-(use-package org-recur
-  :hook ((org-mode . org-recur-mode)
-         (org-agenda-mode . org-recur-agenda-mode))
-  :demand t
-  :config
-  (define-key org-recur-mode-map (kbd "C-c d") 'org-recur-finish)
-
-  ;; Rebind the 'd' key in org-agenda (default: `org-agenda-day-view').
-  (define-key org-recur-agenda-mode-map (kbd "d") 'org-recur-finish)
-  (define-key org-recur-agenda-mode-map (kbd "C-c d") 'org-recur-finish)
-
-  (setq org-recur-finish-done t
-        org-recur-finish-archive t))
-
-                                        ; (use-package! org-pdftools
-                                        ;   :hook (org-load . org-pdftools-setup-link))
-                                        ;
-                                        ; (use-package! org-noter
-                                        ;   :after (:any org pdf-view)
-                                        ;   :custom (org-noter-always-create-frame nil))
-                                        ;
-                                        ; (use-package! org-noter-pdftools
-                                        ;   :after org-noter
-                                        ;   :config
-                                        ;   (with-eval-after-load 'pdf-annot
-                                        ;      (add-hook 'pdf-annot-activate-handler-functions #'org-noter-pdftools-jump-to-note)))
-
 ;; (use-package! org-super-agenda
 ;;   :after org-agenda
 ;;   :init
@@ -174,8 +147,10 @@
   :ensure t
   :init (ivy-rich-mode 1))
 
-(use-package rustic
+(use-package! rustic
   :custom
   (rustic-lsp-client 'eglot)
   (rustic-analyzer-command '("/etc/profiles/per-user/shivanshu/bin/rust-analyzer"))
   (rustic-enable-detached-file-support t)) ;; enable this until we figure out how to get rust-analyzer to autodetect the workspace
+
+(cmake-ide-setup)

@@ -13,9 +13,6 @@
 (package! sublimity)
 (package! selectric-mode)
 (package! org-modern)
-;;(package! org-pdftools)
-;;(package! org-noter)
-;;(package! org-noter-pdftools)
 (package! nushell-mode :recipe (:host github :repo "mrkkrp/nushell-mode"))
 (package! org-recur)
 (package! org-super-agenda)
@@ -35,19 +32,6 @@
            ("terminfo/65" "terminfo/65/*")
            ("integration" "integration/*")
            (:exclude ".dir-locals.el" "*-tests.el"))))
-;; (package! pdf-tools :recipe
-;;           (:host github
-;;                  :repo "dalanicolai/pdf-tools"
-;;                  :branch "pdf-roll"
-;;                  :files ("lisp/*.el"
-;;                          "README"
-;;                          ("build" "Makefile")
-;;                          ("build" "server")
-;;                          (:exclude "lisp/tablist.el" "lisp/tablist-filter.el"))))
-
-;; (package! image-roll :recipe
-;;           (:host github
-;;                  :repo "dalanicolai/image-roll.el"))
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
