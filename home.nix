@@ -225,9 +225,13 @@
       steam-run
       appimage-run
       tealdeer
+      pueue
+      lazygit
       scrcpy
       tmux
+      dust
       grc
+      duf
       android-tools
 
       # System
@@ -280,6 +284,7 @@
       # Language
       mitscheme
       luarocks
+      racket
       rustup
       evcxr # rust repl
       lld
@@ -287,6 +292,7 @@
       just
       gnumake
       openjdk
+      ghc
       zig
       go
 
