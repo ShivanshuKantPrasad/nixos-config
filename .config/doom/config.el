@@ -154,3 +154,7 @@
   (rustic-enable-detached-file-support t)) ;; enable this until we figure out how to get rust-analyzer to autodetect the workspace
 
 (cmake-ide-setup)
+
+(load! "dired+.el")
+(use-package! dired+)
+(diredp-toggle-find-file-reuse-dir)

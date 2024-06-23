@@ -97,15 +97,15 @@
 
       "${config.xdg.configHome}/ideavim/ideavimrc".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.ideavimrc";
+        "/home/shivanshu/Dev/nixos-config/.ideavimrc";
 
       "${config.xdg.configHome}/doom".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/doom";
+        "/home/shivanshu/Dev/nixos-config/.config/doom";
 
       "${config.xdg.configHome}/keyboard.kbd".source =
         config.lib.file.mkOutOfStoreSymlink
-          "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
+        "/home/shivanshu/Dev/nixos-config/.config/keyboard.kbd";
 
       "${config.xdg.configHome}/python/pythonrc".text = ''
         import os
@@ -369,7 +369,9 @@
       yt-dlp
       spotify
       qbittorrent
+      obs-studio
       gwenview
+      ffmpeg
       feh
       nomacs
       blender
@@ -379,14 +381,11 @@
 
       # Browsers
       vieb
-      (vivaldi.override {
-          enableWidevine = true;
-          proprietaryCodecs = true;
-          commandLineArgs = ["--enable-features=UseOzonePlatform" "--ozone-platform=wayland"];
-      })
       (microsoft-edge.override {
-          commandLineArgs = ["--enable-features=UseOzonePlatform" "--ozone-platform=wayland"];
+        commandLineArgs =
+          [ "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" ];
       })
+      firefox
       floorp
       qutebrowser
       thunderbird
@@ -405,6 +404,7 @@
       vscode
       neovide
       my-emacs
+      zed-editor
 
       #Man packages
       #linux-manual
