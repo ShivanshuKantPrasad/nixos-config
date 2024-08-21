@@ -60,7 +60,7 @@
   services.flatpak.enable = true;
   # services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
-  
+
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
@@ -161,7 +161,10 @@
     ];
   };
 
-  environment.systemPackages = with pkgs; [ config.boot.kernelPackages.perf sddm-chili-theme ];
+  environment.systemPackages = with pkgs; [
+    config.boot.kernelPackages.perf
+    sddm-chili-theme
+  ];
 
   programs = {
     virt-manager.enable = true;
@@ -170,7 +173,7 @@
     waybar.enable = true;
     hyprland.enable = true;
     fish.enable = true;
-    # partition-manager.enable = true;
+    partition-manager.enable = true;
     gamemode.enable = true;
     dconf.enable = true;
     # kdeconnect.enable = true;
@@ -203,7 +206,7 @@
   # services.openssh.enable = true;
 
   hardware = {
-    opengl.driSupport32Bit = true;
+    graphics.enable32Bit = true;
 
     bluetooth = {
       enable = true;
@@ -259,10 +262,12 @@
         swtpm.enable = true;
         ovmf = {
           enable = true;
-          packages = [(pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd];
+          packages = [
+            (pkgs.OVMF.override {
+              secureBoot = true;
+              tpmSupport = true;
+            }).fd
+          ];
         };
       };
     };
