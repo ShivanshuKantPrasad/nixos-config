@@ -61,13 +61,13 @@
   # services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
 
-  services.mysql = {
-    enable = true;
-    package = pkgs.mariadb;
-  };
+  # services.mysql = {
+  #   enable = true;
+  #   package = pkgs.mariadb;
+  # };
 
-  services.tomcat.enable = true;
-  services.tomcat.package = pkgs.tomcat10;
+  # services.tomcat.enable = true;
+  # services.tomcat.package = pkgs.tomcat10;
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
@@ -250,8 +250,8 @@
   };
 
   virtualisation = {
-    # virtualbox.host.enable = true;
-    # virtualbox.host.enableExtensionPack = true;
+    virtualbox.host.enable = true;
+    virtualbox.host.enableExtensionPack = true;
     docker.enable = true;
     waydroid.enable = true;
     libvirtd = {
