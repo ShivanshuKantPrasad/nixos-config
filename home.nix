@@ -446,6 +446,7 @@
     startWithUserSession = "graphical";
   };
   services.syncthing.enable = true;
+  services.mpris-proxy.enable = true;
 
   programs = {
     nix-index-database.comma.enable = true;

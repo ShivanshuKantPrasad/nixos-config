@@ -157,4 +157,4 @@
 
 (load! "dired+.el")
 (use-package! dired+)
-(diredp-toggle-find-file-reuse-dir)
+;(diredp-toggle-find-file-reuse-dir)
