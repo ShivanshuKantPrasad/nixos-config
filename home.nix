@@ -383,7 +383,7 @@
       blender
       gimp
       vlc
-      mpv
+      (mpv.override { scripts = [ mpvScripts.mpris mpvScripts.uosc ]; })
 
       # Browsers
       vieb
