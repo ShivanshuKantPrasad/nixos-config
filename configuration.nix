@@ -61,10 +61,12 @@
   # services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
 
-  # services.mysql = {
-  #   enable = true;
-  #   package = pkgs.mariadb;
-  # };
+  services.postgresql.enable = true;
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+  };
 
   # services.tomcat.enable = true;
   # services.tomcat.package = pkgs.tomcat10;
