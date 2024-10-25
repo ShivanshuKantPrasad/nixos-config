@@ -226,6 +226,7 @@
 
   nix = {
     # nix options for derivations to persist garbage collection
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
       substituters = [
         "https://hyprland.cachix.org"
