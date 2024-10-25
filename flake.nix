@@ -33,10 +33,10 @@
           specialArgs = { inherit inputs pkgs; };
           modules = [
             # stylix.nixosModules.stylix
-            kmonad.nixosModules.default
+            # kmonad.nixosModules.default
             ./configuration.nix
             # ./stylix.nix
-	
+
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

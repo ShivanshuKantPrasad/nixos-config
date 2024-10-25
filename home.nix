@@ -135,7 +135,7 @@
 
       # Hyprland
       kanata-with-cmd
-      kmonad
+      # kmonad
       networkmanagerapplet
       wlogout
       mpd
@@ -368,7 +368,7 @@
       pipx
       pipenv
       (python3.withPackages
-        (ps: with ps; [ jupyter isort black nose pytest pyflakes setuptools ]))
+        (ps: with ps; [ jupyter isort black pytest pyflakes setuptools ]))
 
       # Media
       revanced-cli
