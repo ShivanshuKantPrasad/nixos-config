@@ -331,7 +331,6 @@
       # Nix
       nh
       nvd
-      nil
       nixd
       nixfmt-classic
       cachix
