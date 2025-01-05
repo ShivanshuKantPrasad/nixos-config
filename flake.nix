@@ -5,8 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     master.url = "github:nixos/nixpkgs/master";
     stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    kmonad.url = "github:kmonad/kmonad?dir=nix";
-    stylix.url = "github:danth/stylix";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,8 +13,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{ self, stylix, kmonad, master, stable, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, master, stable, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       commonConfig = {
@@ -27,7 +24,6 @@
       pkgs-stable = import stable commonConfig;
       pkgs = import nixpkgs (commonConfig // {
         overlays = [
-          inputs.kmonad.overlays.default
           (self: super: {
             my-emacs = super.emacs29-pgtk;
             quickemu = pkgs-stable.quickemu;
@@ -44,10 +40,7 @@
           inherit system;
           specialArgs = { inherit inputs pkgs; };
           modules = [
-            # stylix.nixosModules.stylix
-            # kmonad.nixosModules.default
             ./configuration.nix
-            # ./stylix.nix
 
             home-manager.nixosModules.home-manager
             {
