@@ -276,6 +276,7 @@
       # lshw
       (lshw.override { withGUI = true; })
       nethogs
+      bandwhich
       fastfetch
       glxinfo
       hwinfo
@@ -336,6 +337,7 @@
       cachix
       statix
       deadnix
+      nix-tree
       patchelf
       nixpkgs-fmt
       nix-search-cli
