@@ -61,7 +61,7 @@
   # services.teamviewer.enable = true;
   # services.accounts-daemon.enable = true;
 
-  services.postgresql.enable = true;
+  # services.postgresql.enable = true;
 
   services.mysql = {
     enable = true;
@@ -158,7 +158,9 @@
       jetbrains-mono
       emacs-all-the-icons-fonts
       font-awesome
-      nerdfonts
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.comic-shanns-mono
       noto-fonts
     ];
   };

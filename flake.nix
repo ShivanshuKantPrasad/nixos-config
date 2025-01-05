@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    master.url = "github:nixos/nixpkgs/master";
+    stable.url = "github:nixos/nixpkgs/nixos-24.11";
     kmonad.url = "github:kmonad/kmonad?dir=nix";
     stylix.url = "github:danth/stylix";
     home-manager = {
@@ -13,17 +15,27 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, stylix, kmonad, nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{ self, stylix, kmonad, master, stable, nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = import nixpkgs {
+      commonConfig = {
         inherit system;
-        overlays = [
-          inputs.kmonad.overlays.default
-          (self: super: { my-emacs = super.emacs29-pgtk; })
-        ];
         config.allowUnfree = true;
       };
+      # pkgs-master = import master commonConfig;
+      pkgs-stable = import stable commonConfig;
+      pkgs = import nixpkgs (commonConfig // {
+        overlays = [
+          inputs.kmonad.overlays.default
+          (self: super: {
+            my-emacs = super.emacs29-pgtk;
+            quickemu = pkgs-stable.quickemu;
+            rofi-file-browser = pkgs-stable.rofi-file-browser;
+            jetbrains = pkgs-stable.jetbrains;
+          })
+        ];
+      });
 
       lib = nixpkgs.lib;
     in {
