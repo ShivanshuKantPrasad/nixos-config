@@ -373,7 +373,6 @@
         (ps: with ps; [ jupyter isort black pytest pyflakes setuptools ]))
 
       # Media
-      revanced-cli
       yt-dlp
       spotify
       qbittorrent
@@ -404,15 +403,12 @@
       jetbrains.pycharm-community
       jetbrains.datagrip
       jetbrains.rust-rover
-      eclipses.eclipse-sdk
       android-studio
 
       # Editors
-      helix
       vscode
       neovide
       my-emacs
-      zed-editor
 
       #Man packages
       #linux-manual
