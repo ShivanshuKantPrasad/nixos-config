@@ -94,9 +94,19 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-  services.avahi.enable = true;
-  services.avahi.openFirewall = true;
-  services.avahi.nssmdns4 = true;
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
 
   # Enable sound with pipewire.
@@ -172,7 +182,6 @@
 
   programs = {
     virt-manager.enable = true;
-    adb.enable = true;
     nix-ld.enable = true;
     waybar.enable = true;
     hyprland.enable = true;
@@ -219,10 +228,10 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 6567 8795 ];
-  networking.firewall.allowedUDPPorts = [ 6567 8795 ];
+  networking.firewall.allowedTCPPorts = [ 5173 6567 8795 ];
+  networking.firewall.allowedUDPPorts = [ 5173 6567 8795 ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   environment.pathsToLink = [ "/share/nix-direnv" ];
 

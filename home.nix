@@ -232,7 +232,6 @@
       dust
       grc
       duf
-      android-tools
 
       # System
       acpi
