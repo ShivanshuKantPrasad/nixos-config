@@ -53,6 +53,15 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enable = true;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = [ pkgs.fcitx5-configtool pkgs.fcitx5-mozc ];
+    };
+  };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.gvfs.enable = true;
@@ -172,6 +181,8 @@
       nerd-fonts.caskaydia-mono
       nerd-fonts.comic-shanns-mono
       noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
     ];
   };
 
