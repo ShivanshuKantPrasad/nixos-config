@@ -142,7 +142,7 @@
       jq
       mako
       brightnessctl
-      pamixer
+      # pamixer
       pavucontrol
       libnotify
       wl-clipboard

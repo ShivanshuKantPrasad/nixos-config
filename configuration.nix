@@ -105,7 +105,8 @@
   services.printing.enable = true;
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
+    nssmdns6 = true;
     openFirewall = true;
     publish = {
       enable = true;
@@ -220,7 +221,6 @@
     enable = true;
     package = pkgs.plocate;
     interval = "hourly";
-    localuser = null;
   };
 
   # Enable ipfs service
