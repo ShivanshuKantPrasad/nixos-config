@@ -20,11 +20,12 @@
         inherit system;
         config.allowUnfree = true;
       };
-      # pkgs-master = import master commonConfig;
+      pkgs-master = import master commonConfig;
       pkgs-stable = import stable commonConfig;
       pkgs = import nixpkgs (commonConfig // {
         overlays = [
           (self: super: {
+            pamixer = pkgs-master.pamixer;
             my-emacs = super.emacs29-pgtk;
             quickemu = pkgs-stable.quickemu;
             rofi-file-browser = pkgs-stable.rofi-file-browser;
