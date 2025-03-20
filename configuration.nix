@@ -211,6 +211,12 @@
         init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
       '';
     };
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
   };
 
   # List services that you want to enable:
