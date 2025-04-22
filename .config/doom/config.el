@@ -137,7 +137,6 @@
 (use-package! kbd-mode)
 
 (setq org-element-use-cache nil)
-(setq select-enable-clipboard nil)
 
 (use-package! all-the-icons-ivy-rich
   :ensure t

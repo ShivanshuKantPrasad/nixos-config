@@ -220,7 +220,6 @@
       # Terminal commands
       trashy
       wget
-      xclip
       meld
       steam-run
       appimage-run
