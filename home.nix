@@ -160,7 +160,7 @@
       rofi-bluetooth
       rofi-power-menu
 
-      breeze-icons
+      kdePackages.breeze-icons
       orchis-theme
       themechanger
 
@@ -181,7 +181,7 @@
       keepassxc
       # obsidian
       protonvpn-cli_2
-      kget
+      kdePackages.kget
 
       #File Manager
       ranger
@@ -204,7 +204,7 @@
       alacritty
 
       #pdf
-      okular
+      kdePackages.okular
       masterpdfeditor
       zathura
       mupdf
@@ -315,7 +315,7 @@
       # linuxKernel.packages.linux_6_1.perf
       #linuxPackages_latest.perf
       samply
-      kcachegrind
+      kdePackages.kcachegrind
       valgrind
       massif-visualizer
       hyperfine
@@ -375,7 +375,7 @@
       spotify
       qbittorrent
       obs-studio
-      gwenview
+      kdePackages.gwenview
       ffmpeg
       feh
       nomacs

@@ -26,7 +26,7 @@
         overlays = [
           (self: super: {
             pamixer = pkgs-master.pamixer;
-            my-emacs = super.emacs29-pgtk;
+            my-emacs = super.emacs30-pgtk;
             quickemu = pkgs-stable.quickemu;
             rofi-file-browser = pkgs-stable.rofi-file-browser;
             jetbrains = pkgs-stable.jetbrains;

@@ -88,7 +88,7 @@
   # services.xserver.windowManager.qtile.backend = "wayland";
   # services.xserver.windowManager.qtile.extraPackages = python3Packages:
   # [ python3Packages.qtile-extras ];
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
