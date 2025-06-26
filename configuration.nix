@@ -81,14 +81,18 @@
   # services.tomcat.package = pkgs.tomcat10;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.theme = "chili";
-  services.displayManager.sddm.autoNumlock = true;
+  services.displayManager.sddm = {
+    enable = true;
+    extraPackages = [ pkgs.sddm-astronaut ];
+    theme = "sddm-astronaut-theme";
+    autoNumlock = true;
+    settings = { Theme = { Current = "sddm-astronaut-theme"; }; };
+  };
   # services.xserver.windowManager.qtile.enable = true;
   # services.xserver.windowManager.qtile.backend = "wayland";
   # services.xserver.windowManager.qtile.extraPackages = python3Packages:
   # [ python3Packages.qtile-extras ];
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -189,7 +193,8 @@
 
   environment.systemPackages = with pkgs; [
     config.boot.kernelPackages.perf
-    sddm-chili-theme
+    kdePackages.qtmultimedia
+    sddm-astronaut
   ];
 
   programs = {
