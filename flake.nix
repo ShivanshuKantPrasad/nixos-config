@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     master.url = "github:nixos/nixpkgs/master";
-    stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    stable.url = "github:nixos/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +25,7 @@
       pkgs = import nixpkgs (commonConfig // {
         overlays = [
           (self: super: {
-            pamixer = pkgs-master.pamixer;
             my-emacs = super.emacs30-pgtk;
-            quickemu = pkgs-stable.quickemu;
-            rofi-file-browser = pkgs-stable.rofi-file-browser;
             jetbrains = pkgs-stable.jetbrains;
             neovim = pkgs-stable.neovim;
             qutebrowser = pkgs-stable.qutebrowser;
