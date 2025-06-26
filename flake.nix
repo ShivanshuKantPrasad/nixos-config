@@ -30,6 +30,8 @@
             quickemu = pkgs-stable.quickemu;
             rofi-file-browser = pkgs-stable.rofi-file-browser;
             jetbrains = pkgs-stable.jetbrains;
+            neovim = pkgs-stable.neovim;
+            qutebrowser = pkgs-stable.qutebrowser;
           })
         ];
       });
