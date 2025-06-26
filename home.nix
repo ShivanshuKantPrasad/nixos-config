@@ -58,7 +58,7 @@
       PYTHONSTARTUP = "${config.xdg.configHome}/python/pythonrc";
       JUPYTER_CONFIG_DIR = "${config.xdg.configHome}/jupyter";
       IPYTHONDIR = "${config.xdg.configHome}/ipython";
-      FLAKE = "/home/shivanshu/Dev/nixos-config";
+      NH_FLAKE = "/home/shivanshu/Dev/nixos-config";
       MYSQL_HISTFILE = "${config.xdg.dataHome}/mysql_history";
     };
 
