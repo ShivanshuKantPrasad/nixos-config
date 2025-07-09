@@ -385,13 +385,7 @@
       (mpv.override { scripts = [ mpvScripts.mpris mpvScripts.uosc ]; })
 
       # Browsers
-      vieb
-      (microsoft-edge.override {
-        commandLineArgs =
-          [ "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" ];
-      })
       firefox
-      floorp
       qutebrowser
       thunderbird
 
@@ -401,7 +395,6 @@
       jetbrains.pycharm-community
       jetbrains.datagrip
       jetbrains.rust-rover
-      android-studio
 
       # Editors
       vscode
