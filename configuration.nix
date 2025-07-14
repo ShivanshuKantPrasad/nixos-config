@@ -159,6 +159,8 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "scanner"
+      "lp"
     ];
     shell = pkgs.bash;
   };
@@ -247,6 +249,9 @@
       enable = true;
       settings.General.Experimental = true;
     };
+
+    sane.enable = true;
+    sane.extraBackends = [ pkgs.hplipWithPlugin ];
   };
 
   # Open ports in the firewall.
