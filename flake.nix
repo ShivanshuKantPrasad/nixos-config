@@ -48,8 +48,10 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.shivanshu = {
-                imports =
-                  [ inputs.nix-index-database.hmModules.nix-index ./home.nix ];
+                imports = [
+                  inputs.nix-index-database.homeModules.nix-index
+                  ./home.nix
+                ];
               };
             }
           ];
