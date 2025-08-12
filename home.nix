@@ -372,7 +372,6 @@
 
       # Media
       yt-dlp
-      spotify
       qbittorrent
       obs-studio
       kdePackages.gwenview
