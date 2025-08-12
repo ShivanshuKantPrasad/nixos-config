@@ -62,6 +62,9 @@
     };
   };
 
+  # Snowflake proxy
+  services.snowflake-proxy = { enable = true; };
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.gvfs.enable = true;
