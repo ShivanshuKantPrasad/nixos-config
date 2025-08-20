@@ -211,6 +211,7 @@
     partition-manager.enable = true;
     gamemode.enable = true;
     dconf.enable = true;
+    thunderbird.enable = true;
     # kdeconnect.enable = true;
     npm = {
       enable = true;

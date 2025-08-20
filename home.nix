@@ -507,7 +507,6 @@
       };
     };
 
-    thunderbird.enable = true;
     # doom-emacs = rec {
     #   enable = true;
     #   doomPrivateDir = ./.config/doom;
