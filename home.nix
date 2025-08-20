@@ -284,7 +284,9 @@
       mitscheme
       luarocks
       racket
-      rustup
+      # rustup
+      rustc
+      cargo
       evcxr # rust repl
       lld
       mold
@@ -386,7 +388,6 @@
       # Browsers
       firefox
       qutebrowser
-      thunderbird
 
       # IDEs
       jetbrains.clion
@@ -506,6 +507,7 @@
       };
     };
 
+    thunderbird.enable = true;
     # doom-emacs = rec {
     #   enable = true;
     #   doomPrivateDir = ./.config/doom;

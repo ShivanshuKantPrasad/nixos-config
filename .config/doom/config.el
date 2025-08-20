@@ -157,3 +157,5 @@
 (load! "dired+.el")
 (use-package! dired+)
 ;(diredp-toggle-find-file-reuse-dir)
+;
+(setq +latex-viewers '(pdf-tools))
