@@ -197,6 +197,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    inputs.winapps.packages."${pkgs.system}".winapps
+    inputs.winapps.packages."${pkgs.system}".winapps-launcher # optional
     config.boot.kernelPackages.perf
     kdePackages.qtmultimedia
     sddm-astronaut
