@@ -153,6 +153,7 @@
       pyprland
       grimblast
       hyprcursor
+      hyprlock
 
       ydotool
       keepmenu
@@ -441,8 +442,6 @@
     nix-index-database.comma.enable = true;
     nix-index.enable = true;
     home-manager.enable = true;
-    swaylock.enable = true;
-    swaylock.package = pkgs.swaylock-effects;
     bat.enable = true;
     eza.enable = true;
     bash.enable = true;
