@@ -300,7 +300,8 @@
 
       # LaTeX
       pandoc
-      texlive.combined.scheme-medium
+      # texlive.combined.scheme-medium
+      miktex
       graphviz
       gnuplot
 

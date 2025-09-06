@@ -180,6 +180,7 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      corefonts
       comic-mono
       victor-mono
       fantasque-sans-mono
