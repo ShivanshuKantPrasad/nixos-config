@@ -156,6 +156,13 @@
 
 (load! "dired+.el")
 (use-package! dired+)
-;(diredp-toggle-find-file-reuse-dir)
-;
+                                        ;(diredp-toggle-find-file-reuse-dir)
+                                        ;
 (setq +latex-viewers '(pdf-tools))
+
+(add-hook 'LaTeX-mode-hook
+          (lambda ()
+            (add-hook 'after-save-hook
+                      (lambda ()
+                        (TeX-command-run-all nil)) ; <- call with arg
+                      nil t)))
