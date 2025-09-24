@@ -154,6 +154,9 @@
 
 (cmake-ide-setup)
 
+(load! "org-typst-preview.el")
+(use-package! org-typst-preview)
+
 (load! "dired+.el")
 (use-package! dired+)
                                         ;(diredp-toggle-find-file-reuse-dir)
