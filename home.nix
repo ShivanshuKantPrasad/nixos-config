@@ -181,7 +181,7 @@
       libreoffice
       keepassxc
       # obsidian
-      protonvpn-cli_2
+      protonvpn-gui
       kdePackages.kget
 
       #File Manager
