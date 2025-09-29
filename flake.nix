@@ -26,7 +26,6 @@
         overlays = [
           (self: super: {
             my-emacs = super.emacs30-pgtk;
-            jetbrains = pkgs-stable.jetbrains;
             virtualbox = pkgs-stable.virtualbox;
           })
         ];
