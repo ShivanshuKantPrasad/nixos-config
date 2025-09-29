@@ -177,7 +177,7 @@
       anki
       discord
       teams-for-linux
-      teamviewer
+      # teamviewer
       libreoffice
       keepassxc
       # obsidian
@@ -206,7 +206,6 @@
 
       #pdf
       kdePackages.okular
-      masterpdfeditor
       zathura
       mupdf
 
@@ -488,10 +487,9 @@
 
     rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
       plugins = [
-        (pkgs.rofi-file-browser.override { rofi = pkgs.rofi-wayland; })
-        (pkgs.rofi-calc.override { rofi-unwrapped = pkgs.rofi-wayland; })
+        (pkgs.rofi-file-browser)
+        (pkgs.rofi-calc)
       ];
     };
 

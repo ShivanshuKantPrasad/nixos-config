@@ -232,7 +232,9 @@
 
   # List services that you want to enable:
 
-  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login = {
+    HandleLidSwitchExternalPower = "ignore";
+  };
 
   services.locate = {
     enable = true;
@@ -317,10 +319,6 @@
       };
     };
   };
-
-  systemd.extraConfig = ''
-    DefaultTimeoutStopSec=10s
-  '';
 
   # systemd.services.kmonad = {
   #   enable = true;

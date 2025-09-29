@@ -27,8 +27,7 @@
           (self: super: {
             my-emacs = super.emacs30-pgtk;
             jetbrains = pkgs-stable.jetbrains;
-            neovim = pkgs-stable.neovim;
-            qutebrowser = pkgs-stable.qutebrowser;
+            virtualbox = pkgs-stable.virtualbox;
           })
         ];
       });
