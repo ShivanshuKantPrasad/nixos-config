@@ -9,11 +9,11 @@
     mimeApps.defaultApplications = {
       "application/pdf" = "org.kde.okular.desktop";
       "application/octet-stream" = "emacsclient.desktop";
-      # "text/html" = "org.qutebrowser.qutebrowser.desktop";
-      # "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-      # "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-      # "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-      # "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+      "text/html" = "zen-beta.desktop";
+      "x-scheme-handler/http" = "zen-beta.desktop";
+      "x-scheme-handler/https" = "zen-beta.desktop";
+      "x-scheme-handler/about" = "zen-beta.desktop";
+      "x-scheme-handler/unknown" = "zen-beta.desktop";
       "x-scheme-handler/org-protocol" = "emacsclient.desktop";
     };
   };
@@ -303,6 +303,10 @@
       miktex
       graphviz
       gnuplot
+
+      # Proof Assistants
+      coq
+      lean4
 
       # C
       gcc
