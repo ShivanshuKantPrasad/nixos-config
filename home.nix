@@ -482,6 +482,13 @@
     direnv.enable = true;
     direnv.nix-direnv.enable = true;
 
+    opam = {
+      enable = true;
+      enableBashIntegration = true;
+      enableZshIntegration = true;
+      enableFishIntegration = true;
+    };
+
     neovim = {
       enable = true;
       viAlias = true;

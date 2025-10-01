@@ -169,3 +169,6 @@
                       (lambda ()
                         (TeX-command-run-all nil)) ; <- call with arg
                       nil t)))
+
+(add-to-list 'load-path "/home/shivanshu/.opam/default/share/emacs/site-lisp")
+(require 'ocp-indent)
