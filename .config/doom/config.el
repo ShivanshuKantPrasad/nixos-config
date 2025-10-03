@@ -113,6 +113,11 @@
       sublimity-scroll-drift-length 10
       sublimity-scroll-vertical-frame-delay 0.01)
 
+(after! sublimity
+  (add-hook 'pdf-view-mode-hook
+            (lambda ()
+              (sublimity-mode -1))))
+
 (with-eval-after-load 'doom-themes
   (doom-themes-treemacs-config))
 (setq doom-themes-treemacs-theme "doom-colors")
@@ -172,3 +177,102 @@
 
 (add-to-list 'load-path "/home/shivanshu/.opam/default/share/emacs/site-lisp")
 (require 'ocp-indent)
+
+
+
+
+
+
+
+
+;; Try to change how horizontal rules are rendered in org mode
+ ;;; Org visual horizontal rule - overlays replacing ----- with a thicker colored rule
+;; Usage: evaluate the file or add to your init.el. Works per-org-buffer.
+
+(defface org-horizontal-rule-face
+  '((t :foreground "DodgerBlue" :weight bold))
+  "Face used for the visual horizontal rule overlay."
+  :group 'org-faces)
+
+(defvar-local org--hr-overlays nil
+  "List of overlays used to display visual horizontal rules in this buffer.")
+
+(defun org--hr-make-bar-string (&optional wind)
+  "Return a horizontal-bar STRING sized to WIND's width (or current window).
+Uses a heavy bar character and repeats it to fill the line visually."
+  (let* ((w (or (and wind (window-width wind)) (window-width)))
+         ;; Choose a thicker glyph. You can replace with \"─\" (U+2500), \"━\" (U+2501),
+         ;; or \"―\" (U+2015) depending on font/glyph you prefer.
+         (ch "━") ;; boxed heavy horizontal
+         ;; create string a bit longer so overlay appears to span end-to-end
+         (repeat-count (max 1 (- w 14))))
+    (apply #'string (make-list repeat-count (string-to-char ch)))))
+
+(defun org--hr-clear-overlays ()
+  "Remove all overlays created by org visual hr in current buffer."
+  (when org--hr-overlays
+    (mapc #'delete-overlay org--hr-overlays)
+    (setq org--hr-overlays nil)))
+
+(defun org--hr-scan-and-make-overlays (&optional _beg _end _len)
+  "Scan buffer for lines of 5+ dashes and create overlays that display a thick rule.
+This is buffer-local and idempotent (clears previous overlays first).
+Optional args _BEG _END _LEN are ignored but accepted for `after-change-functions`."
+  (when (derived-mode-p 'org-mode)
+    (save-excursion
+      (let ((inhibit-modification-hooks t)
+            (win (selected-window)))
+        (org--hr-clear-overlays)
+        (goto-char (point-min))
+        (while (re-search-forward "^-\\{5,\\}[ \t]*$" nil t)
+          (let* ((b (match-beginning 0))
+                 (e (match-end 0))
+                 (ov (make-overlay b e (current-buffer) nil t))
+                 (bar (org--hr-make-bar-string win)))
+            ;; overlay display replaces the line visually
+            (overlay-put ov 'display bar)
+            ;; optionally keep the original text accessible to yank/copy by not modifying buffer text
+            (overlay-put ov 'evaporate t)
+            (overlay-put ov 'face 'org-horizontal-rule-face)
+            (overlay-put ov 'category 'org-hr-overlay)
+            ;; record it
+            (push ov org--hr-overlays)))))))
+
+(defun org--hr-refresh-all ()
+  "Refresh overlays in all visible org-mode buffers.
+Useful when window size changes so overlays can resize."
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (derived-mode-p 'org-mode)
+        (org--hr-scan-and-make-overlays)))))
+
+;; Hooks to keep overlays up-to-date
+(defun org--hr-enable ()
+  "Enable visual horizontal rules in this org buffer."
+  (org--hr-scan-and-make-overlays)
+  ;; update when text changes
+  (add-hook 'after-change-functions #'org--hr-scan-and-make-overlays nil t)
+  ;; update when window config/size changes so overlay width matches
+  (add-hook 'window-size-change-functions (lambda (_) (org--hr-refresh-all)) nil t)
+  (add-hook 'window-configuration-change-hook #'org--hr-refresh-all nil t))
+
+(defun org--hr-disable ()
+  "Disable visual horizontal rules in this org buffer."
+  (org--hr-clear-overlays)
+  (remove-hook 'after-change-functions #'org--hr-scan-and-make-overlays t)
+  (remove-hook 'window-size-change-functions (lambda (_) (org--hr-refresh-all)) t)
+  (remove-hook 'window-configuration-change-hook #'org--hr-refresh-all t))
+
+;;;###autoload
+(define-minor-mode org-visual-hr-mode
+  "Minor mode: visually replace org-mode '-----' rules with a thicker colored line."
+  :lighter " oHR"
+  :group 'org
+  (if org-visual-hr-mode
+      (org--hr-enable)
+    (org--hr-disable)))
+
+;; Optional: enable automatically in org-mode buffers
+;; (add-hook 'org-mode-hook #'org-visual-hr-mode)
+
+(provide 'org-visual-hr)
