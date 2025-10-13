@@ -17,7 +17,6 @@
 (package! org-recur)
 (package! org-super-agenda)
 (package! org-web-tools)
-(package! company-quickhelp)
 (package! cmake-ide)
 (package! ivy-rich)
 (package! all-the-icons-ivy-rich)
