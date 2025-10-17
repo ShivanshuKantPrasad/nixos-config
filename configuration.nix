@@ -200,6 +200,7 @@
     config.boot.kernelPackages.perf
     kdePackages.qtmultimedia
     sddm-astronaut
+    matlab
   ];
 
   programs = {

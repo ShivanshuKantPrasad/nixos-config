@@ -9,11 +9,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-matlab = {
+        inputs.nixpkgs.follows = "nixpkgs";
+        url = "gitlab:doronbehar/nix-matlab";
+    };
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, master, stable, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ self, master, stable, nixpkgs, home-manager, nix-matlab, ... }:
     let
       system = "x86_64-linux";
       commonConfig = {
@@ -28,6 +32,7 @@
             my-emacs = super.emacs30-pgtk;
             virtualbox = pkgs-stable.virtualbox;
           })
+          nix-matlab.overlay
         ];
       });
 
