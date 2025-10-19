@@ -136,6 +136,7 @@
 (when (fboundp 'windmove-default-keybindings)
   (windmove-default-keybindings))
 
+(add-hook 'visual-line-mode-hook #'visual-fill-column-for-vline)
 
 (use-package! kbd-mode)
 
