@@ -33,6 +33,7 @@
     };
 
     sessionVariables = rec {
+      ROCQPATH = "/nix/store/ib3rrdilixjsnbimdbj7fzh0rjjy8g04-rocq-core9.0-stdlib-9.0.0/lib/coq/9.0/user-contrib/";
       NIXOS_OZONE_WL = "1";
       MANPAGER = "vim +Man!";
       BAT_PAGER = "less";
@@ -305,7 +306,8 @@
       gnuplot
 
       # Proof Assistants
-      coq
+      rocq-core
+      rocqPackages.stdlib
       lean4
 
       # C

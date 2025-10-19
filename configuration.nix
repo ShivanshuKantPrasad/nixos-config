@@ -197,11 +197,14 @@
   };
 
   environment.systemPackages = with pkgs; [
-    config.boot.kernelPackages.perf
+    # config.boot.kernelPackages.perf
+    perf
     kdePackages.qtmultimedia
     sddm-astronaut
     matlab
   ];
+
+  boot.kernel.sysctl."kernel.kptr_restrict" = 0;
 
   programs = {
     virt-manager.enable = true;
