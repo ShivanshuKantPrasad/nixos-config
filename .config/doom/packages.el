@@ -20,6 +20,7 @@
 (package! cmake-ide)
 (package! ivy-rich)
 (package! all-the-icons-ivy-rich)
+(package! visual-fill-column)
 (package! kbd-mode
   :recipe (:host github
            :repo "kmonad/kbd-mode"))
