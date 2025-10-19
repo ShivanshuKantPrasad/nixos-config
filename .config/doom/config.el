@@ -21,6 +21,7 @@
 ;; accept. For example:
 ;;
 ;; (setq doom-font (font-spec :family "VictorMono Nerd Font Mono" :size 16))
+;; (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 14))
 ;; (setq doom-font (font-spec :family "FantasqueSansM Nerd Font Mono" :size 16))
 (setq doom-font (font-spec :family "Comic Code Ligatures" :size 16))
 ;; (setq doom-font (font-spec :family "Comic Mono" :size 16))
@@ -143,14 +144,6 @@
 
 (setq org-element-use-cache nil)
 
-(use-package! all-the-icons-ivy-rich
-  :ensure t
-  :init (all-the-icons-ivy-rich-mode 1))
-
-(use-package! ivy-rich
-  :ensure t
-  :init (ivy-rich-mode 1))
-
 (use-package! rustic
   :custom
   (rustic-lsp-client 'eglot)
@@ -177,9 +170,6 @@
 
 (add-to-list 'load-path "/home/shivanshu/.opam/default/share/emacs/site-lisp")
 (require 'ocp-indent)
-
-
-
 
 
 
