@@ -171,6 +171,7 @@
 (add-to-list 'load-path "/home/shivanshu/.opam/default/share/emacs/site-lisp")
 (require 'ocp-indent)
 
+(add-hook 'coq-mode-hook #'undo-tree-mode)
 
 
 
