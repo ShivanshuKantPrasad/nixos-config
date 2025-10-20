@@ -10,14 +10,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-matlab = {
-        inputs.nixpkgs.follows = "nixpkgs";
-        url = "gitlab:doronbehar/nix-matlab";
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "gitlab:doronbehar/nix-matlab";
     };
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, master, stable, nixpkgs, home-manager, nix-matlab, ... }:
+  outputs = { master, stable, nixpkgs, home-manager, nix-matlab
+    , nix-index-database, ... }:
     let
       system = "x86_64-linux";
       commonConfig = {
@@ -40,9 +41,9 @@
     in {
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs pkgs; };
           modules = [
+            { nixpkgs.pkgs = pkgs; }
+            nixpkgs.nixosModules.readOnlyPkgs
             ./configuration.nix
 
             home-manager.nixosModules.home-manager
@@ -51,10 +52,8 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
               home-manager.users.shivanshu = {
-                imports = [
-                  inputs.nix-index-database.homeModules.nix-index
-                  ./home.nix
-                ];
+                imports =
+                  [ nix-index-database.homeModules.nix-index ./home.nix ];
               };
             }
           ];

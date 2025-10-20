@@ -1,7 +1,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }: {
-  nix.registry.nixpkgs.flake = inputs.nixpkgs;
+{ pkgs, ... }: {
+  # nix.registry.nixpkgs.flake = pkgs;
 
   imports = [
     # Include the results of the hardware scan.
@@ -175,7 +175,7 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   fonts = {
     enableDefaultPackages = true;
@@ -236,9 +236,7 @@
 
   # List services that you want to enable:
 
-  services.logind.settings.Login = {
-    HandleLidSwitchExternalPower = "ignore";
-  };
+  services.logind.settings.Login = { HandleLidSwitchExternalPower = "ignore"; };
 
   services.locate = {
     enable = true;
@@ -274,7 +272,7 @@
 
   nix = {
     # nix options for derivations to persist garbage collection
-    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    nixPath = [ "nixpkgs=${pkgs.path}" ];
     settings = {
       substituters = [
         "https://hyprland.cachix.org"
