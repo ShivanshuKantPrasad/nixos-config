@@ -326,7 +326,7 @@
       samply
       kdePackages.kcachegrind
       valgrind
-      massif-visualizer
+      # massif-visualizer
       hyperfine
       hotspot
       ghidra
@@ -507,14 +507,19 @@
     };
 
     gh.enable = true;
+    delta.enable = true;
+    delta.enableGitIntegration = true;
     git = {
       enable = true;
-      delta.enable = true;
-      userName = "Shivanshu Kant Prasad";
-      userEmail = "shivanshukantprasad@gmail.com";
-      aliases = {
-        lg =
-          "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      settings = {
+        user = { 
+          name = "Shivanshu Kant Prasad";
+          email = "shivanshukantprasad@gmail.com"; 
+        };
+        aliases = {
+          lg =
+            "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+        };
       };
     };
 
