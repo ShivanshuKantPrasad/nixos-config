@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   xsession.enable = true;
@@ -32,9 +32,8 @@
       gtk.enable = true;
     };
 
-    sessionVariables = rec {
-      ROCQPATH =
-        "/nix/store/ib3rrdilixjsnbimdbj7fzh0rjjy8g04-rocq-core9.0-stdlib-9.0.0/lib/coq/9.0/user-contrib/";
+    sessionVariables = {
+      ROCQPATH = "${pkgs.rocqPackages.stdlib.out}/lib/coq/9.0/user-contrib";
       NIXOS_OZONE_WL = "1";
       MANPAGER = "vim +Man!";
       BAT_PAGER = "less";
