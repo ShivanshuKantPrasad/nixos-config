@@ -62,6 +62,14 @@
     };
   };
 
+  # Audiobookshelf
+  # services.audiobookshelf = {
+  #   enable = true;
+  #   host = "0.0.0.0";
+  #   port = 13378;
+  #   openFirewall = true;
+  # };
+
   # Snowflake proxy
   services.snowflake-proxy = { enable = true; };
 
