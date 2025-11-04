@@ -360,7 +360,6 @@
       php
       nodejs
       html-tidy
-      wireshark
       nodePackages.stylelint
       nodePackages.js-beautify
 
