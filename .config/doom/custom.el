@@ -21,3 +21,4 @@
  '(ts-fold-replacement-face ((t (:foreground unspecified :box nil :inherit font-lock-comment-face :weight light)))))
 (put 'upcase-region 'disabled nil)
 (put 'projectile-grep 'disabled nil)
+(put 'projectile-ripgrep 'disabled nil)

@@ -173,6 +173,10 @@
 
 (add-hook 'coq-mode-hook #'undo-tree-mode)
 
+(setq nov-text-width t)
+(setq visual-fill-column-center-text t)
+(add-hook 'nov-mode-hook 'visual-line-mode)
+(add-hook 'nov-mode-hook 'visual-fill-column-mode)
 
 
 
