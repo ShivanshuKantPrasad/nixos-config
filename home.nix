@@ -196,7 +196,7 @@
       #Game
       lutris
       mangohud
-      wineWowPackages.waylandFull
+      wineWow64Packages.waylandFull
       winetricks
       mindustry-wayland
 
@@ -277,7 +277,7 @@
       nethogs
       bandwhich
       fastfetch
-      glxinfo
+      mesa-demos
       hwinfo
       procs
 
@@ -340,7 +340,7 @@
       nh
       nvd
       nixd
-      nixfmt-classic
+      nixfmt
       cachix
       statix
       deadnix
@@ -397,8 +397,8 @@
 
       # IDEs
       jetbrains.clion
-      jetbrains.idea-community
-      jetbrains.pycharm-community
+      jetbrains.idea
+      jetbrains.pycharm
       jetbrains.datagrip
       jetbrains.rust-rover
 
@@ -412,7 +412,7 @@
       man-pages-posix
       man-pages
       zeal
-      hors
+      # hors
       python3Packages.howdoi
 
     ];

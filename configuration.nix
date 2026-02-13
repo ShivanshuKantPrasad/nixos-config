@@ -58,7 +58,7 @@
     type = "fcitx5";
     fcitx5 = {
       waylandFrontend = true;
-      addons = [ pkgs.fcitx5-configtool pkgs.fcitx5-mozc ];
+      addons = [ pkgs.qt6Packages.fcitx5-configtool pkgs.fcitx5-mozc ];
     };
   };
 
