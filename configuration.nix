@@ -18,7 +18,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      useOSProber = true;
+      useOSProber = false;
     };
   };
 
@@ -272,8 +272,8 @@
   };
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 5173 6567 8795 ];
-  networking.firewall.allowedUDPPorts = [ 5173 6567 8795 ];
+  networking.firewall.allowedTCPPorts = [ 2000 5173 6567 8795 ];
+  networking.firewall.allowedUDPPorts = [ 2000 5173 6567 8795 ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 

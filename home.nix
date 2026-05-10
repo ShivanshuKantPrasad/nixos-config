@@ -512,6 +512,7 @@
           name = "Shivanshu Kant Prasad";
           email = "shivanshukantprasad@gmail.com";
         };
+        pull.rebase = "merges";
         alias = {
           lg =
             "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
