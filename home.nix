@@ -135,6 +135,7 @@
     packages = with pkgs; [
 
       # Hyprland
+      nwg-displays
       kanata-with-cmd
       # kmonad
       networkmanagerapplet
