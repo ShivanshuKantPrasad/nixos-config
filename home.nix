@@ -183,7 +183,7 @@
       libreoffice
       keepassxc
       # obsidian
-      protonvpn-gui
+      proton-vpn
       kdePackages.kget
 
       #File Manager
@@ -195,7 +195,7 @@
       # libsForQt5.dolphin-plugins
 
       #Game
-      lutris
+      # lutris
       mangohud
       wineWow64Packages.waylandFull
       winetricks
@@ -236,7 +236,7 @@
 
       # System
       acpi
-      light
+      acpilight
       ncdu
       gdu
       xdg-ninja
@@ -361,8 +361,8 @@
       php
       nodejs
       html-tidy
-      nodePackages.stylelint
-      nodePackages.js-beautify
+      stylelint
+      js-beautify
 
       #Shell
       shfmt
@@ -414,7 +414,6 @@
       man-pages
       zeal
       # hors
-      python3Packages.howdoi
 
     ];
 
@@ -496,6 +495,9 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
+      withRuby = true;
+      withPython3 = true;
+      withNodeJs = true;
     };
 
     rofi = {
