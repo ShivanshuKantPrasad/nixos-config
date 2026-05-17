@@ -135,7 +135,7 @@
     packages = with pkgs; [
 
       # Hyprland
-      nwg-displays
+      # nwg-displays
       kanata-with-cmd
       # kmonad
       networkmanagerapplet
@@ -495,9 +495,9 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      withRuby = true;
-      withPython3 = true;
-      withNodeJs = true;
+      # withRuby = true;
+      # withPython3 = true;
+      # withNodeJs = true;
     };
 
     rofi = {
