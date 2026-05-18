@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   xsession.enable = true;
@@ -17,6 +17,7 @@
       "x-scheme-handler/org-protocol" = "emacsclient.desktop";
     };
   };
+  xdg.configFile."nvim/init.lua".enable = lib.mkForce false;
 
   qt = {
     enable = true;
@@ -136,6 +137,7 @@
 
       # Hyprland
       # nwg-displays
+      hyprshutdown
       kanata-with-cmd
       # kmonad
       networkmanagerapplet
@@ -156,6 +158,7 @@
       grimblast
       hyprcursor
       hyprlock
+      hyprpolkitagent
 
       ydotool
       keepmenu

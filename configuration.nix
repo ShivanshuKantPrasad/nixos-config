@@ -210,6 +210,7 @@
     kdePackages.qtmultimedia
     sddm-astronaut
     matlab
+    waybar
   ];
 
   boot.kernel.sysctl."kernel.kptr_restrict" = 0;
@@ -218,8 +219,11 @@
     wireshark.enable = true;
     virt-manager.enable = true;
     nix-ld.enable = true;
-    waybar.enable = true;
-    hyprland.enable = true;
+    # waybar.enable = true;
+    hyprland = {
+      withUWSM = true;
+      enable = true;
+    };
     fish.enable = true;
     partition-manager.enable = true;
     gamemode.enable = true;
