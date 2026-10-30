@@ -216,7 +216,10 @@
   boot.kernel.sysctl."kernel.kptr_restrict" = 0;
 
   programs = {
-    wireshark.enable = true;
+    wireshark = {
+      enable = true;
+      usbmon.enable = true;
+    };
     virt-manager.enable = true;
     nix-ld.enable = true;
     # waybar.enable = true;

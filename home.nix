@@ -136,7 +136,7 @@
     packages = with pkgs; [
 
       # Hyprland
-      # nwg-displays
+      nwg-displays
       hyprshutdown
       kanata-with-cmd
       # kmonad
@@ -445,6 +445,7 @@
   };
   services.syncthing.enable = true;
   services.mpris-proxy.enable = true;
+  services.kdeconnect.enable = true;
 
   programs = {
     nix-index-database.comma.enable = true;
