@@ -5,6 +5,7 @@
 
   imports = [
     # Include the results of the hardware scan.
+    ./fingerprint.nix
     ./hardware-configuration.nix
   ];
 
