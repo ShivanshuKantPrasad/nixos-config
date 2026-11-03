@@ -50,7 +50,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = null;
               home-manager.users.shivanshu = {
                 imports =
                   [ nix-index-database.homeModules.nix-index ./home.nix ];
