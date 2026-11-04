@@ -1,12 +1,13 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
   # nix.registry.nixpkgs.flake = pkgs;
 
   imports = [
     # Include the results of the hardware scan.
     # ./fingerprint.nix
     ./hardware-configuration.nix
+    inputs.duodesk.nixosModules.default
   ];
 
   services.fprintd = { enable = true; };
@@ -163,7 +164,7 @@
   hardware.uinput.enable = true;
   services.pipewire = {
     enable = true;
-    systemWide = true;
+    # systemWide = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
@@ -239,6 +240,10 @@
   boot.kernel.sysctl."kernel.kptr_restrict" = 0;
 
   programs = {
+    twindesk = {
+      enable = true;
+      user = "shivanshu";
+    };
     wireshark = {
       enable = true;
       usbmon.enable = true;

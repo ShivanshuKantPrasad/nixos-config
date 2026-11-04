@@ -15,10 +15,12 @@
     };
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    duodesk.url = "github:0xCodez/DuoDesk";
+    # duodesk.url = "github:InukaAsith/TwinDesk";
   };
 
-  outputs = { master, stable, nixpkgs, home-manager, nix-matlab
-    , nix-index-database, ... }:
+  outputs = { master, stable, nixpkgs, home-manager, nix-matlab, duodesk
+    , nix-index-database, ... }@inputs:
     let
       system = "x86_64-linux";
       commonConfig = {
@@ -41,6 +43,7 @@
     in {
       nixosConfigurations = {
         shivanshu = lib.nixosSystem {
+          specialArgs = { inherit inputs; };
           modules = [
             { nixpkgs.pkgs = pkgs; }
             nixpkgs.nixosModules.readOnlyPkgs
