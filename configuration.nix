@@ -1,6 +1,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }: {
   # nix.registry.nixpkgs.flake = pkgs;
 
   imports = [
@@ -30,6 +30,12 @@
   # The sensor returns a whole frame per SPI message; spidev's default 4096-byte
   # buffer truncates it. Works whether spidev is a module or built in.
   # Needs a reboot to take effect.
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
+  boot.extraModprobeConfig = ''
+    options v4l2loopback devices=1 exclusive_caps=1 card_label="DuoDesk Camera"
+  '';
+
   boot.kernelParams = [ "spidev.bufsiz=32768" ];
 
   # Bootloader.
@@ -243,6 +249,7 @@
     twindesk = {
       enable = true;
       user = "shivanshu";
+      package = pkgs.twindesk;
     };
     wireshark = {
       enable = true;

@@ -16,6 +16,7 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     duodesk.url = "github:0xCodez/DuoDesk";
+    duodesk.inputs.nixpkgs.follows = "nixpkgs";
     # duodesk.url = "github:InukaAsith/TwinDesk";
   };
 
@@ -36,6 +37,8 @@
             virtualbox = pkgs-stable.virtualbox;
           })
           nix-matlab.overlay
+          duodesk.overlays.default
+          (import ./twindesk-vcam-overlay.nix)
         ];
       });
 
