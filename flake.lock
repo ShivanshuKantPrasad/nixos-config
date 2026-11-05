@@ -7,16 +7,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1793459376,
-        "narHash": "sha256-SrXcCYE4+rJAQsa74VGCnY881xKINGFaFrRFlm/rp4s=",
-        "owner": "0xCodez",
-        "repo": "DuoDesk",
-        "rev": "50125ca0c4f73ab3253e739dd8a6ec9cf1a8444b",
+        "lastModified": 1793873720,
+        "narHash": "sha256-qpLI8LISRs6PTZS4uUTXXQJIgiJtOpAFhwvGojX9ZL0=",
+        "owner": "InukaAsith",
+        "repo": "TwinDesk",
+        "rev": "86c3af9baddd64105f26a766d188beef944c761a",
         "type": "github"
       },
       "original": {
-        "owner": "0xCodez",
-        "repo": "DuoDesk",
+        "owner": "InukaAsith",
+        "repo": "TwinDesk",
         "type": "github"
       }
     },
