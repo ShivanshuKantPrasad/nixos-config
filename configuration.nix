@@ -186,6 +186,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    settings = {
+      capture = "wlr";
+      output_name = 1;
+    };
+    # capSysAdmin = true;
+    openFirewall = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shivanshu = {
     isNormalUser = true;
@@ -300,9 +311,20 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
 
   hardware = {
-    graphics.enable32Bit = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+
+      extraPackages = with pkgs; [
+        intel-media-driver
+        intel-ocl
+        intel-vaapi-driver
+        libvdpau-va-gl
+      ];
+    };
 
     bluetooth = {
       enable = true;
