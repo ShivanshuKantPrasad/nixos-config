@@ -19,17 +19,22 @@
     duodesk.url = "github:InukaAsith/TwinDesk";
     # duodesk.url = "github:0xCodez/DuoDesk";
     duodesk.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { master, stable, nixpkgs, home-manager, nix-matlab, duodesk
-    , nix-index-database, ... }@inputs:
+  outputs = { stable, nixpkgs, home-manager, nix-matlab, duodesk
+    , nix-index-database, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       commonConfig = {
         inherit system;
         config.allowUnfree = true;
       };
-      pkgs-master = import master commonConfig;
+      # pkgs-master = import master commonConfig;
       pkgs-stable = import stable commonConfig;
       pkgs = import nixpkgs (commonConfig // {
         overlays = [
@@ -59,8 +64,11 @@
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = null;
               home-manager.users.shivanshu = {
-                imports =
-                  [ nix-index-database.homeModules.nix-index ./home.nix ];
+                imports = [
+                  nix-index-database.homeModules.nix-index
+                  zen-browser.homeModules.beta
+                  ./home.nix
+                ];
               };
             }
           ];

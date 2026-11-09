@@ -240,7 +240,6 @@
       # System
       acpi
       acpilight
-      ncdu
       gdu
       xdg-ninja
       system-config-printer
@@ -398,18 +397,19 @@
       # Browsers
       firefox
       qutebrowser
+      tor-browser
 
       # IDEs
       jetbrains.clion
       jetbrains.idea
       jetbrains.pycharm
-      jetbrains.datagrip
-      jetbrains.rust-rover
 
       # Editors
       vscode
       neovide
       my-emacs
+      zed-editor
+      code-cursor
 
       #Man packages
       #linux-manual
@@ -448,6 +448,10 @@
   services.kdeconnect.enable = true;
 
   programs = {
+    zen-browser = {
+      enable = true;
+      setAsDefaultBrowser = true;
+    };
     nix-index-database.comma.enable = true;
     nix-index.enable = true;
     home-manager.enable = true;
