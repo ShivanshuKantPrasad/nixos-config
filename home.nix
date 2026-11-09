@@ -308,11 +308,6 @@
       graphviz
       gnuplot
 
-      # Proof Assistants
-      rocq-core
-      rocqPackages.stdlib
-      lean4
-
       # C
       gcc
       bear
