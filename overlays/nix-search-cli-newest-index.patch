@@ -1,0 +1,97 @@
+--- a/pkg/nixsearch/esclient.go
++++ b/pkg/nixsearch/esclient.go
+@@ -8,6 +8,10 @@
+ 	"io"
+ 	"net/http"
+ 	"net/url"
++	"regexp"
++	"strconv"
++	"sync"
++	"time"
+ 
+ 	"github.com/hashicorp/go-retryablehttp"
+ )
+@@ -24,15 +28,61 @@
+ 	//   - latest-40-group-manual
+ 	//   - latest-40-nixos-unstable
+ 	//   - latest-40-nixos-22.11
+-	// As the indices are updated, the version number changes over time, and old
+-	// version numbers stop working because the related indices are deleted. The
+-	// upstream project does not create a version-number-less alias (although
+-	// they could easily) so we do the next best thing and use a wildcard prefix
+-	// for the version number. Experimentally, results are the same as before,
+-	// it doesn't matter that we're querying over multiple indices.
++	// Older versions of this tool used the "latest-*-" wildcard below, which
++	// matches every index version that is still alive upstream. Because
++	// ElasticSearch keeps several generations around at once, that returns
++	// duplicate packages from stale nixpkgs snapshots. We instead ask for the
++	// alias list and use only the newest generation for the requested channel.
+ 	ElasticSearchIndexPrefix = "latest-*-"
++	ElasticSearchAliasesURL  = `https://nixos-search-7-1733963800.us-east-1.bonsaisearch.net:443/_cat/aliases?format=json&h=alias`
+ )
+ 
++var (
++	indexCache  sync.Map // suffix -> resolved index (or wildcard fallback)
++	aliasClient = &http.Client{Timeout: 10 * time.Second}
++)
++
++// resolveIndex returns the newest "latest-<N>-<suffix>" index alias that
++// exists upstream, falling back to the old wildcard if the alias lookup
++// fails for any reason.
++func resolveIndex(suffix string) string {
++	if cached, ok := indexCache.Load(suffix); ok {
++		return cached.(string)
++	}
++
++	index := ElasticSearchIndexPrefix + url.QueryEscape(suffix)
++	req, err := http.NewRequest(http.MethodGet, ElasticSearchAliasesURL, nil)
++	if err == nil {
++		req.SetBasicAuth(ElasticSearchUsername, ElasticSearchPassword)
++		req.Header.Set("Accept", "application/json")
++		if resp, err := aliasClient.Do(req); err == nil {
++			defer resp.Body.Close()
++			var aliases []struct {
++				Alias string `json:"alias"`
++			}
++			if json.NewDecoder(resp.Body).Decode(&aliases) == nil {
++				re := regexp.MustCompile(`^latest-(\d+)-` + regexp.QuoteMeta(suffix) + `$`)
++				newest := -1
++				for _, a := range aliases {
++					m := re.FindStringSubmatch(a.Alias)
++					if m == nil {
++						continue
++					}
++					if n, err := strconv.Atoi(m[1]); err == nil && n > newest {
++						newest = n
++					}
++				}
++				if newest >= 0 {
++					index = fmt.Sprintf("latest-%d-%s", newest, url.QueryEscape(suffix))
++				}
++			}
++		}
++	}
++
++	indexCache.Store(suffix, index)
++	return index
++}
++
+ type ElasticSearchClient struct {
+ 	HTTPClient *http.Client
+ }
+@@ -74,12 +124,11 @@
+ }
+ 
+ func newRequest(ctx context.Context, query Query) (*http.Request, error) {
+-	index := ""
++	suffix := "nixos-" + query.Channel
+ 	if query.Flakes {
+-		index = ElasticSearchIndexPrefix + "group-manual"
+-	} else {
+-		index = ElasticSearchIndexPrefix + url.QueryEscape("nixos-"+query.Channel)
++		suffix = "group-manual"
+ 	}
++	index := resolveIndex(suffix)
+ 	eurl := fmt.Sprintf(ElasticSearchURLTemplate, index)
+ 	payload, err := query.Payload()
+ 	if err != nil {

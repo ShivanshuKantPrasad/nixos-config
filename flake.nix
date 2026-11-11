@@ -44,6 +44,7 @@
           })
           nix-matlab.overlay
           twindesk.overlays.default
+          (import ./overlays/nix-search-cli.nix)
           # (import ./twindesk-vcam-overlay.nix)
         ];
       });
