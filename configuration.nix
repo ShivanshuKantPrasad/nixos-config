@@ -260,7 +260,6 @@
   programs = {
     twindesk = {
       enable = true;
-      user = "shivanshu";
       package = pkgs.twindesk;
     };
     wireshark = {

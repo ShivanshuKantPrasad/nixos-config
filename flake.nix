@@ -43,7 +43,9 @@
             virtualbox = pkgs-stable.virtualbox;
           })
           nix-matlab.overlay
-          twindesk.overlays.default
+          (final: prev: {
+            twindesk = twindesk.packages.${final.stdenv.hostPlatform.system}.twindesk;
+          })
           (import ./overlays/nix-search-cli.nix)
           # (import ./twindesk-vcam-overlay.nix)
         ];

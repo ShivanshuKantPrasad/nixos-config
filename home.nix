@@ -422,6 +422,7 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     theme = {
       name = "Orchis-Dark";
       package = pkgs.orchis-theme;
@@ -499,8 +500,8 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      # withRuby = true;
-      # withPython3 = true;
+      withRuby = false;
+      withPython3 = true;
       # withNodeJs = true;
     };
 
