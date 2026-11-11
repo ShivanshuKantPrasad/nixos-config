@@ -30,6 +30,7 @@
       name = "phinger-cursors-light";
       package = pkgs.phinger-cursors;
       size = 36;
+      enable = true;
       gtk.enable = true;
     };
 
@@ -179,7 +180,7 @@
       # libsForQt5.kio-extras
 
       # General Apps
-      anki
+      # anki
       discord
       teams-for-linux
       # teamviewer
@@ -262,7 +263,7 @@
       fzf
       plocate
       fsearch
-      silver-searcher
+      silver-searcher-ng
       ripgrep
 
       # Version Control
@@ -321,7 +322,7 @@
       # Debugger
       # linuxKernel.packages.linux_6_1.perf
       #linuxPackages_latest.perf
-      samply
+      # samply
       kdePackages.kcachegrind
       valgrind
       # massif-visualizer

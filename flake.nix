@@ -16,9 +16,9 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     # duodesk.url = "path:/home/shivanshu/TwinDesk";
-    duodesk.url = "github:InukaAsith/TwinDesk";
+    twindesk.url = "github:InukaAsith/TwinDesk";
     # duodesk.url = "github:0xCodez/DuoDesk";
-    duodesk.inputs.nixpkgs.follows = "nixpkgs";
+    twindesk.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -26,7 +26,7 @@
     };
   };
 
-  outputs = { stable, nixpkgs, home-manager, nix-matlab, duodesk
+  outputs = { stable, nixpkgs, home-manager, nix-matlab, twindesk
     , nix-index-database, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
@@ -39,11 +39,11 @@
       pkgs = import nixpkgs (commonConfig // {
         overlays = [
           (self: super: {
-            my-emacs = super.emacs30-pgtk;
+            my-emacs = super.emacs-pgtk;
             virtualbox = pkgs-stable.virtualbox;
           })
           nix-matlab.overlay
-          duodesk.overlays.default
+          twindesk.overlays.default
           # (import ./twindesk-vcam-overlay.nix)
         ];
       });

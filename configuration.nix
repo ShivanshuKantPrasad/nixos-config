@@ -7,7 +7,7 @@
     # Include the results of the hardware scan.
     # ./fingerprint.nix
     ./hardware-configuration.nix
-    inputs.duodesk.nixosModules.default
+    inputs.twindesk.nixosModules.default
   ];
 
   services.fprintd = { enable = true; };
@@ -153,13 +153,15 @@
     nssmdns4 = true;
     nssmdns6 = true;
     openFirewall = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      domain = true;
-      hinfo = true;
-      userServices = true;
-      workstation = true;
+    settings = {
+      publish = {
+        disable-publishing = false;
+        publish-domain = true;
+        publish-hinfo = true;
+        disable-user-service-publishing = false;
+        publish-addresses = true;
+        publish-workstation = true;
+      };
     };
   };
   services.printing.drivers = [ pkgs.hplipWithPlugin ];
@@ -250,7 +252,6 @@
     perf
     kdePackages.qtmultimedia
     sddm-astronaut
-    matlab
     waybar
   ];
 
