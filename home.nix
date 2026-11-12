@@ -24,6 +24,27 @@
     platformTheme.name = "kde";
   };
 
+  # Polkit authentication agent for Hyprland. The package ships a systemd user
+  # unit but home-manager does not link it on its own, so declare it here. This
+  # also replaces the stale hand-made ~/.config/systemd/user symlink that kept
+  # pointing at hyprpolkitagent 0.1.3 (whose Qt Quick frontend crashes with
+  # "Failed to create temporary context" on this setup; 0.2.0 uses hyprtoolkit).
+  systemd.user.services.hyprpolkitagent = {
+    Unit = {
+      Description = "Hyprland Polkit Authentication Agent";
+      PartOf = [ "graphical-session.target" ];
+      After = [ "graphical-session.target" ];
+      ConditionEnvironment = "WAYLAND_DISPLAY";
+    };
+    Service = {
+      ExecStart = "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent";
+      Slice = "session.slice";
+      TimeoutStopSec = "5sec";
+      Restart = "on-failure";
+    };
+    Install.WantedBy = [ "graphical-session.target" ];
+  };
+
   home = {
 
     pointerCursor = {
