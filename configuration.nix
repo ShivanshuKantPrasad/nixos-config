@@ -19,6 +19,14 @@
     sudo.fprintAuth = false;
   };
 
+  security.sudo.extraRules = [{
+    users = [ "shivanshu" ];
+    commands = [{
+      command = "/home/shivanshu/.nix-profile/bin/containerlab";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
+
   # KeePassXC 2.8's Quick Unlock on Linux goes through polkit (action
   # org.keepassxc.KeePassXC.unlockDatabase), and polkitd only reads actions from
   # system directories. KeePassXC is installed per-user by home-manager, so its
