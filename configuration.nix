@@ -19,6 +19,14 @@
     sudo.fprintAuth = false;
   };
 
+  # KeePassXC 2.8's Quick Unlock on Linux goes through polkit (action
+  # org.keepassxc.KeePassXC.unlockDatabase), and polkitd only reads actions from
+  # system directories. KeePassXC is installed per-user by home-manager, so its
+  # policy file ends up in the home profile and is never registered. Copy it into
+  # /etc/polkit-1/actions so the action exists system-wide.
+  environment.etc."polkit-1/actions/org.keepassxc.KeePassXC.policy".source =
+    "${pkgs.keepassxc}/share/polkit-1/actions/org.keepassxc.KeePassXC.policy";
+
   # hyprpolkitagent registers itself with polkitd exactly once, when it starts
   # (CPolkitListener::registerAgent), and never watches for polkitd coming back.
   # So a polkit.service restart -- which nixos-rebuild does whenever the polkit
